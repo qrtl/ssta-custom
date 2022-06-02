@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem
+        id="auction_menu_root"
+        name="Auctions"
+        web_icon="product_auction,static/description/icon.png"
+        sequence="25"
+    />
+    <menuitem
+        id="menu_auction_config"
+        name="Configuration"
+        parent="product_auction.auction_menu_root"
+        sequence="35"
+        groups="product_auction.group_auction_manager"
+    />
+</odoo>

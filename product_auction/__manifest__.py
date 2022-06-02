@@ -1,0 +1,23 @@
+# Copyright 2022 Quartile Limited
+# License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
+{
+    "name": "Product Auction",
+    "category": "Auction",
+    "version": "15.0.1.0.0",
+    "author": "Quartile Limited",
+    "website": "https://www.quartile.co",
+    "license": "LGPL-3",
+    "depends": ["product"],
+    "data": [
+        "security/auction_security.xml",
+        "security/ir.model.access.csv",
+        "views/battery_service_views.xml",
+        "views/product_auction_views.xml",
+        "views/product_model_views.xml",
+        "views/product_template_views.xml",
+        "views/rom_size_views.xml",
+        "views/sim_lock_views.xml",
+        "views/use_limit_views.xml",
+    ],
+    "installable": True,
+}

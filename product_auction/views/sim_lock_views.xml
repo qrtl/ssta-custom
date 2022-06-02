@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_sim_lock_tree" model="ir.ui.view">
+        <field name="name">sim.lock.tree</field>
+        <field name="model">sim.lock</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree create="1">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_sim_lock_form" model="ir.ui.view">
+        <field name="name">sim.lock.form</field>
+        <field name="model">sim.lock</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="SIM Lock State">
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <group>
+                        <field name="name" />
+                        <field name="active" invisible="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_sim_lock_view" model="ir.actions.act_window">
+        <field name="name">SIM Lock States</field>
+        <field name="res_model">sim.lock</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_sim_lock_tree" />
+    </record>
+    <menuitem
+        id="menu_sim_lock"
+        name="SIM Lock States"
+        parent="product_auction.menu_auction_config"
+        action="action_sim_lock_view"
+        sequence="20"
+    />
+</odoo>
