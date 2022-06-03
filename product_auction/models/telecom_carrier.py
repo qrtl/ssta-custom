@@ -4,7 +4,7 @@
 from odoo import fields, models
 
 
-class Telecom_Carrier(models.Model):
+class TelecomCarrier(models.Model):
     _name = "telecom.carrier"
     _description = "Telecom Carrier"
 

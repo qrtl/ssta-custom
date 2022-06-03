@@ -16,7 +16,7 @@ class ProductTemplate(models.Model):
     battery_health = fields.Char()
     battery_service_id = fields.Many2one("battery.service", "Battery Service Display")
     color = fields.Char()
-    use_limit_id = fields.Many2one("use.limit", "Use Limit") 
+    use_limit_id = fields.Many2one("use.limit", "Use Limit")
     telecom_carrier_id = fields.Many2one("telecom.carrier", "Telecom Carrier")
     product_grade_id = fields.Many2one("product.grade", "Product Grade")
     cpu = fields.Char("CPU")

@@ -20,9 +20,6 @@
                             <field name="imei" />
                             <field name="sim_lock_id" />
                             <field name="battery_health" />
-                            <field name="qa_state_id" />
-                            <field name="qa_note" />
-                            <field name="description_sale" />
                         </group>
                         <group>
                             <field name="battery_service_id" />
@@ -33,7 +30,12 @@
                             <field name="cpu" />
                             <field name="ram" />
                         </group>
-                    </group>
+                     </group>
+                        <group>
+                            <field name="qa_state_id" />
+                            <field name="qa_note" />
+                            <field name="description_sale" />
+                        </group>
                 </page>
             </xpath>
         </field>
