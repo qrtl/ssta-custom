@@ -1,0 +1,365 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* product_auction
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-03 08:51+0000\n"
+"PO-Revision-Date: 2022-06-03 08:51+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: product_auction
+#: model:ir.model.fields,help:product_auction.field_product_product__description_sale
+#: model:ir.model.fields,help:product_auction.field_product_template__description_sale
+msgid ""
+"A description of the Product that you want to communicate to your customers."
+" This description will be copied to every Sales Order, Delivery Order and "
+"Customer Invoice/Credit Note"
+msgstr "顧客に見せたいプロダクトの説明。この説明は販売オーダ、配送オーダ、顧客請求書/クレジットノートにコピーされます。"
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_battery_service__active
+#: model:ir.model.fields,field_description:product_auction.field_product_grade__active
+#: model:ir.model.fields,field_description:product_auction.field_product_model__active
+#: model:ir.model.fields,field_description:product_auction.field_qa_state__active
+#: model:ir.model.fields,field_description:product_auction.field_rom_size__active
+#: model:ir.model.fields,field_description:product_auction.field_sim_lock__active
+#: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__active
+#: model:ir.model.fields,field_description:product_auction.field_use_limit__active
+msgid "Active"
+msgstr ""
+
+#. module: product_auction
+#: model_terms:ir.ui.view,arch_db:product_auction.view_battery_service_form
+#: model_terms:ir.ui.view,arch_db:product_auction.view_product_grade_form
+#: model_terms:ir.ui.view,arch_db:product_auction.view_product_model_form
+#: model_terms:ir.ui.view,arch_db:product_auction.view_qa_state_form
+#: model_terms:ir.ui.view,arch_db:product_auction.view_rom_size_form
+#: model_terms:ir.ui.view,arch_db:product_auction.view_sim_lock_form
+#: model_terms:ir.ui.view,arch_db:product_auction.view_telecom_carrier_form
+#: model_terms:ir.ui.view,arch_db:product_auction.view_use_limit_form
+msgid "Archived"
+msgstr ""
+
+#. module: product_auction
+#: model_terms:ir.ui.view,arch_db:product_auction.product_template_form_view
+msgid "Auction Attributes"
+msgstr "入札会情報"
+
+#. module: product_auction
+#: model:res.groups,name:product_auction.group_auction_manager
+msgid "Auction Manager"
+msgstr "入札会管理者"
+
+#. module: product_auction
+#: model:res.groups,name:product_auction.group_auction_user
+msgid "Auction User"
+msgstr "入札会ユーザ"
+
+#. module: product_auction
+#: model:ir.module.category,name:product_auction.module_category_auction
+#: model:ir.ui.menu,name:product_auction.auction_menu_root
+msgid "Auctions"
+msgstr "入札会"
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__battery_health
+#: model:ir.model.fields,field_description:product_auction.field_product_template__battery_health
+msgid "Battery Health"
+msgstr "バッテリーヘルス"
+
+#. module: product_auction
+#: model:ir.model,name:product_auction.model_battery_service
+#: model:ir.model.fields,field_description:product_auction.field_product_product__battery_service_id
+#: model:ir.model.fields,field_description:product_auction.field_product_template__battery_service_id
+#: model_terms:ir.ui.view,arch_db:product_auction.view_battery_service_form
+msgid "Battery Service Display"
+msgstr "バッテリーサービス表示"
+
+#. module: product_auction
+#: model:ir.actions.act_window,name:product_auction.action_battery_service_view
+#: model:ir.ui.menu,name:product_auction.menu_battery_service
+msgid "Battery Service Displays"
+msgstr "バッテリーサービス表示"
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__cpu
+#: model:ir.model.fields,field_description:product_auction.field_product_template__cpu
+msgid "CPU"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__case_number
+#: model:ir.model.fields,field_description:product_auction.field_product_template__case_number
+msgid "Case Number"
+msgstr "箱番号"
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__color
+#: model:ir.model.fields,field_description:product_auction.field_product_template__color
+msgid "Color"
+msgstr "カラー"
+
+#. module: product_auction
+#: model:ir.ui.menu,name:product_auction.menu_auction_config
+msgid "Configuration"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_battery_service__create_uid
+#: model:ir.model.fields,field_description:product_auction.field_product_grade__create_uid
+#: model:ir.model.fields,field_description:product_auction.field_product_model__create_uid
+#: model:ir.model.fields,field_description:product_auction.field_qa_state__create_uid
+#: model:ir.model.fields,field_description:product_auction.field_rom_size__create_uid
+#: model:ir.model.fields,field_description:product_auction.field_sim_lock__create_uid
+#: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__create_uid
+#: model:ir.model.fields,field_description:product_auction.field_use_limit__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_battery_service__create_date
+#: model:ir.model.fields,field_description:product_auction.field_product_grade__create_date
+#: model:ir.model.fields,field_description:product_auction.field_product_model__create_date
+#: model:ir.model.fields,field_description:product_auction.field_qa_state__create_date
+#: model:ir.model.fields,field_description:product_auction.field_rom_size__create_date
+#: model:ir.model.fields,field_description:product_auction.field_sim_lock__create_date
+#: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__create_date
+#: model:ir.model.fields,field_description:product_auction.field_use_limit__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_battery_service__display_name
+#: model:ir.model.fields,field_description:product_auction.field_product_grade__display_name
+#: model:ir.model.fields,field_description:product_auction.field_product_model__display_name
+#: model:ir.model.fields,field_description:product_auction.field_qa_state__display_name
+#: model:ir.model.fields,field_description:product_auction.field_rom_size__display_name
+#: model:ir.model.fields,field_description:product_auction.field_sim_lock__display_name
+#: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__display_name
+#: model:ir.model.fields,field_description:product_auction.field_use_limit__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_battery_service__id
+#: model:ir.model.fields,field_description:product_auction.field_product_grade__id
+#: model:ir.model.fields,field_description:product_auction.field_product_model__id
+#: model:ir.model.fields,field_description:product_auction.field_qa_state__id
+#: model:ir.model.fields,field_description:product_auction.field_rom_size__id
+#: model:ir.model.fields,field_description:product_auction.field_sim_lock__id
+#: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__id
+#: model:ir.model.fields,field_description:product_auction.field_use_limit__id
+msgid "ID"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__imei
+#: model:ir.model.fields,field_description:product_auction.field_product_template__imei
+msgid "IMEI"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_battery_service____last_update
+#: model:ir.model.fields,field_description:product_auction.field_product_grade____last_update
+#: model:ir.model.fields,field_description:product_auction.field_product_model____last_update
+#: model:ir.model.fields,field_description:product_auction.field_qa_state____last_update
+#: model:ir.model.fields,field_description:product_auction.field_rom_size____last_update
+#: model:ir.model.fields,field_description:product_auction.field_sim_lock____last_update
+#: model:ir.model.fields,field_description:product_auction.field_telecom_carrier____last_update
+#: model:ir.model.fields,field_description:product_auction.field_use_limit____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_battery_service__write_uid
+#: model:ir.model.fields,field_description:product_auction.field_product_grade__write_uid
+#: model:ir.model.fields,field_description:product_auction.field_product_model__write_uid
+#: model:ir.model.fields,field_description:product_auction.field_qa_state__write_uid
+#: model:ir.model.fields,field_description:product_auction.field_rom_size__write_uid
+#: model:ir.model.fields,field_description:product_auction.field_sim_lock__write_uid
+#: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__write_uid
+#: model:ir.model.fields,field_description:product_auction.field_use_limit__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_battery_service__write_date
+#: model:ir.model.fields,field_description:product_auction.field_product_grade__write_date
+#: model:ir.model.fields,field_description:product_auction.field_product_model__write_date
+#: model:ir.model.fields,field_description:product_auction.field_qa_state__write_date
+#: model:ir.model.fields,field_description:product_auction.field_rom_size__write_date
+#: model:ir.model.fields,field_description:product_auction.field_sim_lock__write_date
+#: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__write_date
+#: model:ir.model.fields,field_description:product_auction.field_use_limit__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__product_model_id
+#: model:ir.model.fields,field_description:product_auction.field_product_template__product_model_id
+msgid "Model"
+msgstr "機種名"
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__model_number
+#: model:ir.model.fields,field_description:product_auction.field_product_template__model_number
+msgid "Model Number"
+msgstr "モデル"
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_battery_service__name
+#: model:ir.model.fields,field_description:product_auction.field_product_grade__name
+#: model:ir.model.fields,field_description:product_auction.field_product_model__name
+#: model:ir.model.fields,field_description:product_auction.field_qa_state__name
+#: model:ir.model.fields,field_description:product_auction.field_rom_size__name
+#: model:ir.model.fields,field_description:product_auction.field_sim_lock__name
+#: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__name
+#: model:ir.model.fields,field_description:product_auction.field_use_limit__name
+msgid "Name"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.constraint,message:product_auction.constraint_battery_service_name
+#: model:ir.model.constraint,message:product_auction.constraint_product_grade_name
+#: model:ir.model.constraint,message:product_auction.constraint_product_model_name
+#: model:ir.model.constraint,message:product_auction.constraint_qa_state_name
+#: model:ir.model.constraint,message:product_auction.constraint_rom_size_name
+#: model:ir.model.constraint,message:product_auction.constraint_sim_lock_name
+#: model:ir.model.constraint,message:product_auction.constraint_telecom_carrier_name
+#: model:ir.model.constraint,message:product_auction.constraint_use_limit_name
+msgid "Name must be unique!"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model,name:product_auction.model_product_grade
+#: model:ir.model.fields,field_description:product_auction.field_product_product__product_grade_id
+#: model:ir.model.fields,field_description:product_auction.field_product_template__product_grade_id
+#: model_terms:ir.ui.view,arch_db:product_auction.view_product_grade_form
+msgid "Product Grade"
+msgstr "グレード"
+
+#. module: product_auction
+#: model:ir.actions.act_window,name:product_auction.action_product_grade_view
+#: model:ir.ui.menu,name:product_auction.menu_product_grade
+msgid "Product Grades"
+msgstr "グレード"
+
+#. module: product_auction
+#: model:ir.model,name:product_auction.model_product_model
+#: model_terms:ir.ui.view,arch_db:product_auction.view_product_model_form
+msgid "Product Model"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.actions.act_window,name:product_auction.action_product_model_view
+#: model:ir.ui.menu,name:product_auction.menu_product_model
+msgid "Product Models"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model,name:product_auction.model_product_template
+msgid "Product Template"
+msgstr "プロダクトテンプレート"
+
+#. module: product_auction
+#: model:ir.ui.menu,name:product_auction.menu_product_template
+msgid "Products"
+msgstr ""
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__qa_note
+#: model:ir.model.fields,field_description:product_auction.field_product_template__qa_note
+msgid "QA Note"
+msgstr "検査不具合"
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__qa_state_id
+#: model:ir.model.fields,field_description:product_auction.field_product_template__qa_state_id
+msgid "QA State"
+msgstr "検査"
+
+#. module: product_auction
+#: model:ir.actions.act_window,name:product_auction.action_qa_state_view
+#: model:ir.ui.menu,name:product_auction.menu_qa_state
+msgid "QA States"
+msgstr "検査"
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__ram
+#: model:ir.model.fields,field_description:product_auction.field_product_template__ram
+msgid "RAM"
+msgstr "メモリ"
+
+#. module: product_auction
+#: model:ir.model,name:product_auction.model_rom_size
+#: model:ir.model.fields,field_description:product_auction.field_product_product__rom_size_id
+#: model:ir.model.fields,field_description:product_auction.field_product_template__rom_size_id
+#: model_terms:ir.ui.view,arch_db:product_auction.view_rom_size_form
+msgid "ROM Size"
+msgstr "容量"
+
+#. module: product_auction
+#: model:ir.actions.act_window,name:product_auction.action_rom_size_view
+#: model:ir.ui.menu,name:product_auction.menu_rom_size
+msgid "ROM Sizes"
+msgstr "容量"
+
+#. module: product_auction
+#: model:ir.model,name:product_auction.model_sim_lock
+msgid "SIM Lock"
+msgstr "SIMロック"
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__sim_lock_id
+#: model:ir.model.fields,field_description:product_auction.field_product_template__sim_lock_id
+#: model_terms:ir.ui.view,arch_db:product_auction.view_sim_lock_form
+msgid "SIM Lock State"
+msgstr "SIMロック"
+
+#. module: product_auction
+#: model:ir.actions.act_window,name:product_auction.action_sim_lock_view
+#: model:ir.ui.menu,name:product_auction.menu_sim_lock
+msgid "SIM Lock States"
+msgstr "SIMロック"
+
+#. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_product__description_sale
+#: model:ir.model.fields,field_description:product_auction.field_product_template__description_sale
+msgid "Sales Description"
+msgstr "販売説明"
+
+#. module: product_auction
+#: model:ir.model,name:product_auction.model_telecom_carrier
+#: model:ir.model.fields,field_description:product_auction.field_product_product__telecom_carrier_id
+#: model:ir.model.fields,field_description:product_auction.field_product_template__telecom_carrier_id
+#: model_terms:ir.ui.view,arch_db:product_auction.view_telecom_carrier_form
+msgid "Telecom Carrier"
+msgstr "キャリア"
+
+#. module: product_auction
+#: model:ir.actions.act_window,name:product_auction.action_telecom_carrier_view
+#: model:ir.ui.menu,name:product_auction.menu_telecom_Carrier
+msgid "Telecom Carriers"
+msgstr "キャリア"
+
+#. module: product_auction
+#: model:ir.model,name:product_auction.model_use_limit
+#: model:ir.model.fields,field_description:product_auction.field_product_product__use_limit_id
+#: model:ir.model.fields,field_description:product_auction.field_product_template__use_limit_id
+#: model_terms:ir.ui.view,arch_db:product_auction.view_use_limit_form
+msgid "Use Limit"
+msgstr "利用制限"
+
+#. module: product_auction
+#: model:ir.actions.act_window,name:product_auction.action_use_limit_view
+#: model:ir.ui.menu,name:product_auction.menu_use_limit
+msgid "Use Limits"
+msgstr "利用制限"

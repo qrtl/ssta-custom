@@ -32,14 +32,14 @@
         </field>
     </record>
     <record id="action_telecom_carrier_view" model="ir.actions.act_window">
-        <field name="name">Telecom Carrier</field>
+        <field name="name">Telecom Carriers</field>
         <field name="res_model">telecom.carrier</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="view_telecom_carrier_tree" />
     </record>
     <menuitem
         id="menu_telecom_Carrier"
-        name="Telecom Carrier"
+        name="Telecom Carriers"
         parent="product_auction.menu_auction_config"
         action="action_telecom_carrier_view"
         sequence="15"

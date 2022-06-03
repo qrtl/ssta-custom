@@ -32,14 +32,14 @@
         </field>
     </record>
     <record id="action_product_grade_view" model="ir.actions.act_window">
-        <field name="name">Product Grade</field>
+        <field name="name">Product Grades</field>
         <field name="res_model">product.grade</field>
         <field name="view_mode">tree,form</field>
         <field name="view_id" ref="view_product_grade_tree" />
     </record>
     <menuitem
         id="menu_product_grade"
-        name="Product Grade"
+        name="Product Grades"
         parent="product_auction.menu_auction_config"
         action="action_product_grade_view"
         sequence="15"

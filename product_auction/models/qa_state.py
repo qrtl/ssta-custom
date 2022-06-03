@@ -6,7 +6,7 @@ from odoo import fields, models
 
 class QaState(models.Model):
     _name = "qa.state"
-    _description = "Qa State"
+    _description = "QA State"
 
     name = fields.Char()
     active = fields.Boolean(default=True)
