@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_qa_state_tree" model="ir.ui.view">
+        <field name="name">qa.state.tree</field>
+        <field name="model">qa.state</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree create="1">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_qa_state_form" model="ir.ui.view">
+        <field name="name">qa.state.form</field>
+        <field name="model">qa.state</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Qa State">
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <group>
+                        <field name="name" />
+                        <field name="active" invisible="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_qa_state_view" model="ir.actions.act_window">
+        <field name="name">Qa State</field>
+        <field name="res_model">qa.state</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_qa_state_tree" />
+    </record>
+    <menuitem
+        id="menu_qa_state"
+        name="Qa State"
+        parent="product_auction.menu_auction_config"
+        action="action_qa_state_view"
+        sequence="15"
+    />
+</odoo>
