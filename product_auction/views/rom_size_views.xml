@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_rom_size_tree" model="ir.ui.view">
+        <field name="name">rom.size.tree</field>
+        <field name="model">rom.size</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree create="1">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_rom_size_form" model="ir.ui.view">
+        <field name="name">rom.size.form</field>
+        <field name="model">rom.size</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="ROM Size">
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <group>
+                        <field name="name" />
+                        <field name="active" invisible="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_rom_size_view" model="ir.actions.act_window">
+        <field name="name">ROM Sizes</field>
+        <field name="res_model">rom.size</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_rom_size_tree" />
+    </record>
+    <menuitem
+        id="menu_rom_size"
+        name="ROM Sizes"
+        parent="product_auction.menu_auction_config"
+        action="action_rom_size_view"
+        sequence="15"
+    />
+</odoo>

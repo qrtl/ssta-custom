@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_battery_service_tree" model="ir.ui.view">
+        <field name="name">battery.service.tree</field>
+        <field name="model">battery.service</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree create="1">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_battery_service_form" model="ir.ui.view">
+        <field name="name">battery.service.form</field>
+        <field name="model">battery.service</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Battery Service Display">
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <group>
+                        <field name="name" />
+                        <field name="active" invisible="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_battery_service_view" model="ir.actions.act_window">
+        <field name="name">Battery Service Displays</field>
+        <field name="res_model">battery.service</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_battery_service_tree" />
+    </record>
+    <menuitem
+        id="menu_battery_service"
+        name="Battery Service Displays"
+        parent="product_auction.menu_auction_config"
+        action="action_battery_service_view"
+        sequence="25"
+    />
+</odoo>

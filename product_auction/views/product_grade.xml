@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_product_grade_tree" model="ir.ui.view">
+        <field name="name">product.grade.tree</field>
+        <field name="model">product.grade</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree create="1">
+                <field name="name" />
+            </tree>
+        </field>
+    </record>
+    <record id="view_product_grade_form" model="ir.ui.view">
+        <field name="name">product.grade.form</field>
+        <field name="model">product.grade</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Product Grade">
+                <sheet>
+                    <widget
+                        name="web_ribbon"
+                        title="Archived"
+                        bg_color="bg-danger"
+                        attrs="{'invisible': [('active', '=', True)]}"
+                    />
+                    <group>
+                        <field name="name" />
+                        <field name="active" invisible="1" />
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="action_product_grade_view" model="ir.actions.act_window">
+        <field name="name">Product Grades</field>
+        <field name="res_model">product.grade</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_product_grade_tree" />
+    </record>
+    <menuitem
+        id="menu_product_grade"
+        name="Product Grades"
+        parent="product_auction.menu_auction_config"
+        action="action_product_grade_view"
+        sequence="15"
+    />
+</odoo>

@@ -1,0 +1,17 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_model_auction_user,product.model.auction.user,model_product_model,product_auction.group_auction_user,1,0,0,0
+access_product_model_auction_manager,product.model.auction.manager,model_product_model,product_auction.group_auction_manager,1,1,1,1
+access_rom_size_auction_user,rom.size.auction.user,model_rom_size,product_auction.group_auction_user,1,0,0,0
+access_rom_size_auction_manager,rom.size.auction.manager,model_rom_size,product_auction.group_auction_manager,1,1,1,1
+access_sim_lock_auction_user,sim.lock.auction.user,model_sim_lock,product_auction.group_auction_user,1,0,0,0
+access_sim_lock_auction_manager,sim.lock.auction.manager,model_sim_lock,product_auction.group_auction_manager,1,1,1,1
+access_battery_service_auction_user,battery.service.auction.user,model_battery_service,product_auction.group_auction_user,1,0,0,0
+access_battery_service_auction_manager,battery.service.auction.manager,model_battery_service,product_auction.group_auction_manager,1,1,1,1
+access_use_limit_auction_user,use.limit.auction.user,model_use_limit,product_auction.group_auction_user,1,0,0,0
+access_use_limit_auction_manager,use.limit.auction.manager,model_use_limit,product_auction.group_auction_manager,1,1,1,1
+access_telecom_carrier_auction_user,telecom.carrier.auction.user,model_telecom_carrier,product_auction.group_auction_user,1,0,0,0
+access_telecom_carrier_auction_manager,telecom.carrier.auction.manager,model_telecom_carrier,product_auction.group_auction_manager,1,1,1,1
+access_product_grade_auction_user,product.grade.auction.user,model_product_grade,product_auction.group_auction_user,1,0,0,0
+access_product_grade_auction_manager,product.grade.auction.manager,model_product_grade,product_auction.group_auction_manager,1,1,1,1
+access_qa_state_auction_user,qa.state.auction.user,model_qa_state,product_auction.group_auction_user,1,0,0,0
+access_qa_state_auction_manager,qa.state.auction.manager,model_qa_state,product_auction.group_auction_manager,1,1,1,1
