@@ -110,7 +110,7 @@ msgstr "カラー"
 #. module: product_auction
 #: model:ir.ui.menu,name:product_auction.menu_auction_config
 msgid "Configuration"
-msgstr ""
+msgstr "設定"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__create_uid
@@ -188,7 +188,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__write_uid
 #: model:ir.model.fields,field_description:product_auction.field_use_limit__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__write_date
@@ -200,7 +200,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__write_date
 #: model:ir.model.fields,field_description:product_auction.field_use_limit__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_product_product__product_model_id
@@ -256,13 +256,13 @@ msgstr "グレード"
 #: model:ir.model,name:product_auction.model_product_model
 #: model_terms:ir.ui.view,arch_db:product_auction.view_product_model_form
 msgid "Product Model"
-msgstr ""
+msgstr "機種名"
 
 #. module: product_auction
 #: model:ir.actions.act_window,name:product_auction.action_product_model_view
 #: model:ir.ui.menu,name:product_auction.menu_product_model
 msgid "Product Models"
-msgstr ""
+msgstr "機種名"
 
 #. module: product_auction
 #: model:ir.model,name:product_auction.model_product_template
@@ -272,7 +272,7 @@ msgstr "プロダクトテンプレート"
 #. module: product_auction
 #: model:ir.ui.menu,name:product_auction.menu_product_template
 msgid "Products"
-msgstr ""
+msgstr "プロダクト"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_product_product__qa_note
