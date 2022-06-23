@@ -7,7 +7,7 @@ from odoo import api, models
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    @api.multi
+    
     def create(self, vals):
         res = super(ResCompany, self).create(vals)
         # Create the sequence for the company upon creation

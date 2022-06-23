@@ -1,8 +1,8 @@
-# Copyright 2017 Quartile Limited
+# Copyright 2022 Quartile Limited
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Product Internal Reference Code",
-    "version": "11.0.1.1.0",
+    "version": "15.0.1.0.0",
     "category": "Sales",
     "author": "Quartile Limited",
     "website": "https://www.quartile.co",
