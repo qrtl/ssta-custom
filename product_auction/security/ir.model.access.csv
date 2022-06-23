@@ -15,3 +15,11 @@ access_product_grade_auction_user,product.grade.auction.user,model_product_grade
 access_product_grade_auction_manager,product.grade.auction.manager,model_product_grade,product_auction.group_auction_manager,1,1,1,1
 access_qa_state_auction_user,qa.state.auction.user,model_qa_state,product_auction.group_auction_user,1,0,0,0
 access_qa_state_auction_manager,qa.state.auction.manager,model_qa_state,product_auction.group_auction_manager,1,1,1,1
+
+access_product_template_auction_user,product.template.auction.user,product.model_product_template,product_auction.group_auction_user,1,0,0,0
+access_product_product_auction_user,product.product.auction.user,product.model_product_product,product_auction.group_auction_user,1,0,0,0
+access_res_partner_auction_user,res.partner.auction.user,base.model_res_partner,product_auction.group_auction_user,1,0,0,0
+access_ir_default_auction_user,ir.default.auction.user,base.model_ir_default,product_auction.group_auction_user,1,0,0,0
+access_ir_filters_auction_user,ir.filters.auction.user,base.model_ir_filters,product_auction.group_auction_user,1,0,0,0
+access_uom_uom_auction_user,uom.uom.auction.user,uom.model_uom_uom,product_auction.group_auction_user,1,0,0,0
+access_uom_category_auction_user,uom.category.auction.user,uom.model_uom_category,product_auction.group_auction_user,1,0,0,0
