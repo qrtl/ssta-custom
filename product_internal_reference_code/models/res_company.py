@@ -1,13 +1,12 @@
 # Copyright 2017 Quartile Limited
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from odoo import api, models
+from odoo import models
 
 
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    
     def create(self, vals):
         res = super(ResCompany, self).create(vals)
         # Create the sequence for the company upon creation

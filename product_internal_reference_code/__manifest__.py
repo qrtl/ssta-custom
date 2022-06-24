@@ -1,4 +1,4 @@
-# Copyright 2022 Quartile Limited
+# Copyright 2017-2022 Quartile Limited
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Product Internal Reference Code",

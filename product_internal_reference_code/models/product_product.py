@@ -13,7 +13,7 @@ class ProductProduct(models.Model):
             # Get the sequence with user company_id
             seq_code = (
                 self.env["ir.sequence"]
-                .with_context(force_company=self.env.user.company_id.id)
+                .with_company(self.env.company)
                 .next_by_code("product.product.internal_code")
             )
             vals.update({"default_code": seq_code})
