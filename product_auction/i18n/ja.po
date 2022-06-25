@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-03 08:51+0000\n"
-"PO-Revision-Date: 2022-06-03 08:51+0000\n"
+"POT-Creation-Date: 2022-06-25 08:51+0000\n"
+"PO-Revision-Date: 2022-06-25 08:51+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -34,7 +34,7 @@ msgstr "顧客に見せたいプロダクトの説明。この説明は販売オ
 #: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__active
 #: model:ir.model.fields,field_description:product_auction.field_use_limit__active
 msgid "Active"
-msgstr ""
+msgstr "有効"
 
 #. module: product_auction
 #: model_terms:ir.ui.view,arch_db:product_auction.view_battery_service_form
@@ -46,28 +46,12 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:product_auction.view_telecom_carrier_form
 #: model_terms:ir.ui.view,arch_db:product_auction.view_use_limit_form
 msgid "Archived"
-msgstr ""
+msgstr "アーカイブ済"
 
 #. module: product_auction
 #: model_terms:ir.ui.view,arch_db:product_auction.product_template_form_view
 msgid "Auction Attributes"
 msgstr "入札会情報"
-
-#. module: product_auction
-#: model:res.groups,name:product_auction.group_auction_manager
-msgid "Auction Manager"
-msgstr "入札会管理者"
-
-#. module: product_auction
-#: model:res.groups,name:product_auction.group_auction_user
-msgid "Auction User"
-msgstr "入札会ユーザ"
-
-#. module: product_auction
-#: model:ir.module.category,name:product_auction.module_category_auction
-#: model:ir.ui.menu,name:product_auction.auction_menu_root
-msgid "Auctions"
-msgstr "入札会"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_product_product__battery_health
@@ -93,7 +77,7 @@ msgstr "バッテリーサービス表示"
 #: model:ir.model.fields,field_description:product_auction.field_product_product__cpu
 #: model:ir.model.fields,field_description:product_auction.field_product_template__cpu
 msgid "CPU"
-msgstr ""
+msgstr "CPU"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_product_product__case_number
@@ -105,12 +89,7 @@ msgstr "箱番号"
 #: model:ir.model.fields,field_description:product_auction.field_product_product__color
 #: model:ir.model.fields,field_description:product_auction.field_product_template__color
 msgid "Color"
-msgstr "カラー"
-
-#. module: product_auction
-#: model:ir.ui.menu,name:product_auction.menu_auction_config
-msgid "Configuration"
-msgstr "設定"
+msgstr "色"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__create_uid
@@ -122,7 +101,7 @@ msgstr "設定"
 #: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__create_uid
 #: model:ir.model.fields,field_description:product_auction.field_use_limit__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "作成者"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__create_date
@@ -134,7 +113,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__create_date
 #: model:ir.model.fields,field_description:product_auction.field_use_limit__create_date
 msgid "Created on"
-msgstr ""
+msgstr "作成日"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__display_name
@@ -146,7 +125,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__display_name
 #: model:ir.model.fields,field_description:product_auction.field_use_limit__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "表示名"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__id
@@ -164,7 +143,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_auction.field_product_product__imei
 #: model:ir.model.fields,field_description:product_auction.field_product_template__imei
 msgid "IMEI"
-msgstr ""
+msgstr "IMEI"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_battery_service____last_update
@@ -176,7 +155,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_auction.field_telecom_carrier____last_update
 #: model:ir.model.fields,field_description:product_auction.field_use_limit____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "最終修正日"
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__write_uid
@@ -224,7 +203,7 @@ msgstr "モデル"
 #: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__name
 #: model:ir.model.fields,field_description:product_auction.field_use_limit__name
 msgid "Name"
-msgstr ""
+msgstr "名称"
 
 #. module: product_auction
 #: model:ir.model.constraint,message:product_auction.constraint_battery_service_name
@@ -236,7 +215,7 @@ msgstr ""
 #: model:ir.model.constraint,message:product_auction.constraint_telecom_carrier_name
 #: model:ir.model.constraint,message:product_auction.constraint_use_limit_name
 msgid "Name must be unique!"
-msgstr ""
+msgstr "名称は一意でなければなりません。"
 
 #. module: product_auction
 #: model:ir.model,name:product_auction.model_product_grade
@@ -281,8 +260,10 @@ msgid "QA Note"
 msgstr "検査不具合"
 
 #. module: product_auction
+#: model:ir.model,name:product_auction.model_qa_state
 #: model:ir.model.fields,field_description:product_auction.field_product_product__qa_state_id
 #: model:ir.model.fields,field_description:product_auction.field_product_template__qa_state_id
+#: model_terms:ir.ui.view,arch_db:product_auction.view_qa_state_form
 msgid "QA State"
 msgstr "検査"
 

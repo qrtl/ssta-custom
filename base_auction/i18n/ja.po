@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-25 04:02+0000\n"
-"PO-Revision-Date: 2022-06-25 04:02+0000\n"
+"POT-Creation-Date: 2022-06-25 08:50+0000\n"
+"PO-Revision-Date: 2022-06-25 08:50+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,7 +18,7 @@ msgstr ""
 #. module: base_auction
 #: model:res.groups,name:base_auction.group_auction_manager
 msgid "Auction Manager"
-msgstr "入札会マネジャー"
+msgstr "入札会管理者"
 
 #. module: base_auction
 #: model:res.groups,name:base_auction.group_auction_user
