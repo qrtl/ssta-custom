@@ -69,7 +69,7 @@
     <menuitem
         id="menu_product_template"
         name="Products"
-        parent="product_auction.menu_auction_config"
+        parent="base_auction.menu_auction_config"
         action="product.product_template_action_all"
         sequence="5"
     />

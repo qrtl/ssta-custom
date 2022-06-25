@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ir_ui_menu_auction_user,ir.ui.menu.auction.user,base.model_ir_ui_menu,base_auction.group_auction_user,1,0,0,0
+access_ir_filters_auction_user,ir.filters.auction.user,base.model_ir_filters,base_auction.group_auction_user,1,1,1,1
+access_ir_default_auction_user,ir.default.auction.user,base.model_ir_default,base_auction.group_auction_user,1,1,1,1
+access_ir_translation_auction_user,ir.translation.auction.user,base.model_ir_translation,base_auction.group_auction_user,1,1,1,1
+access_res_groups_auction_user,res.groups.auction.user,base.model_res_groups,base_auction.group_auction_user,1,0,0,0
+access_mail_channel_partner_auction_user,mail.channel.partner.auction.user,mail.model_mail_channel_partner,base_auction.group_auction_user,1,1,1,1
+access_res_partner_auction_user,res.partner.auction.user,base.model_res_partner,base_auction.group_auction_user,1,0,0,0
