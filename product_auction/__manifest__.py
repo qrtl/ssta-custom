@@ -7,11 +7,9 @@
     "author": "Quartile Limited",
     "website": "https://www.quartile.co",
     "license": "LGPL-3",
-    "depends": ["product"],
+    "depends": ["product", "base_auction"],
     "data": [
-        "security/auction_security.xml",
         "security/ir.model.access.csv",
-        "views/product_auction_views.xml",
         "views/battery_service_views.xml",
         "views/product_model_views.xml",
         "views/product_template_views.xml",

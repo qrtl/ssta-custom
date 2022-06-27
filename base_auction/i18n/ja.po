@@ -1,0 +1,42 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* base_auction
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-06-25 08:50+0000\n"
+"PO-Revision-Date: 2022-06-25 08:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: base_auction
+#: model:res.groups,name:base_auction.group_auction_manager
+msgid "Auction Manager"
+msgstr "入札会管理者"
+
+#. module: base_auction
+#: model:res.groups,name:base_auction.group_auction_user
+msgid "Auction User"
+msgstr "入札会ユーザ"
+
+#. module: base_auction
+#: model:ir.module.category,name:base_auction.module_category_auction
+#: model:ir.ui.menu,name:base_auction.auction_menu_root
+msgid "Auctions"
+msgstr "入札会"
+
+#. module: base_auction
+#: model:ir.ui.menu,name:base_auction.menu_auction_config
+msgid "Configuration"
+msgstr "設定"
+
+#. module: base_auction
+#: model:ir.model,name:base_auction.model_ir_http
+msgid "HTTP Routing"
+msgstr "HTTPルーティング"

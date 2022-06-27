@@ -40,7 +40,7 @@
     <menuitem
         id="menu_telecom_Carrier"
         name="Telecom Carriers"
-        parent="product_auction.menu_auction_config"
+        parent="base_auction.menu_auction_config"
         action="action_telecom_carrier_view"
         sequence="15"
     />

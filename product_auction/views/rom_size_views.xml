@@ -40,7 +40,7 @@
     <menuitem
         id="menu_rom_size"
         name="ROM Sizes"
-        parent="product_auction.menu_auction_config"
+        parent="base_auction.menu_auction_config"
         action="action_rom_size_view"
         sequence="15"
     />

@@ -40,7 +40,7 @@
     <menuitem
         id="menu_product_model"
         name="Product Models"
-        parent="product_auction.menu_auction_config"
+        parent="base_auction.menu_auction_config"
         action="action_product_model_view"
         sequence="10"
     />

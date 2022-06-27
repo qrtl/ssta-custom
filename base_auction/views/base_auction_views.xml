@@ -4,14 +4,14 @@
     <menuitem
         id="auction_menu_root"
         name="Auctions"
-        web_icon="product_auction,static/description/icon.png"
+        web_icon="base_auction,static/description/icon.png"
         sequence="25"
     />
     <menuitem
         id="menu_auction_config"
         name="Configuration"
-        parent="product_auction.auction_menu_root"
+        parent="base_auction.auction_menu_root"
         sequence="35"
-        groups="product_auction.group_auction_manager"
+        groups="base_auction.group_auction_manager"
     />
 </odoo>
