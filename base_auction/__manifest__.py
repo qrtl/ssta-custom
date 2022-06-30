@@ -12,6 +12,7 @@
         "security/auction_security.xml",
         "security/ir.model.access.csv",
         "views/base_auction_views.xml",
+        "views/editor.xml",
     ],
     "installable": True,
 }
