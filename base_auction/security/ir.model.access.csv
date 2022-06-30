@@ -6,3 +6,4 @@ access_ir_translation_auction_user,ir.translation.auction.user,base.model_ir_tra
 access_res_groups_auction_user,res.groups.auction.user,base.model_res_groups,base_auction.group_auction_user,1,0,0,0
 access_mail_channel_partner_auction_user,mail.channel.partner.auction.user,mail.model_mail_channel_partner,base_auction.group_auction_user,1,1,1,1
 access_res_partner_auction_user,res.partner.auction.user,base.model_res_partner,base_auction.group_auction_user,1,0,0,0
+access_res_users_apikeys_auction_user,res.users.apikeys.auction.user,base.model_res_users_apikeys,base_auction.group_auction_user,1,0,0,0
