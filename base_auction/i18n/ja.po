@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-25 08:50+0000\n"
-"PO-Revision-Date: 2022-06-25 08:50+0000\n"
+"POT-Creation-Date: 2022-07-23 08:31+0000\n"
+"PO-Revision-Date: 2022-07-23 08:31+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -22,8 +22,8 @@ msgstr "入札会管理者"
 
 #. module: base_auction
 #: model:res.groups,name:base_auction.group_auction_user
-msgid "Auction User"
-msgstr "入札会ユーザ"
+msgid "Auction Participant"
+msgstr "入札会参加者"
 
 #. module: base_auction
 #: model:ir.module.category,name:base_auction.module_category_auction
@@ -40,3 +40,13 @@ msgstr "設定"
 #: model:ir.model,name:base_auction.model_ir_http
 msgid "HTTP Routing"
 msgstr "HTTPルーティング"
+
+#. module: base_auction
+#: model:ir.model.fields,field_description:base_auction.field_res_users__is_auction_user
+msgid "Is Auction User"
+msgstr "入札会参加者ユーザ"
+
+#. module: base_auction
+#: model:ir.model,name:base_auction.model_res_users
+msgid "Users"
+msgstr "ユーザ"

@@ -13,6 +13,7 @@
         "security/ir.model.access.csv",
         "views/base_auction_views.xml",
         "views/editor.xml",
+        "views/res_users_views.xml",
     ],
     "installable": True,
 }
