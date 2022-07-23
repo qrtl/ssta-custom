@@ -40,8 +40,8 @@
     <menuitem
         id="menu_product_grade"
         name="Product Grades"
-        parent="base_auction.menu_auction_config"
+        parent="product_auction.menu_auction_product"
         action="action_product_grade_view"
-        sequence="15"
+        sequence="40"
     />
 </odoo>

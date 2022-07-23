@@ -40,8 +40,8 @@
     <menuitem
         id="menu_telecom_Carrier"
         name="Telecom Carriers"
-        parent="base_auction.menu_auction_config"
+        parent="product_auction.menu_auction_product"
         action="action_telecom_carrier_view"
-        sequence="15"
+        sequence="35"
     />
 </odoo>
