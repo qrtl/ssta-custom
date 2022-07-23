@@ -40,7 +40,7 @@
     <menuitem
         id="menu_use_limit"
         name="Use Limits"
-        parent="base_auction.menu_auction_config"
+        parent="product_auction.menu_auction_product"
         action="action_use_limit_view"
         sequence="30"
     />

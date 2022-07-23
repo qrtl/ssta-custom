@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-06-25 08:51+0000\n"
-"PO-Revision-Date: 2022-06-25 08:51+0000\n"
+"POT-Creation-Date: 2022-07-23 14:04+0000\n"
+"PO-Revision-Date: 2022-07-23 14:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -54,6 +54,11 @@ msgid "Auction Attributes"
 msgstr "入札会情報"
 
 #. module: product_auction
+#: model:ir.ui.menu,name:product_auction.product_auction_menu_root
+msgid "Auction Products"
+msgstr "入札会プロダクト"
+
+#. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_product_product__battery_health
 #: model:ir.model.fields,field_description:product_auction.field_product_template__battery_health
 msgid "Battery Health"
@@ -77,7 +82,7 @@ msgstr "バッテリーサービス表示"
 #: model:ir.model.fields,field_description:product_auction.field_product_product__cpu
 #: model:ir.model.fields,field_description:product_auction.field_product_template__cpu
 msgid "CPU"
-msgstr "CPU"
+msgstr ""
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_product_product__case_number
@@ -143,7 +148,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_auction.field_product_product__imei
 #: model:ir.model.fields,field_description:product_auction.field_product_template__imei
 msgid "IMEI"
-msgstr "IMEI"
+msgstr ""
 
 #. module: product_auction
 #: model:ir.model.fields,field_description:product_auction.field_battery_service____last_update
@@ -249,6 +254,7 @@ msgid "Product Template"
 msgstr "プロダクトテンプレート"
 
 #. module: product_auction
+#: model:ir.ui.menu,name:product_auction.menu_auction_product
 #: model:ir.ui.menu,name:product_auction.menu_product_template
 msgid "Products"
 msgstr "プロダクト"

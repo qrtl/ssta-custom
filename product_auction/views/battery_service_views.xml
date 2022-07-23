@@ -40,7 +40,7 @@
     <menuitem
         id="menu_battery_service"
         name="Battery Service Displays"
-        parent="base_auction.menu_auction_config"
+        parent="product_auction.menu_auction_product"
         action="action_battery_service_view"
         sequence="25"
     />

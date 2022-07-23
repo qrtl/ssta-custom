@@ -40,8 +40,8 @@
     <menuitem
         id="menu_qa_state"
         name="QA States"
-        parent="base_auction.menu_auction_config"
+        parent="product_auction.menu_auction_product"
         action="action_qa_state_view"
-        sequence="15"
+        sequence="45"
     />
 </odoo>

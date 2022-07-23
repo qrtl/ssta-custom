@@ -40,7 +40,7 @@
     <menuitem
         id="menu_sim_lock"
         name="SIM Lock States"
-        parent="base_auction.menu_auction_config"
+        parent="product_auction.menu_auction_product"
         action="action_sim_lock_view"
         sequence="20"
     />

@@ -66,11 +66,4 @@
             </xpath>
         </field>
     </record>
-    <menuitem
-        id="menu_product_template"
-        name="Products"
-        parent="base_auction.menu_auction_config"
-        action="product.product_template_action_all"
-        sequence="5"
-    />
 </odoo>
