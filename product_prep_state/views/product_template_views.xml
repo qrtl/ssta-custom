@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.common.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='group_general']/.." position="inside">
+                <group>
+                    <field name="prep_state_id" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <record id="product_template_tree_view" model="ir.ui.view">
+        <field name="name">product.template.product.tree</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='list_price']" position="before">
+                <field name="prep_state_id" />
+            </xpath>
+        </field>
+    </record>
+    <record id="product_template_search_view" model="ir.ui.view">
+        <field name="name">product.template.search</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='pricelist_id']" position="before">
+                <field name="prep_state_id" />
+            </xpath>
+            <xpath expr="//filter[@name='categ_id']" position="after">
+                <filter
+                    string="Preparation State"
+                    name="prep_state"
+                    context="{'group_by': 'prep_state_id'}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
