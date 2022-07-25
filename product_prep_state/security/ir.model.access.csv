@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_product_prep_state_user,product.prep.state.user,model_product_prep_state,base.group_user,1,0,0,0
-access_product_prep_state_stock_manager,product.prep.state.stock.manager,model_product_prep_state,stock.group_stock_manager,1,1,1,1
+access_product_prep_state_purchase_manager,product.prep.state.purchase.manager,model_product_prep_state,purchase.group_purchase_manager,1,1,1,1

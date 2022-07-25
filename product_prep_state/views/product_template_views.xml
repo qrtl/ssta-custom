@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <xpath expr="//group[@name='group_general']/.." position="inside">
                 <group>
-                    <field name="prep_state_id" />
+                    <field name="prep_state_id" optional="show" />
                 </group>
             </xpath>
         </field>
