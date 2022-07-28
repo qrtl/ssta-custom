@@ -10,7 +10,8 @@
     "depends": ["purchase"],
     "data": [
         "security/ir.model.access.csv",
-        "views/res_identification_type_views.xml",
+        "data/menuitem_data.xml",
+        "views/identification_type_views.xml",
         "views/res_occupation_views.xml",
         "views/res_partner_views.xml",
     ],

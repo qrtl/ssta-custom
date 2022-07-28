@@ -33,16 +33,7 @@
         <field name='name'>Identification Types</field>
         <field name='res_model'>identification.type</field>
         <field name='view_mode'>tree,form</field>
-        <field name="view_id" ref='view_identification_type_tree' />
     </record>
-
-    <menuitem
-        id="menu_vendor_in_config_purchase"
-        name="Vendors"
-        parent="purchase.menu_purchase_config"
-        groups="base.group_no_one"
-        sequence="40"
-    />
 
     <menuitem
         id="menu_identification_type"
