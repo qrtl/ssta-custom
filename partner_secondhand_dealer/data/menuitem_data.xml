@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <!-- Top menu item -->
+    <!-- node item -->
     <menuitem
         id="menu_vendor_in_config_purchase"
         name="Vendors"
