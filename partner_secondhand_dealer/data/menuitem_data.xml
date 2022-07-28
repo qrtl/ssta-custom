@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- node item -->
+    <menuitem
+        id="menu_vendor_in_config_purchase"
+        name="Vendors"
+        parent="purchase.menu_purchase_config"
+        groups="base.group_no_one"
+        sequence="40"
+    />
+</odoo>
