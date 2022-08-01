@@ -9,9 +9,9 @@
     "license": "LGPL-3",
     "depends": ["auction_event","product_auction"],
     "data": [
-        "views/product_product_views.xml",
+        #"views/product_product_views.xml",
         #"views/product_template_views.xml",
-        #"data/cron_data.xml"
+        "data/cron_data.xml"
         ],
     "installable": True,
 }
