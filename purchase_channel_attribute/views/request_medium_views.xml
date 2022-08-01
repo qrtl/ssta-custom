@@ -28,7 +28,7 @@
         <field name='model'>request.medium</field>
         <field name='type'>tree</field>
         <field name='arch' type='xml'>
-            <tree string='Request Media'>
+            <tree>
                 <field name="sequence" widget="handle" />
                 <field name="name" />
                 <field name="active" />
@@ -44,11 +44,11 @@
     </record>
 
     <menuitem
-    id="menu_request_medium"
-    name="Request Media"
-    parent="menu_purchase_in_config_purchase"
-    action='action_request_medium'
-    sequence="20"
-  />
+        id="menu_request_medium"
+        name="Request Media"
+        parent="menu_purchase_in_config_purchase"
+        action='action_request_medium'
+        sequence="20"
+    />
 
 </odoo>
