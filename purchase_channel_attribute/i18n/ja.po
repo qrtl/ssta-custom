@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-29 06:59+0000\n"
-"PO-Revision-Date: 2022-07-29 06:59+0000\n"
+"POT-Creation-Date: 2022-08-02 01:57+0000\n"
+"PO-Revision-Date: 2022-08-02 01:57+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -76,14 +76,8 @@ msgid "Name"
 msgstr "名称"
 
 #. module: purchase_channel_attribute
-#: model:ir.ui.menu,name:purchase_channel_attribute.menu_purchase_in_config_purchase
-msgid "Purchase"
-msgstr "購買"
-
-#. module: purchase_channel_attribute
 #: model:ir.actions.act_window,name:purchase_channel_attribute.action_purchase_category
 #: model:ir.ui.menu,name:purchase_channel_attribute.menu_purchase_category
-#: model_terms:ir.ui.view,arch_db:purchase_channel_attribute.view_purchase_category_tree
 msgid "Purchase Categories"
 msgstr "買取区分"
 
@@ -99,9 +93,13 @@ msgid "Purchase Order"
 msgstr "購買オーダ"
 
 #. module: purchase_channel_attribute
+#: model:ir.ui.menu,name:purchase_channel_attribute.menu_purchase_in_config_purchase
+msgid "Purchases"
+msgstr "購買"
+
+#. module: purchase_channel_attribute
 #: model:ir.actions.act_window,name:purchase_channel_attribute.action_request_medium
 #: model:ir.ui.menu,name:purchase_channel_attribute.menu_request_medium
-#: model_terms:ir.ui.view,arch_db:purchase_channel_attribute.view_request_medium_tree
 msgid "Request Media"
 msgstr "媒体"
 

@@ -18,9 +18,9 @@
         <field name="inherit_id" ref="purchase.purchase_order_kpis_tree" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
-                <field name="purchase_category_id" />
-                <field name="request_medium_id" />
-                <field name="shop_id" />
+                <field name="purchase_category_id" optional="show" />
+                <field name="request_medium_id" optional="show" />
+                <field name="shop_id" optional="show" />
             </xpath>
         </field>
     </record>
@@ -30,9 +30,9 @@
         <field name="inherit_id" ref="purchase.purchase_order_view_tree" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='partner_id']" position="after">
-                <field name="purchase_category_id" />
-                <field name="request_medium_id" />
-                <field name="shop_id" />
+                <field name="purchase_category_id" optional="show" />
+                <field name="request_medium_id" optional="show" />
+                <field name="shop_id" optional="show" />
             </xpath>
         </field>
     </record>

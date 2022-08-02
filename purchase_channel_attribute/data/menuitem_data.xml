@@ -2,7 +2,7 @@
 <odoo>
     <menuitem
         id="menu_purchase_in_config_purchase"
-        name="Purchase"
+        name="Purchases"
         parent="purchase.menu_purchase_config"
         groups="base.group_no_one"
         sequence="70"
