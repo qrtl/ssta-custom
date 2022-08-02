@@ -1,22 +1,11 @@
 # Copyright 2022 Quartile Limited
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from odoo import api, fields, models
+from odoo import api, models
 
 
 class ProductProduct(models.Model):
     _inherit = "product.product"
-
-    # is_sold = fields.Boolean(compute="_compute_is_sold",store=True)
-    # #is_sold = fields.Boolean()
-
-    # @api.depends("auction_item_ids")
-    # def _compute_is_sold(self):
-    #     for product in self:
-    #         if product.sales_count == 0:
-    #             product.is_sold = False
-    #         else:
-    #             product.is_sold = True
 
     @api.model
     def _process_product_archive(self):
@@ -35,14 +24,14 @@ class ProductProduct(models.Model):
                 product_id
         """
         )
-        
+
         sale_dict = self.env.cr.dictfetchall()
 
         sale_vals = {}
-        for dict in sale_dict:
-            sale_vals[dict["product_id"]] = dict["sale_qty"]
+        for dictionaly in sale_dict:
+            sale_vals[dictionaly["product_id"]] = dictionaly["sale_qty"]
 
-        for prod in self.search([("type", "=", "product"), ("active", "=", True)]):
+        for prod in self.search([("active", "=", True)]):
             if sale_vals.get(prod.id, 0) > 0:
                 # if product has reordering rules then deactivate first
                 if prod.orderpoint_ids:
