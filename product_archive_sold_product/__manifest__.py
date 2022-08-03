@@ -7,7 +7,7 @@
     "website": "https://www.quartile.co",
     "category": "Extra Tools",
     "license": "LGPL-3",
-    "depends": ["auction_event", "product_auction"],
+    "depends": ["sale"],
     "data": ["data/cron_data.xml"],
     "installable": True,
 }

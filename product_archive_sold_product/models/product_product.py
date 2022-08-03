@@ -12,28 +12,24 @@ class ProductProduct(models.Model):
         self.env.cr.execute(
             """
             SELECT
-                product_id,
-                sum(qty_delivered) AS sale_qty
+                sol.product_id
             FROM
-                sale_order_line
+                sale_order_line sol
             JOIN
-                product_product ON product_product.id = sale_order_line.product_id
+                product_product pp ON sol.product_id = pp.id
             WHERE
-                state in ('sale', 'done') AND active = True
+                sol.state in ('sale', 'done')
+                AND sol.qty_delivered > 0
+                AND pp.active = True
             GROUP BY
-                product_id
+                sol.product_id
         """
         )
 
-        sale_dict = self.env.cr.dictfetchall()
+        prod_ids = [r[0] for r in self.env.cr.fetchall()]
 
-        sale_vals = {}
-        for dictionaly in sale_dict:
-            sale_vals[dictionaly["product_id"]] = dictionaly["sale_qty"]
-
-        for prod in self.search([("active", "=", True)]):
-            if sale_vals.get(prod.id, 0) > 0:
-                # if product has reordering rules then deactivate first
-                if prod.orderpoint_ids:
-                    prod.orderpoint_ids.write({"active": False})
-                prod.product_tmpl_id.write({"active": False})
+        for prod in self.browse(prod_ids):
+            # if product has reordering rules then deactivate first
+            if prod.orderpoint_ids:
+                prod.orderpoint_ids.write({"active": False})
+            prod.product_tmpl_id.write({"active": False})
