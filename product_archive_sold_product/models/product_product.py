@@ -18,7 +18,7 @@ class ProductProduct(models.Model):
             JOIN
                 product_product pp ON sol.product_id = pp.id
             JOIN
-                product_template pt ON sol.product_id = pt.id
+                product_template pt ON pp.product_tmpl_id = pt.id
             WHERE
                 sol.state in ('sale', 'done')
                 AND sol.qty_delivered > 0
