@@ -17,10 +17,13 @@ class ProductProduct(models.Model):
                 sale_order_line sol
             JOIN
                 product_product pp ON sol.product_id = pp.id
+            JOIN
+                product_template pt ON sol.product_id = pt.id
             WHERE
                 sol.state in ('sale', 'done')
                 AND sol.qty_delivered > 0
                 AND pp.active = True
+                AND (pt.type = 'product' OR pt.type = 'consu')
             GROUP BY
                 sol.product_id
         """

@@ -370,8 +370,9 @@ ul.auto-toc {
 <p><a class="reference external" href="https://odoo-community.org/page/development-status"><img alt="Beta" src="https://img.shields.io/badge/maturity-Beta-yellow.png" /></a> <a class="reference external" href="http://www.gnu.org/licenses/lgpl-3.0-standalone.html"><img alt="License: LGPL-3" src="https://img.shields.io/badge/licence-LGPL--3-blue.png" /></a> <a class="reference external" href="https://github.com/qrtl/rmm-custom/tree/st1/product_archive_sold_product"><img alt="qrtl/rmm-custom" src="https://img.shields.io/badge/github-qrtl%2Frmm--custom-lightgray.png?logo=github" /></a></p>
 <p>This module does the following:</p>
 <ul class="simple">
+<li>This module is used in env where have only one product record per product</li>
 <li>A cron task that will “Archive” products which have met certain conditions.<ul>
-<li>Target products to “Archive”: The product has to be a (qty_delivered &gt;0)</li>
+<li>Target products to “Archive”: The product has to be a stockable or consumable product and (qty_delivered &gt; 0)</li>
 </ul>
 </li>
 </ul>
