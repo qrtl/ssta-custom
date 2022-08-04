@@ -1,7 +1,6 @@
-This module does the following:
+This module provides the function to archive "sold" products with cron.
 
-* This module is used in env where have only one product record per product
+Assumptions:
 
-* A cron task that will "Archive" products which have met certain conditions.
-
-  - Target products to "Archive": The product has to be a stockable or consumable product and (qty_delivered > 0)
+* Physical products (stockable/consumable) are created per piece with no exceptions.
+* Product variant feature is not enabled (i.e. there is just one variant per template).

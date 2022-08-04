@@ -23,7 +23,7 @@ class ProductProduct(models.Model):
                 sol.state in ('sale', 'done')
                 AND sol.qty_delivered > 0
                 AND pp.active = True
-                AND (pt.type = 'product' OR pt.type = 'consu')
+                AND pt.type in ('product','consu')
             GROUP BY
                 sol.product_id
         """
