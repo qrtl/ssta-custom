@@ -13,6 +13,7 @@
         "data/menuitem_data.xml",
         "views/battery_service_views.xml",
         "views/product_model_views.xml",
+        "views/product_product_views.xml",
         "views/product_template_views.xml",
         "views/rom_size_views.xml",
         "views/sim_lock_views.xml",
