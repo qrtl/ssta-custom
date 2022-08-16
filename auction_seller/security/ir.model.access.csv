@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_auction_item_auction_user,auction.item.auction.user,auction_event.model_auction_item,base_auction.group_auction_seller_user,1,1,0,0
+access_auction_item_auction_manager,auction.item.auction.manager,auction_event.model_auction_item,base_auction.group_auction_seller_manager,1,1,1,1
