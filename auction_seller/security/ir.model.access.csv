@@ -5,3 +5,5 @@ access_stock_warehouse_auction_seller_user,stock.warehouse.auction.seller.user,s
 access_stock_location_auction_seller_user,stock.location.auction.seller.user,stock.model_stock_location,auction_seller.group_auction_seller_user,1,0,0,0
 access_stock_move_auction_seller_user,stock.move.auction.seller.user,stock.model_stock_move,auction_seller.group_auction_seller_user,1,0,0,0
 access_stock_quant_auction_seller_user,stock.quant.auction.seller.user,stock.model_stock_quant,auction_seller.group_auction_seller_user,1,0,0,0
+access_event_event_auction_seller_user,event.event.auction.seller.user,event.model_event_event,auction_seller.group_auction_seller_user,1,0,0,0
+access_activity_exception_decoration_auction_seller_user,activity.exception.decoration.auction.seller.user,mail.model_mail_activity_mixin,auction_seller.group_auction_seller_user,1,0,0,0

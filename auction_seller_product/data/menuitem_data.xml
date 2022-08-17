@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem
+        id="product_auction_menu_root"
+        name="Auction Products"
+        web_icon="product_auction,static/description/icon.png"
+        sequence="25"
+    />
+    <menuitem
+        id="menu_auction_product"
+        groups="base.group_user"
+        name="Products"
+        parent="product_auction.product_auction_menu_root"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_product_template"
+        name="Products"
+        parent="product_auction.menu_auction_product"
+        action="product.product_template_action_all"
+        sequence="5"
+    />
+</odoo>

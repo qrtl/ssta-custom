@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="auction_item_auction_seller_user_rule" model="ir.rule">
+        <field name="name">product.template Auction Seller User</field>
+        <field name="model_id" ref="product.model_product_template" />
+        <field
+            name="domain_force"
+        >[('product.responsible_id','=',user.partner_id.id)]</field>
+        <field
+            name="groups"
+            eval="[Command.link(ref('auction_seller.group_auction_seller_user'))]"
+        />
+    </record>
+    <record id="auction_item_internal_user_rule" model="ir.rule">
+        <field name="name">product.template Auction Seller Internal User</field>
+        <field name="model_id" ref="product.model_product_template" />
+        <field name="domain_force">[(1,'=',1)]</field>
+        <field name="groups" eval="[Command.link(ref('base.group_user'))]" />
+    </record>
+</odoo>
