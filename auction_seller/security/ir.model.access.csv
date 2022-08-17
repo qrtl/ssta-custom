@@ -1,3 +1,7 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_auction_item_auction_user,auction.item.auction.user,auction_event.model_auction_item,base_auction.group_auction_seller_user,1,1,0,0
-access_auction_item_auction_manager,auction.item.auction.manager,auction_event.model_auction_item,base_auction.group_auction_seller_manager,1,1,1,1
+access_product_template_auction_seller_user,product.template.auction.seller.user,product.model_product_template,auction_seller.group_auction_seller_user,1,0,0,0
+access_product_product_auction_seller_user,product.product.auction.seller.user,product.model_product_product,auction_seller.group_auction_seller_user,1,0,0,0
+access_stock_warehouse_auction_seller_user,stock.warehouse.auction.seller.user,stock.model_stock_warehouse,auction_seller.group_auction_seller_user,1,0,0,0
+access_stock_location_auction_seller_user,stock.location.auction.seller.user,stock.model_stock_location,auction_seller.group_auction_seller_user,1,0,0,0
+access_stock_move_auction_seller_user,stock.move.auction.seller.user,stock.model_stock_move,auction_seller.group_auction_seller_user,1,0,0,0
+access_stock_quant_auction_seller_user,stock.quant.auction.seller.user,stock.model_stock_quant,auction_seller.group_auction_seller_user,1,0,0,0

@@ -16,6 +16,9 @@
         <field name="name">Auction Sell Manager</field>
         <field name="category_id" ref="auction_seller.module_category_auction_sell" />
         <!-- We do not inherit group_auction_user here to avoid user type conflicts -->
-        <field name="implied_ids" eval="[(4, ref('base_auction.group_auction_manager'))]" />
+        <field
+            name="implied_ids"
+            eval="[(4, ref('base_auction.group_auction_manager'))]"
+        />
     </record>
 </odoo>

@@ -8,7 +8,8 @@ class Users(models.Model):
     _inherit = "res.users"
 
     is_auction_seller_user = fields.Boolean(
-        compute="_compute_is_auction_seller_user", inverse="_inverse_is_auction_seller_user"
+        compute="_compute_is_auction_seller_user",
+        inverse="_inverse_is_auction_seller_user",
     )
 
     def _compute_is_auction_seller_user(self):
@@ -18,7 +19,9 @@ class Users(models.Model):
                 user.is_auction_seller_user = True
 
     def _inverse_is_auction_seller_user(self):
-        group_auction_seller_user = self.env.ref("auction_seller.group_auction_seller_user")
+        group_auction_seller_user = self.env.ref(
+            "auction_seller.group_auction_seller_user"
+        )
         for user in self:
             if user.is_auction_seller_user:
                 user.write({"groups_id": [(4, group_auction_seller_user.id)]})

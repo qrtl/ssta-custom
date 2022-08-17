@@ -1,0 +1,53 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* auction_seller
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-08-17 03:24+0000\n"
+"PO-Revision-Date: 2022-08-17 03:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: auction_seller
+#: model:res.groups,name:auction_seller.group_auction_seller_manager
+msgid "Auction Sell Manager"
+msgstr "出品管理者"
+
+#. module: auction_seller
+#: model:res.groups,name:auction_seller.group_auction_seller_user
+msgid "Auction Sell Participant"
+msgstr "出品参加者"
+
+#. module: auction_seller
+#: model:ir.module.category,name:auction_seller.module_category_auction_sell
+#: model:ir.ui.menu,name:auction_seller.auction_seller_menu_root
+msgid "Auction Seller"
+msgstr "出品"
+
+#. module: auction_seller
+#: model:ir.model,name:auction_seller.model_ir_http
+msgid "HTTP Routing"
+msgstr "HTTPルーティング"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_res_users__is_auction_seller_user
+msgid "Is Auction Seller User"
+msgstr "出品参加者ユーザ"
+
+#. module: auction_seller
+#: model:ir.ui.menu,name:auction_seller.menu_auction_product
+#: model:ir.ui.menu,name:auction_seller.menu_product_template
+msgid "Products"
+msgstr "プロダクト"
+
+#. module: auction_seller
+#: model:ir.model,name:auction_seller.model_res_users
+msgid "Users"
+msgstr "ユーザ"

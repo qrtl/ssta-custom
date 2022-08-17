@@ -10,16 +10,15 @@
     />
     <menuitem
         id="menu_auction_product"
-        groups="base.group_user"
-        name="Menu"
+        name="Products"
         parent="auction_seller.auction_seller_menu_root"
         sequence="10"
     />
     <menuitem
         id="menu_product_template"
-        name="Menu"
+        name="Products"
         parent="auction_seller.menu_auction_product"
-        action="auction_event.action_auction_item_view"
+        action="product.product_template_action_all"
         sequence="5"
     />
 </odoo>
