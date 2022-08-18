@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="base.view_users_form" />
         <field name="arch" type="xml">
             <xpath expr="//page[@name='access_rights']" position="inside">
-                <group>
+                <group string="Auctions" name="auctions">
                     <field name="share" invisible="1" />
                     <field
                         name="is_auction_user"
