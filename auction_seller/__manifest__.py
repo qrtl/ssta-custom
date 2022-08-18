@@ -14,6 +14,7 @@
         "data/menuitem_data.xml",
         "views/editor.xml",
         "views/res_users_views.xml",
+        "views/product_template_views.xml",
     ],
     "installable": True,
 }
