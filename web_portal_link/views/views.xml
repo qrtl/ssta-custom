@@ -8,9 +8,9 @@
     <menuitem
         id="my_portal_view"
         name="My Page"
-        web_icon="my_portal_page,static/description/icon.png"
+        web_icon="web_portal_link,static/description/icon.png"
         active="True"
-        sequence="30"
+        sequence="990"
     />
 
     <menuitem id="my_page" name="Page" parent="my_portal_view" sequence="2" />

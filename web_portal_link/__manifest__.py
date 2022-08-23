@@ -1,6 +1,5 @@
 {
-    "name": "My Page",
-    "summary": "When cklick the app, system will open my page in new tab.",
+    "name": "Web Portal Link",
     "author": "Quartile Limited",
     "website": "https://www.quartile.co",
     "category": "Portal",
@@ -9,7 +8,6 @@
     "data": [
         "views/views.xml",
     ],
-    "application": True,
     "license": "AGPL-3",
     "installable": True,
 }
