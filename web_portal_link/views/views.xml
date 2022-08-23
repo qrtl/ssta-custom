@@ -1,0 +1,24 @@
+<odoo>
+    <record id="my_portal_url" model="ir.actions.act_url">
+      <field name="name">My Page</field>
+      <field name="url">/my</field>
+      <field name="target">new</field>
+    </record>
+
+    <menuitem
+        id="my_portal_view"
+        name="My Page"
+        web_icon="web_portal_link,static/description/icon.png"
+        active="True"
+        sequence="990"
+    />
+
+    <menuitem id="my_page" name="Page" parent="my_portal_view" sequence="2" />
+
+    <menuitem
+        id="my_portal_page"
+        name="My Page"
+        parent="my_page"
+        action="my_portal_url"
+    />
+</odoo>
