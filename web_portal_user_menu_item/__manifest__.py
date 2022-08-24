@@ -8,7 +8,7 @@
     "depends": ["portal"],
     "assets": {
         "web.assets_backend": [
-            "add_portal_usermenu_item/static/src/**/*.esm.js",
+            "web_portal_user_menu_item/static/src/**/*.esm.js",
         ],
     },
     "installable": True,
