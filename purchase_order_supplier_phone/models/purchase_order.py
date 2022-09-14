@@ -9,13 +9,11 @@ class PurchaseOrder(models.Model):
 
     supplier_phone = fields.Char(
         related="partner_id.phone",
-        string="Supplier Phone",
         readonly=True,
         store=True,
     )
     supplier_mobile = fields.Char(
         related="partner_id.mobile",
-        string="Supplier Mobile",
         readonly=True,
         store=True,
     )
