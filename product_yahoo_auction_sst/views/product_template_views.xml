@@ -56,10 +56,10 @@
             <xpath expr="//field[@name='pricelist_id']" position="after">
                 <group expand="0" string="Group By">
                     <filter
-            string="Yahoo Product State"
-            domain="[]"
-            context="{'group_by': 'yahoo_product_state_id'}"
-          />
+                        string="Yahoo Product State"
+                        domain="[]"
+                        context="{'group_by': 'yahoo_product_state_id'}"
+                    />
                 </group>
             </xpath>
         </field>
