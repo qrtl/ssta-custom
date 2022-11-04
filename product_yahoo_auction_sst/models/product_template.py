@@ -1,64 +1,29 @@
-# Copyright 2017 Quartile Limited
+# Copyright 2022 Quartile Limited
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import api, fields, models
-
-from odoo.addons import decimal_precision as dp
 
 
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    title = fields.Char(
-        compute="_compute_get_title",
-        string="Title",
-        store=True,
-    )
-    product_category = fields.Char(
-        string="Product Category",
-    )
-    product_condition_comment = fields.Text(
-        string="Product Condition Comment",
-    )
-    accessories = fields.Char(
-        string="Accessories",
-    )
-    remark = fields.Text(
-        string="Remark",
-    )
-    staff_in_charge = fields.Many2one(
-        "hr.employee",
-        string="Staff in charge",
-    )
+    title = fields.Char(compute="_compute_get_title", store=True)
+    product_category = fields.Char()
+    product_condition_comment = fields.Text()
+    accessories = fields.Char()
+    remark = fields.Text()
+    staff_in_charge = fields.Many2one("hr.employee")
     auction_start_price = fields.Float(
-        string="Auction Starting Price",
-        digits=dp.get_precision("Product Price"),
+        string="Auction Starting Price", digits="Product Price"
     )
-    auction_buyout_price = fields.Float(
-        string="Auction Buyout Price",
-        digits=dp.get_precision("Product Price"),
-    )
-    product_condition = fields.Selection(
-        [("new", "New"), ("used", "Used")],
-        string="Product Condition",
-    )
-    carrier_id = fields.Many2one(
-        "delivery.carrier",
-        string="Delivery Method",
-    )
-    carrier_size_id = fields.Many2one(
-        "delivery.carrier.size",
-        string="Delivery Size",
-    )
-    deliver_prefecture = fields.Char(
-        string="Delivery Prefecture",
-    )
-    delivery_cites = fields.Char(
-        string="Delivery Cities",
-    )
+    auction_buyout_price = fields.Float(digits="Product Price")
+    product_condition = fields.Selection([("new", "New"), ("used", "Used")])
+    carrier_id = fields.Many2one("delivery.carrier", string="Delivery Method")
+    carrier_size_id = fields.Many2one("delivery.carrier.size", string="Delivery Size")
+    deliver_prefecture = fields.Char(string="Delivery Prefecture")
+    delivery_cites = fields.Char(string="Delivery Cities")
     yahoo_product_state_id = fields.Many2one(
-        "yahoo.product.state",
-        string="Yahoo Product State",
+        "yahoo.product.state", string="Yahoo Product State"
     )
 
     @api.onchange("carrier_id")
