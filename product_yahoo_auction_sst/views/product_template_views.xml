@@ -25,7 +25,6 @@
                             <field name="carrier_size_id" />
                             <field name="deliver_prefecture" />
                             <field name="delivery_cites" />
-                            <field name="yahoo_product_state_id" />
                         </group>
                     </group>
                 </page>
@@ -39,31 +38,8 @@
         <field name="inherit_id" ref="product.product_template_tree_view" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='list_price']" position="before">
-                <field name="yahoo_product_state_id" />
-                <field name="auction_buyout_price" />
+                <field name="auction_buyout_price" optional="show" />
             </xpath>
         </field>
     </record>
-
-    <record id="product_template_search_view" model="ir.ui.view">
-        <field name="name">product.template.search</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_search_view" />
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='pricelist_id']" position="before">
-                <field name="yahoo_product_state_id" />
-            </xpath>
-            <xpath expr="//field[@name='pricelist_id']" position="after">
-                <group expand="0" string="Group By">
-                    <filter
-                        string="Yahoo Product State"
-                        name="yahoo_product_state_id"
-                        domain="[]"
-                        context="{'group_by': 'yahoo_product_state_id'}"
-                    />
-                </group>
-            </xpath>
-        </field>
-    </record>
-
 </odoo>

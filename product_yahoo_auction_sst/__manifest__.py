@@ -7,14 +7,12 @@
     "website": "https://www.quartile.co",
     "category": "Product",
     "license": "AGPL-3",
-    "depends": ["product", "delivery", "hr"],
+    "depends": ["product", "delivery"],
     "data": [
         "security/ir.model.access.csv",
         "data/delivery_carrier_data.xml",
         "data/delivery_carrier_size_data.xml",
-        "data/yahoo_product_state.xml",
         "views/product_template_views.xml",
-        "views/yahoo_product_state_views.xml",
     ],
     "installable": True,
 }
