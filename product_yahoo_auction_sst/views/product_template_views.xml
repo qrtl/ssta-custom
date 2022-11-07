@@ -57,6 +57,7 @@
                 <group expand="0" string="Group By">
                     <filter
                         string="Yahoo Product State"
+                        name="yahoo_product_state_id"
                         domain="[]"
                         context="{'group_by': 'yahoo_product_state_id'}"
                     />

@@ -1,14 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* product_yahoo_auction_sst
+# 	* product_yahoo_auction_sst
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0+e\n"
+"Project-Id-Version: Odoo Server 15.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-03 09:33+0000\n"
-"PO-Revision-Date: 2020-03-03 09:33+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2022-11-04 14:20+0000\n"
+"PO-Revision-Date: 2022-11-04 14:20+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,110 +16,115 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_accessories
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_accessories
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__accessories
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__accessories
 msgid "Accessories"
 msgstr "付属品"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_auction_buyout_price
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_auction_buyout_price
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__auction_buyout_price
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__auction_buyout_price
 msgid "Auction Buyout Price"
 msgstr "即決価格"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_auction_start_price
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_auction_start_price
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__auction_start_price
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__auction_start_price
 msgid "Auction Starting Price"
 msgstr "開始価格"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size_create_uid
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state_create_uid
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size__create_uid
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state__create_uid
 msgid "Created by"
 msgstr "作成者"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size_create_date
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state_create_date
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size__create_date
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state__create_date
 msgid "Created on"
 msgstr "作成日"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_delivery_cites
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_delivery_cites
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__delivery_cites
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__delivery_cites
 msgid "Delivery Cities"
 msgstr "発送市町村"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size_carrier_id
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_carrier_id
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_carrier_id
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size__carrier_id
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__carrier_id
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__carrier_id
 msgid "Delivery Method"
 msgstr "発送方法"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_deliver_prefecture
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_deliver_prefecture
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__deliver_prefecture
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__deliver_prefecture
 msgid "Delivery Prefecture"
 msgstr "発送都道府県"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_carrier_size_id
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_carrier_size_id
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__carrier_size_id
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__carrier_size_id
 msgid "Delivery Size"
 msgstr "発送サイズ"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size_display_name
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state_display_name
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size__display_name
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state__display_name
 msgid "Display Name"
 msgstr "表示名"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size_id
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state_id
-msgid "ID"
-msgstr "ID"
+#: model_terms:ir.ui.view,arch_db:product_yahoo_auction_sst.product_template_search_view
+msgid "Group By"
+msgstr ""
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size___last_update
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state___last_update
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size__id
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state__id
+msgid "ID"
+msgstr ""
+
+#. module: product_yahoo_auction_sst
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size____last_update
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state____last_update
 msgid "Last Modified on"
 msgstr "最終更新日"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size_write_uid
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state_write_uid
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size__write_uid
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state__write_uid
 msgid "Last Updated by"
 msgstr "最終更新者"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size_write_date
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state_write_date
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size__write_date
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state__write_date
 msgid "Last Updated on"
 msgstr "最終更新日"
 
 #. module: product_yahoo_auction_sst
-#: selection:product.template,product_condition:0
+#: model:ir.model.fields.selection,name:product_yahoo_auction_sst.selection__product_template__product_condition__new
 msgid "New"
 msgstr "新品"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_product_category
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_product_category
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__product_category
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__product_category
 msgid "Product Category"
 msgstr "カテゴリ"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_product_condition
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_product_condition
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__product_condition
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__product_condition
 msgid "Product Condition"
 msgstr "状態"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_product_condition_comment
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_product_condition_comment
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__product_condition_comment
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__product_condition_comment
 msgid "Product Condition Comment"
 msgstr "検品コメント"
 
@@ -129,74 +134,81 @@ msgid "Product Template"
 msgstr "製品テンプレート"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_remark
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_remark
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__remark
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__remark
 msgid "Remark"
 msgstr "備考"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size_name
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_delivery_carrier_size__name
 msgid "Size"
 msgstr "サイズ"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_staff_in_charge
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_staff_in_charge
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__staff_in_charge
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__staff_in_charge
 msgid "Staff in charge"
 msgstr "ストック担当"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state_name
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_yahoo_product_state__name
 msgid "Status"
 msgstr "ステータス"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_title
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_title
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__title
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__title
 msgid "Title"
 msgstr "タイトル"
 
 #. module: product_yahoo_auction_sst
-#: selection:product.template,product_condition:0
+#: model:product.product,uom_name:product_yahoo_auction_sst.product_product_kazai_bin
+#: model:product.product,uom_name:product_yahoo_auction_sst.product_product_yu_pack
+#: model:product.template,uom_name:product_yahoo_auction_sst.product_product_kazai_bin_product_template
+#: model:product.template,uom_name:product_yahoo_auction_sst.product_product_yu_pack_product_template
+msgid "Units"
+msgstr ""
+
+#. module: product_yahoo_auction_sst
+#: model:ir.model.fields.selection,name:product_yahoo_auction_sst.selection__product_template__product_condition__used
 msgid "Used"
 msgstr "中古"
 
 #. module: product_yahoo_auction_sst
-#: model:ir.ui.view,arch_db:product_yahoo_auction_sst.product_template_form_view
+#: model_terms:ir.ui.view,arch_db:product_yahoo_auction_sst.product_template_form_view
 msgid "Yahoo Auctions"
 msgstr "ヤフオク"
 
 #. module: product_yahoo_auction_sst
 #: model:ir.actions.act_window,name:product_yahoo_auction_sst.action_yahoo_product_state
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product_yahoo_product_state_id
-#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template_yahoo_product_state_id
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_product__yahoo_product_state_id
+#: model:ir.model.fields,field_description:product_yahoo_auction_sst.field_product_template__yahoo_product_state_id
 #: model:ir.ui.menu,name:product_yahoo_auction_sst.menu_yahoo_product_state
-#: model:ir.ui.view,arch_db:product_yahoo_auction_sst.product_template_search_view
-#: model:ir.ui.view,arch_db:product_yahoo_auction_sst.yahoo_product_state_tree_view
+#: model_terms:ir.ui.view,arch_db:product_yahoo_auction_sst.product_template_search_view
+#: model_terms:ir.ui.view,arch_db:product_yahoo_auction_sst.yahoo_product_state_tree_view
 msgid "Yahoo Product State"
 msgstr "商品化ステータス"
 
 #. module: product_yahoo_auction_sst
 #: model:ir.model,name:product_yahoo_auction_sst.model_delivery_carrier_size
 msgid "delivery.carrier.size"
-msgstr "delivery.carrier.size"
+msgstr ""
 
 #. module: product_yahoo_auction_sst
 #: model:ir.model,name:product_yahoo_auction_sst.model_yahoo_product_state
 msgid "yahoo.product.state"
-msgstr "yahoo.product.state"
+msgstr ""
 
 #. module: product_yahoo_auction_sst
 #: model:delivery.carrier,name:product_yahoo_auction_sst.delivery_carrier_yu_pack
 #: model:product.product,name:product_yahoo_auction_sst.product_product_yu_pack
 #: model:product.template,name:product_yahoo_auction_sst.product_product_yu_pack_product_template
 msgid "ゆうパック"
-msgstr "ゆうパック"
+msgstr ""
 
 #. module: product_yahoo_auction_sst
 #: model:delivery.carrier,name:product_yahoo_auction_sst.delivery_carrier_kazai_bin
 #: model:product.product,name:product_yahoo_auction_sst.product_product_kazai_bin
 #: model:product.template,name:product_yahoo_auction_sst.product_product_kazai_bin_product_template
 msgid "家財便"
-msgstr "家財便"
-
+msgstr ""
