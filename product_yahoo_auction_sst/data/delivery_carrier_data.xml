@@ -16,9 +16,9 @@
         <field name="sequence">3</field>
         <field name="delivery_type">fixed</field>
         <field
-      name="product_id"
-      ref="product_yahoo_auction_sst.product_product_yu_pack"
-    />
+            name="product_id"
+            ref="product_yahoo_auction_sst.product_product_yu_pack"
+        />
     </record>
 
     <record id="product_product_kazai_bin" model="product.product">
@@ -36,9 +36,9 @@
         <field name="sequence">3</field>
         <field name="delivery_type">fixed</field>
         <field
-      name="product_id"
-      ref="product_yahoo_auction_sst.product_product_kazai_bin"
-    />
+            name="product_id"
+            ref="product_yahoo_auction_sst.product_product_kazai_bin"
+        />
     </record>
 
 </odoo>
