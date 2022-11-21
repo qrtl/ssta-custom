@@ -10,6 +10,7 @@
     "depends": ["sale_commission"],
     "data": [
         "views/account_invoice_views.xml",
+        "views/sale_order_views.xml",
     ],
     "installable": True,
 }
