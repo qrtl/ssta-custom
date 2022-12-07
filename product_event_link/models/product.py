@@ -12,5 +12,6 @@ class Product(models.Model):
     )
 
     def _compute_product_event_ids(self):
+        """This method is expected to be extended by child modules."""
         for product in self:
             product.event_ids = False
