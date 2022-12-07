@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Top menu item -->
+    <menuitem
+        id="auction_seller_menu_root"
+        name="Auction Seller"
+        groups="event.group_event_registration_desk,auction_seller.group_auction_seller"
+        web_icon="auction_seller,static/description/icon.png"
+        action="open_board_seller_dash_action"
+        sequence="28"
+    />
+    <menuitem
+        id="menu_auction_product"
+        name="Products"
+        parent="auction_seller.auction_seller_menu_root"
+        sequence="10"
+    />
+    <menuitem
+        id="menu_product_template"
+        name="Products"
+        parent="auction_seller.menu_auction_product"
+        action="action_product_template_seller_view"
+        sequence="5"
+    />
+</odoo>
