@@ -1,0 +1,64 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_commission_listing_fee
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-01-05 05:29+0000\n"
+"PO-Revision-Date: 2023-01-05 05:29+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: account_commission_listing_fee
+#: model:ir.model.fields,field_description:account_commission_listing_fee.field_commission__calculate_listing_fee
+msgid "Calculate Listing Fee"
+msgstr "出品料を計算"
+
+#. module: account_commission_listing_fee
+#: model:ir.model,name:account_commission_listing_fee.model_commission
+msgid "Commission"
+msgstr "コミッション"
+
+#. module: account_commission_listing_fee
+#: model:ir.model,name:account_commission_listing_fee.model_res_partner
+msgid "Contact"
+msgstr "連絡先"
+
+#. module: account_commission_listing_fee
+#: model:ir.model.fields,field_description:account_commission_listing_fee.field_commission_settlement__event_ids
+msgid "Events"
+msgstr "イベント"
+
+#. module: account_commission_listing_fee
+#: model:ir.model,name:account_commission_listing_fee.model_commission_settlement_line
+msgid "Line of a commission settlement"
+msgstr ""
+
+#. module: account_commission_listing_fee
+#: model:ir.model.fields,field_description:account_commission_listing_fee.field_res_partner__listing_fee_product_id
+#: model:ir.model.fields,field_description:account_commission_listing_fee.field_res_users__listing_fee_product_id
+msgid "Listing Fee Product"
+msgstr "出品料プロダクト"
+
+#. module: account_commission_listing_fee
+#: model:ir.model.fields,field_description:account_commission_listing_fee.field_commission_settlement__number_of_items
+msgid "Number Of Items"
+msgstr "アイテム数"
+
+#. module: account_commission_listing_fee
+#: model:ir.model,name:account_commission_listing_fee.model_product_product
+#: model:ir.model.fields,field_description:account_commission_listing_fee.field_commission_settlement_line__product_id
+msgid "Product"
+msgstr "プロダクト"
+
+#. module: account_commission_listing_fee
+#: model:ir.model,name:account_commission_listing_fee.model_commission_settlement
+#: model:ir.model.fields,field_description:account_commission_listing_fee.field_product_product__settlement_id
+msgid "Settlement"
+msgstr "セトルメント"
