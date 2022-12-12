@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_move_auction_seller,account.move.auction.seller,account.model_account_move,auction_seller.group_auction_seller,1,0,0,0
+access_account_move_line_auction_seller,account.move.line.auction.seller,account.model_account_move_line,auction_seller.group_auction_seller,1,0,0,0
+access_account_account_auction_seller,account.account.auction.seller,account.model_account_account,auction_seller.group_auction_seller,1,0,0,0
+access_account_journal_auction_seller,account.journal.auction.seller,account.model_account_journal,auction_seller.group_auction_seller,1,0,0,0
+access_account_account_tag.auction.seller,account.account.tag.auction.seller,account.model_account_account_tag,auction_seller.group_auction_seller,1,0,0,0
+access_account_partial_reconcile,account.partial.reconcile.auction.seller,account.model_account_partial_reconcile,auction_seller.group_auction_seller,1,0,0,0
+access_account_tax,account.tax.auction.seller,account.model_account_tax,auction_seller.group_auction_seller,1,0,0,0
+access_account_tax_group,account.tax.group.auction.seller,account.model_account_tax_group,auction_seller.group_auction_seller,1,0,0,0
+access_commission_settlement,commission.settlement,account_commission.model_commission_settlement,auction_seller.group_auction_seller,1,0,0,0
+access_commission_settlement_line,commission.settlement.line,account_commission.model_commission_settlement_line,auction_seller.group_auction_seller,1,0,0,0
+access_account_invoice_line_agent.auction.seller,account.invoice.line.agent.auction.seller,account_commission.model_account_invoice_line_agent,auction_seller.group_auction_seller,1,0,0,0

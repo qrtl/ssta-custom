@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- pylint:disable=deprecated-data-xml-node -->
+<odoo>
+    <record id="account_move_seller_form_view" model="ir.ui.view">
+        <field name="name">account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@id='other_tab']" position="replace" />
+            <xpath
+                expr="//group[@id='header_right_group']/field[@name='date']"
+                position="replace"
+            />
+            <xpath expr="//label[@for='invoice_payment_term_id']" position="replace" />
+            <!-- Cannot use 'replace' here since the value is used elsewhere in the view. -->
+            <xpath
+                expr="//field[@name='invoice_payment_term_id']"
+                position="attributes"
+            >
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//label[@for='ref']" position="replace" />
+            <xpath expr="//field[@name='payment_reference']" position="replace" />
+            <xpath expr="//field[@name='partner_bank_id']" position="replace" />
+            <xpath expr="//field[@name='invoice_date_due']" position="replace" />
+            <xpath expr="//field[@name='amount_residual']" position="replace" />
+            <xpath expr="//field[@name='activity_ids']" position="replace" />
+            <xpath expr="//field[@name='message_ids']" position="replace" />
+            <xpath
+                expr="//form/div[@class='o_attachment_preview']"
+                position="replace"
+            />
+            <xpath expr="//form/div[@class='oe_chatter']" position="replace" />
+        </field>
+    </record>
+    <record id="account_move_seller_tree_view" model="ir.ui.view">
+        <field name="name">account.out.invoice.tree</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_in_invoice_bill_tree" />
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute
+                    name="decoration-danger"
+                >amount_total_signed_positive &lt; 0</attribute>
+                <attribute name="decoration-info" />
+                <attribute name="decoration-muted" />
+            </xpath>
+            <xpath expr="//field[@name='activity_ids']" position="replace" />
+            <xpath expr="//field[@name='date']" position="replace" />
+            <xpath expr="//field[@name='invoice_date_due']" position="replace" />
+            <xpath expr="//field[@name='invoice_origin']" position="replace" />
+            <xpath expr="//field[@name='payment_reference']" position="replace" />
+            <xpath expr="//field[@name='ref']" position="replace" />
+            <xpath expr="//field[@name='to_check']" position="replace" />
+            <xpath expr="//field[@name='state']" position="replace" />
+            <xpath expr="//field[@name='amount_untaxed_signed']" position="replace">
+                <field
+                    name="amount_untaxed_signed_positive"
+                    string="Tax Excluded"
+                    sum="Total"
+                    optional="show"
+                />
+            </xpath>
+            <xpath expr="//field[@name='amount_tax_signed']" position="replace">
+                <field
+                    name="amount_tax_signed_positive"
+                    string="Tax"
+                    sum="Total"
+                    optional="hide"
+                />
+            </xpath>
+            <xpath expr="//field[@name='amount_total_signed']" position="replace">
+                <field
+                    name="amount_total_signed_positive"
+                    string="Total"
+                    sum="Total"
+                    decoration-bf="1"
+                    optional="show"
+                />
+            </xpath>
+            <xpath expr="//field[@name='amount_residual_signed']" position="replace" />
+        </field>
+    </record>
+    <record id="action_auction_invoice" model="ir.actions.act_window">
+        <field name="name">Invoices</field>
+        <field name="res_model">account.move</field>
+        <field name="view_mode">tree,form</field>
+        <field
+            name="domain"
+        >['|',('move_type','=','in_invoice'),('move_type','=','in_refund'),('state','=','posted')]</field>
+        <field name="context">{'default_move_type': ('in_invoice','in_refund')}</field>
+        <field
+            name="view_ids"
+            eval="[
+            (5, 0, 0),
+            (0, 0, {
+                'view_mode': 'tree',
+                'view_id': ref('account_move_seller_tree_view'),
+                }),
+            (0, 0, {
+                'view_mode': 'form',
+                'view_id': ref('account_move_seller_form_view'),
+                }),
+            ]"
+        />
+    </record>
+    <menuitem
+        id="auction_seller_invoice"
+        name="Invoices"
+        parent="auction_seller.menu_auction_product"
+        action="action_auction_invoice"
+        sequence="10"
+    />
+</odoo>
