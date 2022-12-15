@@ -7,8 +7,10 @@ from odoo import fields, models
 class ProductGrade(models.Model):
     _name = "product.grade"
     _description = "Product Grade"
+    _order = "sequence"
 
     name = fields.Char()
     active = fields.Boolean(default=True)
+    sequence = fields.Integer(default=16, required=True)
 
     _sql_constraints = [("name", "unique(name)", "Name must be unique!")]
