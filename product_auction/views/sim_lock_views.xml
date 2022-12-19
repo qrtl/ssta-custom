@@ -5,7 +5,7 @@
         <field name="model">sim.lock</field>
         <field name="type">tree</field>
         <field name="arch" type="xml">
-            <tree create="1" default_order="sequence">
+            <tree create="1">
                 <field name="sequence" widget="handle" />
                 <field name="name" />
             </tree>
