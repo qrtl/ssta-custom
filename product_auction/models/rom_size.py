@@ -7,8 +7,10 @@ from odoo import fields, models
 class RomSize(models.Model):
     _name = "rom.size"
     _description = "ROM Size"
+    _order = "sequence"
 
     name = fields.Char()
     active = fields.Boolean(default=True)
+    sequence = fields.Integer(default=10, required=True)
 
     _sql_constraints = [("name", "unique(name)", "Name must be unique!")]
