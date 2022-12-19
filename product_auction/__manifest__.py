@@ -18,9 +18,9 @@
         "views/rom_size_views.xml",
         "views/sim_lock_views.xml",
         "views/use_limit_views.xml",
-        "views/telecom_carrier.xml",
-        "views/product_grade.xml",
-        "views/qa_state.xml",
+        "views/telecom_carrier_views.xml",
+        "views/product_grade_views.xml",
+        "views/qa_state_views.xml",
     ],
     "installable": True,
 }
