@@ -13,4 +13,4 @@ class ProductModelCategory(models.Model):
     active = fields.Boolean(default=True)
     sequence = fields.Integer(default=16, required=True)
 
-    _sql_constraints = [("name", "unique(name)", "This category is already exist.")]
+    _sql_constraints = [("name", "unique(name)", "This category already exists.")]
