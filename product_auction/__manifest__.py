@@ -12,6 +12,7 @@
         "security/ir.model.access.csv",
         "data/menuitem_data.xml",
         "views/battery_service_views.xml",
+        "views/product_model_category_views.xml",
         "views/product_model_views.xml",
         "views/product_product_views.xml",
         "views/product_template_views.xml",

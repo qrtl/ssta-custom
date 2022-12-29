@@ -12,5 +12,10 @@ class ProductModel(models.Model):
     name = fields.Char()
     active = fields.Boolean(default=True)
     sequence = fields.Integer(default=16, required=True)
+    category_id = fields.Many2one(
+        comodel_name="product.model.category",
+        string="Product Model Category",
+        required=True,
+    )
 
     _sql_constraints = [("name", "unique(name)", "Name must be unique!")]

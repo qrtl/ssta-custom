@@ -19,3 +19,5 @@ access_product_grade_auction_user,product.grade.auction.user,model_product_grade
 access_product_grade_auction_manager,product.grade.auction.manager,model_product_grade,base_auction.group_auction_manager,1,1,1,1
 access_qa_state_auction_user,qa.state.auction.user,model_qa_state,base_auction.group_auction_user,1,0,0,0
 access_qa_state_auction_manager,qa.state.auction.manager,model_qa_state,base_auction.group_auction_manager,1,1,1,1
+access_product_model_category_auction_user,product.model.category.auction.user,model_product_model_category,base_auction.group_auction_user,1,0,0,0
+access_product_model_category_auction_manager,product.model.category.auction.manager,model_product_model_category,base_auction.group_auction_manager,1,1,1,1
