@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="product_product_tree_view" model="ir.ui.view">
+        <field name="name">product.product.tree</field>
+        <field name="model">product.product</field>
+        <field name="inherit_id" ref="product.product_product_tree_view" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//field[@name='product_template_variant_value_ids']"
+                position="after"
+            >
+                <field name="event_ids" widget="many2many_tags" optional="show" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
