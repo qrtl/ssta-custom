@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-23 14:04+0000\n"
-"PO-Revision-Date: 2022-07-23 14:04+0000\n"
+"POT-Creation-Date: 2022-12-29 08:37+0000\n"
+"PO-Revision-Date: 2022-12-29 08:37+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -28,6 +28,7 @@ msgstr "顧客に見せたいプロダクトの説明。この説明は販売オ
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__active
 #: model:ir.model.fields,field_description:product_auction.field_product_grade__active
 #: model:ir.model.fields,field_description:product_auction.field_product_model__active
+#: model:ir.model.fields,field_description:product_auction.field_product_model_category__active
 #: model:ir.model.fields,field_description:product_auction.field_qa_state__active
 #: model:ir.model.fields,field_description:product_auction.field_rom_size__active
 #: model:ir.model.fields,field_description:product_auction.field_sim_lock__active
@@ -39,6 +40,7 @@ msgstr "有効"
 #. module: product_auction
 #: model_terms:ir.ui.view,arch_db:product_auction.view_battery_service_form
 #: model_terms:ir.ui.view,arch_db:product_auction.view_product_grade_form
+#: model_terms:ir.ui.view,arch_db:product_auction.view_product_model_category_form
 #: model_terms:ir.ui.view,arch_db:product_auction.view_product_model_form
 #: model_terms:ir.ui.view,arch_db:product_auction.view_qa_state_form
 #: model_terms:ir.ui.view,arch_db:product_auction.view_rom_size_form
@@ -100,6 +102,7 @@ msgstr "色"
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__create_uid
 #: model:ir.model.fields,field_description:product_auction.field_product_grade__create_uid
 #: model:ir.model.fields,field_description:product_auction.field_product_model__create_uid
+#: model:ir.model.fields,field_description:product_auction.field_product_model_category__create_uid
 #: model:ir.model.fields,field_description:product_auction.field_qa_state__create_uid
 #: model:ir.model.fields,field_description:product_auction.field_rom_size__create_uid
 #: model:ir.model.fields,field_description:product_auction.field_sim_lock__create_uid
@@ -112,6 +115,7 @@ msgstr "作成者"
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__create_date
 #: model:ir.model.fields,field_description:product_auction.field_product_grade__create_date
 #: model:ir.model.fields,field_description:product_auction.field_product_model__create_date
+#: model:ir.model.fields,field_description:product_auction.field_product_model_category__create_date
 #: model:ir.model.fields,field_description:product_auction.field_qa_state__create_date
 #: model:ir.model.fields,field_description:product_auction.field_rom_size__create_date
 #: model:ir.model.fields,field_description:product_auction.field_sim_lock__create_date
@@ -124,6 +128,7 @@ msgstr "作成日"
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__display_name
 #: model:ir.model.fields,field_description:product_auction.field_product_grade__display_name
 #: model:ir.model.fields,field_description:product_auction.field_product_model__display_name
+#: model:ir.model.fields,field_description:product_auction.field_product_model_category__display_name
 #: model:ir.model.fields,field_description:product_auction.field_qa_state__display_name
 #: model:ir.model.fields,field_description:product_auction.field_rom_size__display_name
 #: model:ir.model.fields,field_description:product_auction.field_sim_lock__display_name
@@ -136,6 +141,7 @@ msgstr "表示名"
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__id
 #: model:ir.model.fields,field_description:product_auction.field_product_grade__id
 #: model:ir.model.fields,field_description:product_auction.field_product_model__id
+#: model:ir.model.fields,field_description:product_auction.field_product_model_category__id
 #: model:ir.model.fields,field_description:product_auction.field_qa_state__id
 #: model:ir.model.fields,field_description:product_auction.field_rom_size__id
 #: model:ir.model.fields,field_description:product_auction.field_sim_lock__id
@@ -154,6 +160,7 @@ msgstr ""
 #: model:ir.model.fields,field_description:product_auction.field_battery_service____last_update
 #: model:ir.model.fields,field_description:product_auction.field_product_grade____last_update
 #: model:ir.model.fields,field_description:product_auction.field_product_model____last_update
+#: model:ir.model.fields,field_description:product_auction.field_product_model_category____last_update
 #: model:ir.model.fields,field_description:product_auction.field_qa_state____last_update
 #: model:ir.model.fields,field_description:product_auction.field_rom_size____last_update
 #: model:ir.model.fields,field_description:product_auction.field_sim_lock____last_update
@@ -166,6 +173,7 @@ msgstr "最終修正日"
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__write_uid
 #: model:ir.model.fields,field_description:product_auction.field_product_grade__write_uid
 #: model:ir.model.fields,field_description:product_auction.field_product_model__write_uid
+#: model:ir.model.fields,field_description:product_auction.field_product_model_category__write_uid
 #: model:ir.model.fields,field_description:product_auction.field_qa_state__write_uid
 #: model:ir.model.fields,field_description:product_auction.field_rom_size__write_uid
 #: model:ir.model.fields,field_description:product_auction.field_sim_lock__write_uid
@@ -178,6 +186,7 @@ msgstr "最終更新者"
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__write_date
 #: model:ir.model.fields,field_description:product_auction.field_product_grade__write_date
 #: model:ir.model.fields,field_description:product_auction.field_product_model__write_date
+#: model:ir.model.fields,field_description:product_auction.field_product_model_category__write_date
 #: model:ir.model.fields,field_description:product_auction.field_qa_state__write_date
 #: model:ir.model.fields,field_description:product_auction.field_rom_size__write_date
 #: model:ir.model.fields,field_description:product_auction.field_sim_lock__write_date
@@ -202,6 +211,7 @@ msgstr "モデル"
 #: model:ir.model.fields,field_description:product_auction.field_battery_service__name
 #: model:ir.model.fields,field_description:product_auction.field_product_grade__name
 #: model:ir.model.fields,field_description:product_auction.field_product_model__name
+#: model:ir.model.fields,field_description:product_auction.field_product_model_category__name
 #: model:ir.model.fields,field_description:product_auction.field_qa_state__name
 #: model:ir.model.fields,field_description:product_auction.field_rom_size__name
 #: model:ir.model.fields,field_description:product_auction.field_sim_lock__name
@@ -241,6 +251,21 @@ msgstr "グレード"
 #: model_terms:ir.ui.view,arch_db:product_auction.view_product_model_form
 msgid "Product Model"
 msgstr "機種名"
+
+#. module: product_auction
+#: model:ir.actions.act_window,name:product_auction.action_product_model_category_view
+#: model:ir.ui.menu,name:product_auction.menu_product_model_category
+msgid "Product Model Categories"
+msgstr "機種カテゴリ"
+
+#. module: product_auction
+#: model:ir.model,name:product_auction.model_product_model_category
+#: model:ir.model.fields,field_description:product_auction.field_product_model__category_id
+#: model:ir.model.fields,field_description:product_auction.field_product_product__product_model_category_id
+#: model:ir.model.fields,field_description:product_auction.field_product_template__product_model_category_id
+#: model_terms:ir.ui.view,arch_db:product_auction.view_product_model_category_form
+msgid "Product Model Category"
+msgstr "機種カテゴリ"
 
 #. module: product_auction
 #: model:ir.actions.act_window,name:product_auction.action_product_model_view
@@ -324,6 +349,16 @@ msgid "Sales Description"
 msgstr "販売説明"
 
 #. module: product_auction
+#: model:ir.model.fields,field_description:product_auction.field_product_grade__sequence
+#: model:ir.model.fields,field_description:product_auction.field_product_model__sequence
+#: model:ir.model.fields,field_description:product_auction.field_product_model_category__sequence
+#: model:ir.model.fields,field_description:product_auction.field_rom_size__sequence
+#: model:ir.model.fields,field_description:product_auction.field_sim_lock__sequence
+#: model:ir.model.fields,field_description:product_auction.field_telecom_carrier__sequence
+msgid "Sequence"
+msgstr ""
+
+#. module: product_auction
 #: model:ir.model,name:product_auction.model_telecom_carrier
 #: model:ir.model.fields,field_description:product_auction.field_product_product__telecom_carrier_id
 #: model:ir.model.fields,field_description:product_auction.field_product_template__telecom_carrier_id
@@ -336,6 +371,11 @@ msgstr "キャリア"
 #: model:ir.ui.menu,name:product_auction.menu_telecom_Carrier
 msgid "Telecom Carriers"
 msgstr "キャリア"
+
+#. module: product_auction
+#: model:ir.model.constraint,message:product_auction.constraint_product_model_category_name
+msgid "This category already exists."
+msgstr "このカテゴリはすでに存在します。"
 
 #. module: product_auction
 #: model:ir.model,name:product_auction.model_use_limit
