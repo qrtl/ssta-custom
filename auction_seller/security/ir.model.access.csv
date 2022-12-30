@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_product_template_auction_seller,product.template.auction.seller,product.model_product_template,auction_seller.group_auction_seller,1,0,0,0
+access_product_product_auction_seller,product.product.auction.seller,product.model_product_product,auction_seller.group_auction_seller,1,0,0,0
+access_event_event_auction_seller,event.event.auction.seller,event.model_event_event,auction_seller.group_auction_seller,1,0,0,0
+access_seller_board_auction_seller_maneger,seller.board.auction.seller.maneger,auction_seller.model_seller_board,base_auction.group_auction_manager,1,1,1,1
+access_seller_board_auction_seller_user,seller.board.auction.seller.user,auction_seller.model_seller_board,auction_seller.group_auction_seller,1,0,0,0

@@ -1,0 +1,221 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* auction_seller
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-21 06:07+0000\n"
+"PO-Revision-Date: 2022-11-21 06:07+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.board_seller_dash_view
+msgid "<i class=\"fa fa-mobile fa-7x\" title=\"Products\"/>"
+msgstr ""
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_form_view
+msgid "Auction Attributes"
+msgstr "入札会情報"
+
+#. module: auction_seller
+#: model:ir.ui.menu,name:auction_seller.auction_seller_menu_root
+#: model:res.groups,name:auction_seller.group_auction_seller
+msgid "Auction Seller"
+msgstr "出品"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "Battery Service"
+msgstr "バッテリーサービス"
+
+#. module: auction_seller
+#: model:ir.model,name:auction_seller.model_res_partner
+msgid "Contact"
+msgstr "連絡先"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_seller_board__create_uid
+msgid "Created by"
+msgstr "作成者"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_seller_board__create_date
+msgid "Created on"
+msgstr "作成日"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_seller_board__display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_product_product__event_ids
+#: model:ir.model.fields,field_description:auction_seller.field_product_template__event_ids
+msgid "Events"
+msgstr "イベント"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "Group By"
+msgstr "グループ化"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_seller_board__id
+msgid "ID"
+msgstr ""
+
+#. module: auction_seller
+#: model:ir.model.fields,help:auction_seller.field_res_partner__is_seller_partner
+#: model:ir.model.fields,help:auction_seller.field_res_users__is_seller_partner
+msgid "If selected, the partner can be set as a seller in products."
+msgstr "選択された場合、パートナーをプロダクトの出品者として設定できます。"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_res_users__is_auction_seller
+msgid "Is Auction Seller"
+msgstr "出品参加者"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_res_partner__is_seller_partner
+#: model:ir.model.fields,field_description:auction_seller.field_res_users__is_seller_partner
+msgid "Is Seller Partner"
+msgstr "出品者フラグ"
+
+#. module: auction_seller
+#: model:ir.model.fields.selection,name:auction_seller.selection__seller_board__state__item
+msgid "Item"
+msgstr "落札済入札会項目"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_seller_board____last_update
+msgid "Last Modified on"
+msgstr "最終更新日"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_seller_board__write_uid
+msgid "Last Updated by"
+msgstr "最終更新者"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_seller_board__write_date
+msgid "Last Updated on"
+msgstr "最終変更日"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "Model"
+msgstr "モデル"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_seller_board__name
+msgid "Name"
+msgstr "名称"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "Non-displayed Products"
+msgstr "非表示にされたプロダクト"
+
+#. module: auction_seller
+#: model:ir.model.fields.selection,name:auction_seller.selection__seller_board__state__order
+msgid "Order"
+msgstr ""
+
+#. module: auction_seller
+#: model:ir.model.fields.selection,name:auction_seller.selection__seller_board__state__product
+msgid "Product"
+msgstr "プロダクト"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "Product Grade"
+msgstr "グレード"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_form_view
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_tree_view
+msgid "Product Name"
+msgstr "プロダクト"
+
+#. module: auction_seller
+#: model:ir.model,name:auction_seller.model_product_template
+msgid "Product Template"
+msgstr "プロダクトテンプレート"
+
+#. module: auction_seller
+#: model:ir.actions.act_window,name:auction_seller.action_product_template_seller_view
+#: model:ir.ui.menu,name:auction_seller.menu_auction_product
+#: model:ir.ui.menu,name:auction_seller.menu_product_template
+#: model_terms:ir.ui.view,arch_db:auction_seller.board_seller_dash_view
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_form_view
+msgid "Products"
+msgstr "プロダクト"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "QA State"
+msgstr "検査"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "ROM Size"
+msgstr "容量"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "SIM Lock"
+msgstr "SIMロック"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "Search Seller Products"
+msgstr "出品者プロダクト検索"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_product_product__seller_id
+#: model:ir.model.fields,field_description:auction_seller.field_product_template__seller_id
+msgid "Seller"
+msgstr "出品者"
+
+#. module: auction_seller
+#: model:ir.actions.act_window,name:auction_seller.open_board_seller_dash_action
+msgid "Seller Board"
+msgstr "出品者ダッシュボード"
+
+#. module: auction_seller
+#: model:ir.model.fields,field_description:auction_seller.field_seller_board__state
+msgid "State"
+msgstr ""
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "Telecom Carrier"
+msgstr "キャリア"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_search_view
+msgid "Use Limit"
+msgstr "利用制限"
+
+#. module: auction_seller
+#: model:ir.model,name:auction_seller.model_res_users
+msgid "Users"
+msgstr "ユーザ"
+
+#. module: auction_seller
+#: model_terms:ir.ui.view,arch_db:auction_seller.product_template_seller_form_view
+msgid "e.g. Cheese Burger"
+msgstr ""
+
+#. module: auction_seller
+#: model:ir.model,name:auction_seller.model_seller_board
+msgid "seller.board"
+msgstr ""

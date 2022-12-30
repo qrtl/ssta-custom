@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="product_template_form_view" model="ir.ui.view">
+        <field name="name">product.template.common.form</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product_auction.product_template_form_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='auction_attributes']/group[1]" position="before">
+                <group>
+                    <field name="seller_id" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_tree_view" model="ir.ui.view">
+        <field name="name">product.template.common.tree</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_tree_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="seller_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_search_view" model="ir.ui.view">
+        <field name="name">product.template.search</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_search_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="seller_id" />
+            </xpath>
+        </field>
+    </record>
+
+    <record id="product_template_seller_form_view" model="ir.ui.view">
+        <field name="name">product.template.seller.form</field>
+        <field name="model">product.template</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Products">
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Product Name" />
+                        <h1>
+                            <div class="d-flex">
+                                <field name="priority" widget="priority" class="mr-3" />
+                                <field
+                                    class="o_text_overflow"
+                                    name="name"
+                                    placeholder="e.g. Cheese Burger"
+                                />
+                            </div>
+                        </h1>
+                    </div>
+                    <notebook>
+                        <page string="Auction Attributes" name="auction_attributes">
+                            <group>
+                                <field name="event_ids" widget="many2many_tags" />
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="default_code" />
+                                    <field name="case_number" />
+                                    <field name="product_model_id" />
+                                    <field name="model_number" />
+                                    <field name="rom_size_id" />
+                                    <field name="imei" />
+                                    <field name="sim_lock_id" />
+                                    <field name="battery_health" />
+                                </group>
+                                <group>
+                                    <field name="battery_service_id" />
+                                    <field name="color" />
+                                    <field name="use_limit_id" />
+                                    <field name="telecom_carrier_id" />
+                                    <field name="product_grade_id" />
+                                    <field name="cpu" />
+                                    <field name="ram" />
+                                </group>
+                            </group>
+                            <group>
+                                <field name="qa_state_id" />
+                                <field name="qa_note" />
+                                <field name="description_sale" />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="product_template_seller_tree_view" model="ir.ui.view">
+        <field name="name">product.template.seller.tree</field>
+        <field name="model">product.template</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="create_date" widget="date" optional="show" />
+                <field name="name" string="Product Name" />
+                <field name="default_code" optional="show" />
+                <field name="case_number" optional="show" />
+                <field name="event_ids" widget="many2many_tags" optional="show" />
+                <field name="product_model_id" optional="show" />
+                <field name="model_number" optional="show" />
+                <field name="rom_size_id" optional="show" />
+                <field name="imei" optional="show" />
+                <field name="sim_lock_id" optional="show" />
+                <field name="battery_health" optional="show" />
+                <field name="battery_service_id" optional="show" />
+                <field name="color" optional="show" />
+                <field name="use_limit_id" optional="show" />
+                <field name="telecom_carrier_id" optional="show" />
+                <field name="product_grade_id" optional="show" />
+                <field name="cpu" optional="show" />
+                <field name="ram" optional="show" />
+                <field name="qa_state_id" optional="show" />
+                <field name="qa_note" optional="show" />
+                <field name="description_sale" optional="show" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="product_template_seller_search_view" model="ir.ui.view">
+        <field name="name">product.template.seller.search</field>
+        <field name="model">product.template</field>
+        <field name="arch" type="xml">
+            <search string="Search Seller Products">
+                <field name="name" />
+                <field name="default_code" />
+                <field name="case_number" />
+                <field name="product_model_id" />
+                <field name="model_number" />
+                <field name="rom_size_id" />
+                <field name="imei" />
+                <field name="sim_lock_id" />
+                <field name="battery_health" />
+                <field name="battery_service_id" />
+                <field name="color" />
+                <field name="use_limit_id" />
+                <field name="telecom_carrier_id" />
+                <field name="product_grade_id" />
+                <field name="cpu" />
+                <field name="ram" />
+                <field name="qa_state_id" />
+                <field name="qa_note" />
+                <separator />
+                <group expand="0" string="Group By">
+                    <filter
+                        string="Model"
+                        name="product_model"
+                        domain="[]"
+                        context="{'group_by': 'product_model_id'}"
+                    />
+                    <filter
+                        string="ROM Size"
+                        name="rom_size"
+                        domain="[]"
+                        context="{'group_by': 'rom_size_id'}"
+                    />
+                    <filter
+                        string="SIM Lock"
+                        name="sim_lock"
+                        domain="[]"
+                        context="{'group_by': 'sim_lock_id'}"
+                    />
+                    <filter
+                        string="Battery Service"
+                        name="battery_service"
+                        domain="[]"
+                        context="{'group_by': 'battery_service_id'}"
+                    />
+                    <filter
+                        string="Use Limit"
+                        name="use_limit"
+                        domain="[]"
+                        context="{'group_by': 'use_limit_id'}"
+                    />
+                    <filter
+                        string="Telecom Carrier"
+                        name="telecom_carrier"
+                        domain="[]"
+                        context="{'group_by': 'telecom_carrier_id'}"
+                    />
+                    <filter
+                        string="Product Grade"
+                        name="product_grade"
+                        domain="[]"
+                        context="{'group_by': 'product_grade_id'}"
+                    />
+                    <filter
+                        string="QA State"
+                        name="qa_state"
+                        domain="[]"
+                        context="{'group_by': 'qa_state_id'}"
+                    />
+                    <filter
+                        string="Non-displayed Products"
+                        name="inactive"
+                        domain="[('active','=',False)]"
+                    />
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_product_template_seller_view" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">product.template</field>
+        <field name="view_mode">tree,form</field>
+        <field
+            name="view_ids"
+            eval="[
+            (5, 0, 0),
+            (0, 0, {
+                'view_mode': 'tree',
+                'view_id': ref('product_template_seller_tree_view'),
+                }),
+            (0, 0, {
+                'view_mode': 'form',
+                'view_id': ref('product_template_seller_form_view'),
+                }),
+            ]"
+        />
+        <field name="search_view_id" ref="product_template_seller_search_view" />
+    </record>
+</odoo>
