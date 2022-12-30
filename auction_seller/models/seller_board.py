@@ -8,6 +8,4 @@ class SellerBoard(models.Model):
     _name = "seller.board"
 
     name = fields.Char()
-    state = fields.Selection(
-        [("product", "Product"), ("item", "Item"), ("order", "Order")]
-    )
+    board_type = fields.Selection([("product", "Products")])
