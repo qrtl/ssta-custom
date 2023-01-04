@@ -32,6 +32,7 @@
                             <field name="default_code" />
                             <field name="case_number" />
                             <field name="product_model_id" />
+                            <field name="product_model_category_id" />
                             <field name="model_number" />
                             <field name="rom_size_id" />
                             <field name="imei" />
@@ -65,6 +66,7 @@
             <xpath expr="//filter[@name='services']" position="before">
                 <field name="case_number" />
                 <field name="product_model_id" />
+                <field name="product_model_category_id" />
                 <field name="model_number" />
                 <field name="rom_size_id" />
                 <field name="imei" />

@@ -9,6 +9,9 @@ class ProductTemplate(models.Model):
 
     case_number = fields.Char()
     product_model_id = fields.Many2one("product.model", "Model")
+    product_model_category_id = fields.Many2one(
+        related="product_model_id.category_id", store=True
+    )
     model_number = fields.Char()
     rom_size_id = fields.Many2one("rom.size", "ROM Size")
     imei = fields.Char("IMEI")

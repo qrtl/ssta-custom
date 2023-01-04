@@ -1,4 +1,5 @@
 from . import battery_service
+from . import product_model_category
 from . import product_model
 from . import product_template
 from . import rom_size
