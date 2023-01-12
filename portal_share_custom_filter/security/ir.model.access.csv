@@ -1,2 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ir_filters_group_auction_user,ir.filters.group,base_custom_filter.model_ir_filters_group,base.group_portal,1,0,0,0
