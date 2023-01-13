@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="ir_filters_auction_user_rule" model="ir.rule">
+        <field name="name">ir.filter: Auction User</field>
+        <field name="model_id" ref="base.model_ir_filters" />
+        <field
+            name="domain_force"
+        >['|',('user_id', '=', user.id),('auction_share','=',True)]</field>
+        <field name="groups" eval="[(4,ref('base_auction.group_auction_user'))]" />
+       <!-- perm_unlink=False prevents users from removing shared Favorites. -->
+        <field name="perm_unlink" eval="False" />
+    </record>
+</odoo>

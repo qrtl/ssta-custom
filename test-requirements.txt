@@ -1,3 +1,4 @@
 git+https://github.com/qrtl/rmm-oca@15.0#subdirectory=setup/commission
 git+https://github.com/qrtl/rmm-oca@15.0#subdirectory=setup/account_commission
 git+https://github.com/qrtl/rmm-oca@15.0#subdirectory=setup/sale_commission
+git+https://github.com/qrtl/rmm-oca@15.0#subdirectory=setup/base_custom_filter
