@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo noupdate="1">
+    <record model="seller.board" id="invoice_data">
+        <field name="name">Invoices</field>
+        <field name="board_type">invoice</field>
+    </record>
+</odoo>

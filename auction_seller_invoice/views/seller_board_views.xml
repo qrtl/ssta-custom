@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="board_seller_dash_view" model="ir.ui.view">
+        <field name="name">seller.board.kanban</field>
+        <field name="model">seller.board</field>
+        <field name="inherit_id" ref="auction_seller.board_seller_dash_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('o_kanban_primary_left')]" position="inside">
+                <div
+                    t-if="record.board_type.raw_value =='invoice'"
+                    style="color:rgb(113,99,158)"
+                >
+                    <a class="item_box" name="%(action_auction_invoice)d" type="action">
+                            <center><i class="fa fa-money fa-7x" title="invoices" />
+                            <h2>Invoices</h2></center>
+                    </a>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>
