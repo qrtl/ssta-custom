@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="commission_form" model="ir.ui.view">
+        <field name="name">commissions form</field>
+        <field name="model">commission</field>
+        <field name="inherit_id" ref="account_commission.commission_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='invoice_state']" position="after">
+                <field name="calculate_sales_fee" />
+                <field
+                    name="sales_fee_product_id"
+                    attrs="{'required': [('calculate_sales_fee', '=', True)], 'invisible': [('calculate_sales_fee', '=', False)]}"
+                />
+            </xpath>
+        </field>
+    </record>
+</odoo>
