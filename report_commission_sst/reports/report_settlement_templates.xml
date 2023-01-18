@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="external_layout_settelement_sst">
+        <div
+            t-attf-class="header o_company_sst_layout"
+            t-att-style="report_header_style"
+        >
+        </div>
+        <div class="article o_report_layout_standard" t-att-data-oe-model="o and o._name" t-att-data-oe-id="o and o.id" t-att-data-oe-lang="o and o.env.context.get('lang')">
+            <t t-call="web.address_layout"/>
+            <t t-raw="0"/>
+        </div>
+
+        <div class="footer o_standard_footer">
+            <div class="text-center" style="border-top: 1px solid black;">
+                <!-- <ul class="list-inline mb4">
+                    <div t-field="company.report_footer" />
+                </ul> -->
+                <div t-if="report_type == 'pdf'" class="text-muted">
+                    Page: <span class="page" /> / <span class="topage" />
+                </div>
+            </div>
+        </div>
+    </template>
+    
+    <template id="commission_settlement_main">
+        <t t-call="report_commission_sst.external_layout_settelement_sst">
+            <div class="page">
+                <h2 class="text-center">
+                    <img
+                        t-if="company.logo"
+                        t-att-src="image_data_uri(company.logo)"
+                        style="max-height: 45px;"
+                        alt="Logo"
+                    />
+                    <span>ASMM精算一覧書</span>
+                </h2>
+                <div class="row" style="padding-top: 60px;">
+                    <div class="col-7">
+                        <div  t-if="o.event_ids">
+                            <strong>Event:</strong>
+                            <span t-field="o.event_ids" />
+                        </div>
+                        <div class="mt32" t-if="o.agent_id">
+                            <strong>Agent:</strong>
+                            <span t-field="o.agent_id" />
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <address
+                            t-field="company.partner_id"
+                            t-options='{"widget": "contact", "fields": ["name", "address"], "no_marker": True}'
+                        />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 20px;">
+                    <div class="col-7">
+                        <h3>    
+                            <div>
+                                <strong>Amount:</strong>
+                                <span t-field="o.invoice_id.amount_total_signed_positive"/>
+                            </div>
+                        </h3>
+                        <h4>
+                            <div class="text-muted">
+                                <strong>Tax:</strong>
+                                <span t-field="o.invoice_id.amount_tax_signed_positive"/>
+                            </div>
+                        </h4>
+                    </div>
+                    <div class="col-5">
+                        <span>Bank:</span>
+                        <div>(振込先)PAYPAY銀⾏ ビジネス営業部（005）普通 1530570 カ）アシスト</div>
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 20px;">
+                    <div class="col-12">
+                        <div>精算書発行後の水曜日に会員様口座へ送金いたします。</div>
+                        <div>差し引き請求金額がマイナスの場合は右記口座まで会員様手数料負担にてお振込みをお願いいたします。</div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px; margin-bottom: 10px;">
+                    <div class="col-12">
+                        <h5 class="text-center">Bill</h5>
+                        <table class="table table-sm table-striped o_main_table">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th>Product</th>
+                                    <th class="text-right">Quantity</th>
+                                    <th class="text-right">Price Unit</th>
+                                    <th class="text-right">Price Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.invoice_id.invoice_line_ids" t-as="il">
+                                    <t t-if="not il.sudo().product_id.settle_product">
+                                        <td>
+                                            <span t-field="il.product_id" />
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="il.quantity" />
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="il.price_unit" />
+                                        </td>
+                                        <td class="text-right">
+                                            <span t-field="il.price_subtotal" />
+                                        </td>
+                                    </t>
+                                </tr>
+                                <t t-set="bill_subtotal" t-value="0"/>
+                                    <tr t-foreach="o.invoice_id.invoice_line_ids" t-as="il">
+                                        <t t-if="not il.sudo().product_id.settle_product">
+                                            <t t-set="bill_subtotal" t-value="bill_subtotal+il.price_subtotal" />
+                                        </t>
+                                    </tr>
+                                    <td colspan="3">
+                                        <strong>Total</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <t t-esc="bill_subtotal" t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"/>
+                                    </td>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px; margin-bottom: 10px;">
+                    <div class="col-12">
+                        <h5 class="text-center">Payment</h5>
+                        <table class="table table-sm table-striped">
+                            <thead>
+                                <tr class="bg-success">
+                                    <th>Case Number</th>
+                                    <th>Product</th>
+                                    <th class="text-right">Amount settled</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.line_ids" t-as="l">
+                                    <td>
+                                        <span t-field="l.product_id.case_number" />
+                                    </td>
+                                    <td>
+                                        <span t-field="l.product_id" />
+                                    </td>
+                                    <td class="text-right">
+                                        <span
+                                            t-field="l.settled_amount"
+                                            t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"
+                                        />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <!-- <td colspan="4"> -->
+                                    <td colspan="2">
+                                        <strong>Total</strong>
+                                    </td>
+                                    <td class="text-right">
+                                        <span
+                                            t-field="o.total"
+                                            t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"
+                                        />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="report_settlement_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="o.agent_id.lang" />
+                <t t-set="company" t-value="o.company_id" />
+                <t
+                    t-call="report_commission_sst.commission_settlement_main"
+                    t-lang="o.agent_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+</odoo>
