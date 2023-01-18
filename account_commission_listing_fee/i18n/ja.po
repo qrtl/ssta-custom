@@ -58,6 +58,12 @@ msgid "Product"
 msgstr "プロダクト"
 
 #. module: account_commission_listing_fee
+#: model:ir.model,name:account_commission_listing_fee.model_product_product
+#: model:ir.model.fields,field_description:account_commission_listing_fee.field_commission_settlement_line__case_number
+msgid "Case Number"
+msgstr "箱番号"
+
+#. module: account_commission_listing_fee
 #: model:ir.model,name:account_commission_listing_fee.model_commission_settlement
 #: model:ir.model.fields,field_description:account_commission_listing_fee.field_product_product__settlement_id
 msgid "Settlement"

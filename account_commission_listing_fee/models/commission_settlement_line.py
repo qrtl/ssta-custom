@@ -12,3 +12,6 @@ class SettlementLine(models.Model):
         related="invoice_line_id.product_id",
         store=True,
     )
+    case_number = fields.Char(
+        related="product_id.case_number",
+    )
