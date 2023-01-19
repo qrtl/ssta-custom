@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# 	* res_company_bank
+# 	* res_company_report_info
 #
 msgid ""
 msgstr ""
@@ -16,21 +16,21 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: res_company_bank
-#: model:ir.model.fields,field_description:res_company_bank.field_res_company__bank_description
+#: model:ir.model.fields,field_description:res_company_report_info.field_res_company__description
 msgid "Bank Description"
 msgstr "説明"
 
 #. module: res_company_bank
-#: model:ir.model.fields,field_description:res_company_bank.field_res_company__bank_info
+#: model:ir.model.fields,field_description:res_company_report_info.field_res_company__bank_info
 msgid "Bank Info"
 msgstr "銀行"
 
 #. module: res_company_bank
-#: model:ir.model,name:res_company_bank.model_res_company
+#: model:ir.model,name:res_company_report_info.model_res_company
 msgid "Companies"
 msgstr "会社"
 
 #. module: res_company_bank
-#: model_terms:ir.ui.view,arch_db:res_company_bank.view_company_form
+#: model_terms:ir.ui.view,arch_db:res_company_report_info.view_company_form
 msgid "Report Information"
 msgstr "レポート情報"

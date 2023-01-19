@@ -7,6 +7,6 @@ class Company(models.Model):
     bank_info = fields.Char(
         name="Bank",
     )
-    bank_description = fields.Char(
+    description = fields.Char(
         name="Description",
     )
