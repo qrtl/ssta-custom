@@ -1,7 +1,7 @@
 # Copyright 2023 Quartile Limited
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 {
-    "name": "Company Report Information",
+    "name": "Base Report Information",
     "version": "15.0.1.0.0",
     "category": "Companies",
     "author": "Quartile Limited",
