@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_company_form" model="ir.ui.view">
+        <field name="name">res.company.form</field>
+        <field name="inherit_id" ref="base_report_info.view_company_form" />
+        <field name="model">res.company</field>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='bank_info']" position="before">
+                <field name="seller_settlement_report_title" />
+            </xpath>
+        </field>
+    </record>
+</odoo>
