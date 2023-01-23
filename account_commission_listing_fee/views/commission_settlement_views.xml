@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_settlement_form">
+        <field name="name">Settlements - Add events and number of items</field>
+        <field name="model">commission.settlement</field>
+        <field name="inherit_id" ref="commission.view_settlement_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='date_to']" position="after">
+                <field name="event_ids" widget="many2many_tags" />
+                <field name="number_of_items" />
+            </xpath>
+            <xpath
+                expr="//field[@name='line_ids']/tree/field[@name='date']"
+                position="after"
+            >
+                <field name="case_number" />
+                <field name="product_id" />
+            </xpath>
+            <xpath
+                expr="//field[@name='line_ids']/tree/field[@name='commission_id']"
+                position="attributes"
+            >
+                <attribute name="groups">base.group_user</attribute>
+            </xpath>
+        </field>
+    </record>
+</odoo>
