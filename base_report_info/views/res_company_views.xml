@@ -9,7 +9,6 @@
                 <page string="Report Information" name="report_info">
                     <group>
                         <field name="bank_info" />
-                        <field name="description" />
                     </group>
                 </page>
             </notebook>
