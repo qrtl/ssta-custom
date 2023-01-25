@@ -34,7 +34,7 @@
                         <field
                             name="customer_payment_journal_id"
                             domain="[('type', 'in', ('cash', 'bank'))]"
-                            required="1"
+                            attrs="{'required': [('process_payment', '=', True)]}"
                         />
                     </group>
                 </group>

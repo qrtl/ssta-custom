@@ -79,7 +79,6 @@ class ImportSale(models.TransientModel):
     customer_payment_journal_id = fields.Many2one(
         "account.journal",
         string="Customer Payment Journal",
-        # required=True,
         default=_default_customer_payment_journal,
     )
     asynchronous = fields.Boolean(string="Process import asynchronously", default=True)
