@@ -1,15 +1,13 @@
-# Copyright 2017-2022 Quartile Limited
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# Copyright 2023 Quartile Limited
+# License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 import base64
 import io
 from datetime import datetime
 
 from odoo import _, api, fields, models
-from odoo.exceptions import Warning
+from odoo.exceptions import UserError, ValidationError
 from odoo.tools import pycompat
-
-from odoo.addons.queue_job.job import job
 
 FIELDS_TO_IMPORT = [
     "Group",
@@ -110,8 +108,8 @@ class ImportSale(models.TransientModel):
         partner_value = row[partner_tel].strip()
 
         if not partner_value:
-            error_vals["error_name"] = (
-                error_vals["error_name"]
+            error_vals["error_message"] = (
+                error_vals["error_message"]
                 + _('Column "Customer Phone/Mobile" cannot be empty.')
                 + "\n"
             )
@@ -123,12 +121,12 @@ class ImportSale(models.TransientModel):
             if self._context.get("partner_name", False):
                 partner_name_value = row[self._context["partner_name"]].strip()
                 ctx.update({"partner_name": partner_name_value})
-            self.with_context(ctx)._get_partner_dict(partner_value, partner_dict)
+            self.with_context(**ctx)._get_partner_dict(partner_value, partner_dict)
 
         product_id_value = row[product_id].strip()
         if not product_id_value:
-            error_vals["error_name"] = (
-                error_vals["error_name"]
+            error_vals["error_message"] = (
+                error_vals["error_message"]
                 + _('Column "Line Product" cannot be empty.')
                 + "\n"
             )
@@ -138,8 +136,8 @@ class ImportSale(models.TransientModel):
 
         pricelist_value = row[pricelist_id].strip()
         if not pricelist_value:
-            error_vals["error_name"] = (
-                error_vals["error_name"]
+            error_vals["error_message"] = (
+                error_vals["error_message"]
                 + _('Column "Pricelist" cannot be empty.')
                 + "\n"
             )
@@ -149,8 +147,8 @@ class ImportSale(models.TransientModel):
 
         warehouse_value = row[warehouse_id].strip()
         if not warehouse_value:
-            error_vals["error_name"] = (
-                error_vals["error_name"]
+            error_vals["error_message"] = (
+                error_vals["error_message"]
                 + _('Column "Warehouse" cannot be empty.')
                 + "\n"
             )
@@ -162,8 +160,8 @@ class ImportSale(models.TransientModel):
 
         team_value = row[team_id].strip()
         if not team_value:
-            error_vals["error_name"] = (
-                error_vals["error_name"] + _('Column "Team" cannot be empty.') + "\n"
+            error_vals["error_message"] = (
+                error_vals["error_message"] + _('Column "Team" cannot be empty.') + "\n"
             )
             error_vals["error"] = True
         else:
@@ -193,8 +191,8 @@ class ImportSale(models.TransientModel):
 
         qty = row[product_qty].strip()
         if not qty:
-            error_vals["error_name"] = (
-                error_vals["error_name"]
+            error_vals["error_message"] = (
+                error_vals["error_message"]
                 + _('Column "Line Qty" cannot be empty.')
                 + "\n"
             )
@@ -203,15 +201,15 @@ class ImportSale(models.TransientModel):
             try:
                 qty = float(qty)
                 if qty <= 0:
-                    error_vals["error_name"] = (
-                        error_vals["error_name"]
+                    error_vals["error_message"] = (
+                        error_vals["error_message"]
                         + _('Column "Line Qty" must be greater than 0.')
                         + "\n"
                     )
                     error_vals["error"] = True
             except ValueError:
-                error_vals["error_name"] = (
-                    error_vals["error_name"]
+                error_vals["error_message"] = (
+                    error_vals["error_message"]
                     + _('Column "Line Qty" must be a number.')
                     + "\n"
                 )
@@ -219,8 +217,8 @@ class ImportSale(models.TransientModel):
 
         price_unit_value = row[price_unit].strip()
         if not price_unit_value:
-            error_vals["error_name"] = (
-                error_vals["error_name"]
+            error_vals["error_message"] = (
+                error_vals["error_message"]
                 + _('Column "Line Unit Price" cannot be empty.')
                 + "\n"
             )
@@ -229,15 +227,15 @@ class ImportSale(models.TransientModel):
             try:
                 price_unit_value = float(price_unit_value)
                 if price_unit_value <= 0:
-                    error_vals["error_name"] = (
-                        error_vals["error_name"]
+                    error_vals["error_message"] = (
+                        error_vals["error_message"]
                         + _('Column "Line Unit Price" must be greater than 0.')
                         + "\n"
                     )
                     error_vals["error"] = True
             except ValueError:
-                error_vals["error_name"] = (
-                    error_vals["error_name"]
+                error_vals["error_message"] = (
+                    error_vals["error_message"]
                     + _('Column "Line Unit Price" must be a number.')
                     + "\n"
                 )
@@ -247,7 +245,7 @@ class ImportSale(models.TransientModel):
     @api.model
     def _get_order_item_dict(
         self,
-        error_log_id,
+        data_import_log_id,
         row,
         order,
         taxes,
@@ -259,11 +257,11 @@ class ImportSale(models.TransientModel):
         price_unit_value,
     ):
         """Get order item dict"""
-        if not error_log_id:
+        if not data_import_log_id:
             name = row[line_name].strip()
             product_data = self.env["product.product"].browse(
                 product_dict[product_id_value]
-            )  # odoo11
+            )
             if not name:
                 name = product_data.name
 
@@ -302,7 +300,7 @@ class ImportSale(models.TransientModel):
     @api.model
     def _get_order_dict(
         self,
-        error_log_id,
+        data_import_log_id,
         order_dict,
         order,
         partner_dict,
@@ -321,13 +319,11 @@ class ImportSale(models.TransientModel):
         notes,
     ):
         """Get order dict"""
-        if not error_log_id:
+        if not data_import_log_id:
             if order not in order_dict:
                 partner_data = self.env["res.partner"].browse(
                     partner_dict[partner_value]
                 )
-                # partner_data.property_product_pricelist and
-                # partner_data.property_product_pricelist.id or False
                 addr = partner_data.address_get(["delivery", "invoice"])
                 order_dict[order] = {
                     "partner_id": partner_dict[partner_value],
@@ -385,8 +381,8 @@ class ImportSale(models.TransientModel):
             product_product = self.env["product.product"]
             product = product_product.search([("default_code", "=", product_id_value)])
             if not product:
-                error_vals["error_name"] = (
-                    error_vals["error_name"]
+                error_vals["error_message"] = (
+                    error_vals["error_message"]
                     + _("Product: ")
                     + product_id_value
                     + _(" Not Found!")
@@ -403,8 +399,8 @@ class ImportSale(models.TransientModel):
             product_pricelist = self.env["product.pricelist"]
             pricelist = product_pricelist.search([("name", "=", pricelist_value)])
             if not pricelist:
-                error_vals["error_name"] = (
-                    error_vals["error_name"]
+                error_vals["error_message"] = (
+                    error_vals["error_message"]
                     + _("Pricelist: ")
                     + pricelist_value
                     + _(" Not Found!")
@@ -422,8 +418,8 @@ class ImportSale(models.TransientModel):
         stock_warehouse = self.env["stock.warehouse"]
         warehouse_id = stock_warehouse.search([("name", "=", warehouse_value)]).id
         if not warehouse_id:
-            error_vals["error_name"] = (
-                error_vals["error_name"]
+            error_vals["error_message"] = (
+                error_vals["error_message"]
                 + _("Warehouse: ")
                 + warehouse_value
                 + _(" Not Found!")
@@ -444,8 +440,8 @@ class ImportSale(models.TransientModel):
         carrier_obj = self.env["delivery.carrier"]
         carrier_id = carrier_obj.search([("name", "=", carrier_value)])
         if not carrier_id:
-            error_vals["error_name"] = (
-                error_vals["error_name"]
+            error_vals["error_message"] = (
+                error_vals["error_message"]
                 + _("Carrier: ")
                 + carrier_value
                 + _(" Not Found!")
@@ -462,8 +458,8 @@ class ImportSale(models.TransientModel):
         crm_team = self.env["crm.team"]
         team_id = crm_team.search([("name", "=", team_value)])
         if not team_id:
-            error_vals["error_name"] = (
-                error_vals["error_name"]
+            error_vals["error_message"] = (
+                error_vals["error_message"]
                 + _("Team: ")
                 + team_value
                 + _(" Not Found!")
@@ -481,8 +477,8 @@ class ImportSale(models.TransientModel):
         for tax_name in tax_name_list:
             tax = self.env["account.tax"].search([("name", "=", tax_name)], limit=1)
             if not tax:
-                error_vals["error_name"] = (
-                    error_vals["error_name"]
+                error_vals["error_message"] = (
+                    error_vals["error_message"]
                     + _("Tax: ")
                     + tax_name
                     + _(" Not Found!")
@@ -494,14 +490,20 @@ class ImportSale(models.TransientModel):
                     taxes.append(taxdata.id)
 
     @api.model
-    def _update_error_log(
-        self, error_log_id, error_vals, ir_attachment, model, row_no, order_group_value
+    def _update_data_import_log(
+        self,
+        data_import_log_id,
+        error_vals,
+        ir_attachment,
+        model,
+        row_no,
+        order_group_value,
     ):
-        """Update error log"""
-        error_line = self.env["error.log.line"]
-        if not error_log_id and error_vals["error"]:
-            error_log = self.env["error.log"]
-            error_log_id = error_log.create(
+        """Update data import log"""
+        error_line = self.env["data.import.error"]
+        if not data_import_log_id and error_vals["error"]:
+            data_import_log = self.env["data.import.log"]
+            data_import_log_id = data_import_log.create(
                 {
                     "input_file": ir_attachment.id,
                     "import_user_id": self.env.user.id,
@@ -513,21 +515,21 @@ class ImportSale(models.TransientModel):
             error_line.create(
                 {
                     "row_no": row_no,
-                    "order_group": order_group_value,
-                    "error_name": error_vals["error_name"],
-                    "log_id": error_log_id,
+                    "reference": order_group_value,
+                    "error_message": error_vals["error_message"],
+                    "log_id": data_import_log_id,
                 }
             )
         elif error_vals["error"]:
             error_line.create(
                 {
                     "row_no": row_no,
-                    "order_group": order_group_value,
-                    "error_name": error_vals["error_name"],
-                    "log_id": error_log_id,
+                    "reference": order_group_value,
+                    "error_message": error_vals["error_message"],
+                    "log_id": data_import_log_id,
                 }
             )
-        return error_log_id
+        return data_import_log_id
 
     def import_sale_data(self):
         self.ensure_one()
@@ -543,13 +545,12 @@ class ImportSale(models.TransientModel):
         warehouse_dict = {}
         team_dict = {}
         carrier_dict = {}
-        error_log_id = False
+        data_import_log_id = False
         ir_attachment_obj = self.env["ir.attachment"]
         ir_attachment = ir_attachment_obj.create(
             {
                 "name": self.datas_fname,
                 "datas": self.input_file,
-                "datas_fname": self.datas_fname,
             }
         )
 
@@ -560,17 +561,19 @@ class ImportSale(models.TransientModel):
         try:
             sheet_fields = next(csv_iterator)
         except Exception:
-            raise Warning(_("Please import a CSV file with UTF-8 encoding."))
+            raise UserError(
+                _("Please import a CSV file with UTF-8 encoding.")
+            ) from None
 
         #  column validation
         missing_columns = list(set(FIELDS_TO_IMPORT) - set(sheet_fields))
         if missing_columns:
-            raise Warning(
-                _("Following columns are missing: \n %s" % ("\n".join(missing_columns)))
+            raise ValidationError(
+                _("Following columns are missing: \n %s") % "\n".join(missing_columns)
             )
 
         order_group = sheet_fields.index("Group")
-        missing_columns.append("Group")
+        # missing_columns.append("Group")
         partner_name = sheet_fields.index("Customer")
         partner_tel = sheet_fields.index("Customer Phone/Mobile")
         product_id = sheet_fields.index("Line Product")
@@ -594,7 +597,7 @@ class ImportSale(models.TransientModel):
                 if not check_list:
                     continue
 
-            error_vals = {"error_name": "", "error": False}
+            error_vals = {"error_message": "", "error": False}
             ctx.update({"partner_name": partner_name})
             (
                 partner_value,
@@ -603,7 +606,7 @@ class ImportSale(models.TransientModel):
                 warehouse_value,
                 team_value,
                 carrier_value,
-            ) = self.with_context(ctx)._get_order_value_dict(
+            ) = self.with_context(**ctx)._get_order_value_dict(
                 row,
                 error_vals,
                 partner_tel,
@@ -627,8 +630,8 @@ class ImportSale(models.TransientModel):
             )
             picking_policy = self.picking_policy
             order = row[order_group].strip()
-            error_log_id = self._update_error_log(
-                error_log_id,
+            data_import_log_id = self._update_data_import_log(
+                data_import_log_id,
                 error_vals,
                 ir_attachment,
                 model,
@@ -637,7 +640,7 @@ class ImportSale(models.TransientModel):
             )
 
             self._get_order_item_dict(
-                error_log_id,
+                data_import_log_id,
                 row,
                 order,
                 taxes,
@@ -650,7 +653,7 @@ class ImportSale(models.TransientModel):
             )
 
             self._get_order_dict(
-                error_log_id,
+                data_import_log_id,
                 order_dict,
                 order,
                 partner_dict,
@@ -669,9 +672,9 @@ class ImportSale(models.TransientModel):
                 notes,
             )
 
-        if not error_log_id:
-            error_log_id = (
-                self.env["error.log"]
+        if not data_import_log_id:
+            data_import_log_id = (
+                self.env["data.import.log"]
                 .create(
                     {
                         "input_file": ir_attachment.id,
@@ -694,27 +697,26 @@ class ImportSale(models.TransientModel):
                     order_dict[item],
                     order_item_dict[item],
                     item,
-                    error_log_id,
+                    data_import_log_id,
                     self.customer_invoice_journal_id,
                     payment_journal,
                 )
 
-        res = self.env.ref("base_import_log.error_log_action")
+        res = self.env.ref("base_data_import.data_import_log_action")
         res = res.read()[0]
-        res["domain"] = str([("id", "in", [error_log_id])])
+        res["domain"] = str([("id", "in", [data_import_log_id])])
         return res
 
-    @job()
     def _process_order(
         self,
         order_data,
         line_data,
         item,
-        error_log_id,
+        data_import_log_id,
         invoice_journal,
         payment_journal,
     ):
-        order = self._create_order(order_data, item, error_log_id)
+        order = self._create_order(order_data, item, data_import_log_id)
         for line in line_data:
             if not line["invoiceable"]:
                 order.invoiceable = False
@@ -724,17 +726,19 @@ class ImportSale(models.TransientModel):
             for picking in order.picking_ids:
                 picking.action_assign()
         if order.invoiceable:
-            order.action_invoice_create()
+            order._create_invoices()
         if order.invoice_ids:
             for invoice in order.invoice_ids:
                 invoice.journal_id = invoice_journal.id
                 if invoice.state == "draft":
-                    invoice.action_invoice_open()
+                    invoice.action_post()
                 if payment_journal:
-                    invoice.pay_and_reconcile(payment_journal)
+                    self.env["account.payment.register"].with_context(
+                        active_model="account.move", active_ids=invoice.ids
+                    ).create({"journal_id": payment_journal.id})._create_payments()
 
     @api.model
-    def _create_order(self, order_data, item, error_log_id):
+    def _create_order(self, order_data, item, data_import_log_id):
         order_vals = {
             "partner_id": order_data["partner_id"],
             "partner_invoice_id": order_data["partner_invoice_id"],
@@ -744,7 +748,7 @@ class ImportSale(models.TransientModel):
             "state": "draft",
             "picking_policy": order_data["picking_policy"],
             "note": order_data["note"],
-            "error_log_id": error_log_id,
+            "data_import_log_id": data_import_log_id,
             "imported_order": True,
             "order_ref": item,
             "team_id": order_data["team_id"],
