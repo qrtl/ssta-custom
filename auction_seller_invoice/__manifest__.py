@@ -16,6 +16,8 @@
         "security/ir.model.access.csv",
         "security/auction_security.xml",
         "data/seller_board_data.xml",
+        "data/ir_actions_server_data.xml",
+        "data/ir_actions_report_data.xml",
         "views/auction_item_invoice_views.xml",
         "views/seller_board_views.xml",
     ],
