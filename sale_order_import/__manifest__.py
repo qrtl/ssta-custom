@@ -8,16 +8,14 @@
     "category": "Sales Management",
     "license": "AGPL-3",
     "depends": [
-        "sale_stock",
-        "base_data_import",
-        "sale",
         "delivery",
+        "base_data_import",
         "queue_job",
     ],
     "data": [
         "security/ir.model.access.csv",
         "views/data_import_logs_views.xml",
-        "views/sale_import_default.xml",
+        "views/res_company_views.xml",
         "views/sale_order_views.xml",
         "wizard/import_sale_view.xml",
     ],

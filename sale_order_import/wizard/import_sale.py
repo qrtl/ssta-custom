@@ -32,29 +32,20 @@ class ImportSale(models.TransientModel):
     @api.model
     def _default_picking_policy(self):
         """Get picking policy"""
-        default_rec = self.env["sale.import.default"].search(
-            [("company_id", "=", self.env.user.company_id.id)], limit=1
-        )
-        if default_rec:
-            return default_rec.picking_policy
+        return self.env.user.company_id.picking_policy
 
     @api.model
     def _default_customer_invoice_journal(self):
         """Get customer invoice journal"""
-        default_rec = self.env["sale.import.default"].search(
-            [("company_id", "=", self.env.user.company_id.id)], limit=1
-        )
-        if default_rec:
-            return default_rec.customer_invoice_journal_id
+        return self.env.user.company_id.customer_invoice_journal_id
 
     @api.model
     def _default_customer_payment_journal(self):
         """Get customer payment journal"""
-        default_rec = self.env["sale.import.default"].search(
-            [("company_id", "=", self.env.user.company_id.id)], limit=1
-        )
-        if default_rec:
-            return default_rec.customer_payment_journal_id
+        return self.env.user.company_id.customer_payment_journal_id
+
+    def _picking_policy_selection(self):
+        return self.env["sale.order"]._fields["picking_policy"].selection
 
     input_file = fields.Binary(
         string="Sale Order File (.csv Format)",
@@ -62,10 +53,7 @@ class ImportSale(models.TransientModel):
     )
     datas_fname = fields.Char(string="File Path")
     picking_policy = fields.Selection(
-        [
-            ("direct", "Deliver each product when available"),
-            ("one", "Deliver all products at once"),
-        ],
+        _picking_policy_selection,
         string="Shipping Policy",
         required=True,
         default=_default_picking_policy,
@@ -355,14 +343,13 @@ class ImportSale(models.TransientModel):
                     "|",
                     ("phone", "=", partner_value),
                     ("mobile", "=", partner_value),
-                    ("active", "=", True),
                 ]
             )
             if not partner:
                 partner_name = self._context.get("partner_name", False)
                 partner_id = Partner.create(
                     {
-                        "name": partner_name and partner_name or partner_value,
+                        "name": partner_name or partner_value,
                         "phone": partner_value,
                         "mobile": partner_value,
                     }
