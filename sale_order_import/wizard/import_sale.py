@@ -675,18 +675,27 @@ class ImportSale(models.TransientModel):
             payment_journal = False
             if self.process_payment:
                 payment_journal = self.customer_payment_journal_id
-            self_delay = self
             if self.asynchronous:
-                self_delay = self.with_delay()
-            for item in order_item_dict:
-                self_delay._process_order(
-                    order_dict[item],
-                    order_item_dict[item],
-                    item,
-                    data_import_log_id,
-                    self.customer_invoice_journal_id,
-                    payment_journal,
-                )
+                for item in order_item_dict:
+                    self_delay = self.with_delay()
+                    self_delay._process_order(
+                        order_dict[item],
+                        order_item_dict[item],
+                        item,
+                        data_import_log_id,
+                        self.customer_invoice_journal_id,
+                        payment_journal,
+                    )
+            else:
+                for item in order_item_dict:
+                    self._process_order(
+                        order_dict[item],
+                        order_item_dict[item],
+                        item,
+                        data_import_log_id,
+                        self.customer_invoice_journal_id,
+                        payment_journal,
+                    )
 
         res = self.env.ref("base_data_import.data_import_log_action")
         res = res.read()[0]
