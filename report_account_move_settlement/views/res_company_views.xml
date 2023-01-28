@@ -5,8 +5,12 @@
         <field name="inherit_id" ref="base_report_info.view_company_form" />
         <field name="model">res.company</field>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='bank_info']" position="before">
-                <field name="seller_settlement_report_title" />
+            <xpath expr="//page[@name='report_info']" position="inside">
+                <group>
+                    <field name="seller_settlement_report_title" />
+                    <field name="seller_settlement_report_debit_comment" />
+                    <field name="seller_settlement_report_credit_comment" />
+                </group>
             </xpath>
         </field>
     </record>

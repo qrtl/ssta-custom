@@ -31,6 +31,15 @@ the details of the settlement invoice for their record.
 .. contents::
    :local:
 
+Configuration
+=============
+
+Update following fields in the company.
+
+* Seller Settlement Report Title
+* Seller Settlement Report Debit Comment
+* Seller Settlement Report Credit Comment
+
 Bug Tracker
 ===========
 

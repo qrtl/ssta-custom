@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-25 06:21+0000\n"
-"PO-Revision-Date: 2023-01-25 06:21+0000\n"
+"POT-Creation-Date: 2023-01-28 08:43+0000\n"
+"PO-Revision-Date: 2023-01-28 08:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,11 +37,6 @@ msgstr "<strong>入札会:</strong>"
 
 #. module: report_account_move_settlement
 #: model_terms:ir.ui.view,arch_db:report_account_move_settlement.commission_settlement_main
-msgid "<strong>Partner:</strong>"
-msgstr "<strong>会員名:</strong>"
-
-#. module: report_account_move_settlement
-#: model_terms:ir.ui.view,arch_db:report_account_move_settlement.commission_settlement_main
 msgid "<strong>Total</strong>"
 msgstr "<strong>合計</strong>"
 
@@ -66,16 +61,25 @@ msgid "Case Number"
 msgstr "箱番号"
 
 #. module: report_account_move_settlement
+#: model:ir.model.fields,help:report_account_move_settlement.field_res_company__seller_settlement_report_credit_comment
+msgid ""
+"Comment to show below the total amount on the seller settlement report when "
+"the balance is negative."
+msgstr ""
+"差引合計がマイナスの場合に精算書の同項目の下に表示するコメント"
+
+#. module: report_account_move_settlement
+#: model:ir.model.fields,help:report_account_move_settlement.field_res_company__seller_settlement_report_debit_comment
+msgid ""
+"Comment to show below the total amount on the seller settlement report when "
+"the balance is positive."
+msgstr ""
+"差引合計がプラスの場合に精算書の同項目の下に表示するコメント"
+
+#. module: report_account_move_settlement
 #: model:ir.model,name:report_account_move_settlement.model_res_company
 msgid "Companies"
 msgstr "会社"
-
-#. module: report_account_move_settlement
-#: model:ir.model.fields,help:report_account_move_settlement.field_account_bank_statement_line__tax_totals_json_negative
-#: model:ir.model.fields,help:report_account_move_settlement.field_account_move__tax_totals_json_negative
-#: model:ir.model.fields,help:report_account_move_settlement.field_account_payment__tax_totals_json_negative
-msgid "Edit Tax amounts if you encounter rounding issues."
-msgstr ""
 
 #. module: report_account_move_settlement
 #: model:ir.model.fields,field_description:report_account_move_settlement.field_account_bank_statement_line__event_ids
@@ -85,10 +89,10 @@ msgid "Event"
 msgstr "イベント"
 
 #. module: report_account_move_settlement
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_account_bank_statement_line__tax_totals_json_negative
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_account_move__tax_totals_json_negative
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_account_payment__tax_totals_json_negative
-msgid "Invoice Totals JSON Negative"
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_account_bank_statement_line__tax_totals_json_signed
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_account_move__tax_totals_json_signed
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_account_payment__tax_totals_json_signed
+msgid "Invoice Totals JSON Signed"
 msgstr ""
 
 #. module: report_account_move_settlement
@@ -127,6 +131,16 @@ msgid "Quantity"
 msgstr "数量"
 
 #. module: report_account_move_settlement
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__seller_settlement_report_credit_comment
+msgid "Seller Settlement Report Credit Comment"
+msgstr "精算書クレジットコメント"
+
+#. module: report_account_move_settlement
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__seller_settlement_report_debit_comment
+msgid "Seller Settlement Report Debit Comment"
+msgstr "精算書デビットコメント"
+
+#. module: report_account_move_settlement
 #: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__seller_settlement_report_title
 msgid "Seller Settlement Report Title"
 msgstr "精算一覧書タイトル"
@@ -138,15 +152,5 @@ msgstr "落札済入札会項目"
 
 #. module: report_account_move_settlement
 #: model:ir.model.fields,help:report_account_move_settlement.field_res_company__seller_settlement_report_title
-msgid "Title show on custom reports."
-msgstr ""
-
-#. module: report_account_move_settlement
-#: model_terms:ir.ui.view,arch_db:report_account_move_settlement.commission_settlement_main
-msgid "差引金額がマイナスの場合は右記口座まで会員様手数料負担にてお振込みをお願いいたします。"
-msgstr ""
-
-#. module: report_account_move_settlement
-#: model_terms:ir.ui.view,arch_db:report_account_move_settlement.commission_settlement_main
-msgid "精算書発行後の水曜日に会員様口座へ送金いたします。"
-msgstr ""
+msgid "Title to show on the seller settlement report."
+msgstr "精算書に表示するタイトル"
