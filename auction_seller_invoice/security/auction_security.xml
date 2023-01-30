@@ -20,4 +20,15 @@
             eval="[Command.link(ref('account.group_account_invoice'))]"
         />
     </record>
+    <record id="auction_seller_settlement_rule" model="ir.rule">
+        <field name="name">commission.settlemnent Auction Seller Invoice</field>
+        <field name="model_id" ref="commission.model_commission_settlement" />
+        <field
+            name="domain_force"
+        >[('agent_id.commercial_partner_id','=',user.commercial_partner_id.id)]</field>
+        <field
+            name="groups"
+            eval="[Command.link(ref('auction_seller.group_auction_seller'))]"
+        />
+    </record>
 </odoo>

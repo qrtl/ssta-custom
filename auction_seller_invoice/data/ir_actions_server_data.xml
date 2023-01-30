@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="account.invoice_send" model="ir.actions.server">
+        <field name="groups_id" eval="[(4, ref('base.group_user'))]" />
+    </record>
+
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                eval="[('name', '=', 'model_account_move_action_share'), ('module', '=', 'account')]"
+            />
+        </function>
+        <value eval="{'noupdate': False}" />
+    </function>
+
+    <record id="account.model_account_move_action_share" model="ir.actions.server">
+        <field name="groups_id" eval="[(4, ref('base.group_user'))]" />
+    </record>
+
+    <function name="write" model="ir.model.data">
+        <function name="search" model="ir.model.data">
+            <value
+                eval="[('name', '=', 'model_account_move_action_share'), ('module', '=', 'account')]"
+            />
+        </function>
+        <value eval="{'noupdate': True}" />
+    </function>
+</odoo>

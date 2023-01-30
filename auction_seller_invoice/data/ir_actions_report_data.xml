@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="account.action_account_original_vendor_bill" model="ir.actions.report">
+        <field name="groups_id" eval="[(4, ref('base.group_user'))]" />
+    </record>
+    <record id="account.account_invoices_without_payment" model="ir.actions.report">
+        <field name="groups_id" eval="[(4, ref('base.group_user'))]" />
+    </record>
+    <record id="commission.action_report_settlement" model="ir.actions.report">
+        <field name="groups_id" eval="[(4, ref('base.group_user'))]" />
+    </record>
+</odoo>
