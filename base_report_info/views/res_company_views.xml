@@ -7,7 +7,7 @@
         <field name="arch" type="xml">
             <notebook>
                 <page string="Report Information" name="report_info">
-                    <group>
+                    <group name="general_report_info">
                         <field name="bank_info" />
                     </group>
                 </page>

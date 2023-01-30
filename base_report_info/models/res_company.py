@@ -7,4 +7,4 @@ from odoo import fields, models
 class Company(models.Model):
     _inherit = "res.company"
 
-    bank_info = fields.Char(help="Bank details to supposedly show on custom reports.")
+    bank_info = fields.Text(help="Bank details to supposedly show on custom reports.")

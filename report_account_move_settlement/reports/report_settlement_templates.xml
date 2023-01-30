@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <template id="external_layout_settelement_sst">
+        <div
+            t-attf-class="header o_company_sst_layout"
+            t-att-style="report_header_style"
+        >
+        </div>
+        <div
+            class="article o_report_layout_standard"
+            t-att-data-oe-model="o and o._name"
+            t-att-data-oe-id="o and o.id"
+            t-att-data-oe-lang="o and o.env.context.get('lang')"
+        >
+            <t t-call="web.address_layout" />
+            <t t-raw="0" />
+        </div>
+
+        <div class="footer o_standard_footer">
+            <div class="text-center" style="border-top: 1px solid black;">
+                <div t-if="report_type == 'pdf'" class="text-muted">
+                    Page: <span class="page" /> / <span class="topage" />
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="commission_settlement_main">
+        <t t-call="report_account_move_settlement.external_layout_settelement_sst">
+            <div class="page">
+                <h2 class="text-center">
+                    <img
+                        t-if="company.logo"
+                        t-att-src="image_data_uri(company.logo)"
+                        style="max-height: 45px;"
+                        alt="Logo"
+                    />
+                    <t t-if="company.seller_settlement_report_title">
+                        <span t-field="company.seller_settlement_report_title" />
+                    </t>
+                    <t t-else="">
+                        <span>精算一覧書</span>
+                    </t>
+                </h2>
+                <div class="row" style="padding-top: 60px;">
+                    <div class="col-7 mb-4">
+                        <div t-if="o.event_ids" class="mb-2">
+                            <strong>Event:</strong>
+                            <span t-field="o.event_ids" />
+                        </div>
+                        <div t-if="o.partner_id" class="mb-2">
+                            <span
+                                t-field="o.partner_id"
+                                t-options='{"widget": "contact", "fields": ["name"], "no_marker": True}'
+                            />
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <address
+                            t-field="company.partner_id"
+                            t-options='{"widget": "contact", "fields": ["name", "address"], "no_marker": True}'
+                        />
+                    </div>
+                </div>
+                <div class="row" style="padding-top: 20px;">
+                    <div class="col-7">
+                        <h3>
+                            <div>
+                                <strong>Amount:</strong>
+                                <span t-field="o.amount_total_signed_positive" />
+                            </div>
+                        </h3>
+                        <div t-if="o.move_type == 'in_invoice'">
+                            <span
+                                t-field="company.seller_settlement_report_debit_comment"
+                            />
+                        </div>
+                        <div t-if="o.move_type == 'in_refund'">
+                            <span
+                                t-field="company.seller_settlement_report_credit_comment"
+                            />
+                        </div>
+                    </div>
+                    <div t-if="o.move_type == 'in_refund'" class="col-5">
+                        <span>Bank:</span>
+                        <div t-field="company.bank_info" />
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px; margin-bottom: 10px;">
+                    <div class="col-12">
+                        <h5 class="text-center">Bill Content</h5>
+                        <table class="table table-sm table-striped o_main_table">
+                            <thead>
+                                <tr class="bg-primary">
+                                    <th>Product</th>
+                                    <th class="text-right">Quantity</th>
+                                    <th class="text-right">Price Unit</th>
+                                    <th class="text-right">Price Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.invoice_line_ids" t-as="il">
+                                    <td>
+                                        <span t-field="il.product_id" />
+                                    </td>
+                                    <td class="text-right">
+                                        <t t-if="o.move_type=='in_invoice'">
+                                            <span t-field="il.quantity" />
+                                        </t>
+                                        <t t-elif="o.move_type=='in_refund'">
+                                            <span t-esc="il.quantity * -1" />
+                                        </t>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="il.price_unit" />
+                                    </td>
+                                    <td class="text-right">
+                                        <t t-if="o.move_type=='in_invoice'">
+                                            <span t-field="il.price_subtotal" />
+                                        </t>
+                                        <t t-elif="o.move_type=='in_refund'">
+                                            <span
+                                                t-esc="il.price_subtotal * -1"
+                                                t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"
+                                            />
+                                        </t>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div id="total" class="row">
+                            <div
+                                t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto"
+                            >
+                                <table
+                                    class="table table-sm"
+                                    style="page-break-inside: avoid;"
+                                >
+                                    <!--Tax totals-->
+                                    <t
+                                        t-set="tax_totals"
+                                        t-value="json.loads(o.sudo().tax_totals_json_signed)"
+                                    />
+                                    <t t-call="account.document_tax_totals" />
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 20px; margin-bottom: 10px;">
+                    <div class="col-12">
+                        <h5 class="text-center">Sold Items</h5>
+                        <table class="table table-sm table-striped">
+                            <thead>
+                                <tr class="bg-success">
+                                    <th>Case Number</th>
+                                    <th>Product</th>
+                                    <th class="text-right">Amount settled</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="settle_total" t-value="0" />
+                                <tr t-foreach="o.settlement_ids.line_ids" t-as="l">
+                                    <td>
+                                        <span
+                                            t-field="l.sudo().product_id.case_number"
+                                        />
+                                    </td>
+                                    <td>
+                                        <span t-field="l.sudo().product_id" />
+                                    </td>
+                                    <td class="text-right">
+                                        <span
+                                            t-field="l.settled_amount"
+                                            t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"
+                                        />
+                                    </td>
+                                    <t
+                                        t-set="settle_total"
+                                        t-value="settle_total + l.settled_amount"
+                                    />
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="clearfix">
+                            <div id="total" class="row">
+                                <div
+                                    t-attf-class="#{'col-6' if report_type != 'html' else 'col-sm-7 col-md-6'} ml-auto"
+                                >
+                                    <table
+                                        class="table table-sm"
+                                        style="page-break-inside: avoid;"
+                                    >
+                                    <tr class="border-black o_subtotal">
+                                        <td>
+                                            <strong>Total</strong>
+                                        </td>
+                                        <td class="text-right o_price_total">
+                                            <t
+                                                    t-esc="settle_total"
+                                                    t-options="{'widget': 'monetary', 'display_currency': o.currency_id}"
+                                                />
+                                        </td>
+                                    </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="report_settlement_document">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-set="lang" t-value="o.partner_id.lang" />
+                <t t-set="company" t-value="o.company_id" />
+                <t
+                    t-call="report_account_move_settlement.commission_settlement_main"
+                    t-lang="o.partner_id.lang"
+                />
+            </t>
+        </t>
+    </template>
+</odoo>
