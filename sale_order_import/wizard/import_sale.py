@@ -9,6 +9,22 @@ from odoo import _, api, fields, models
 from odoo.exceptions import UserError, ValidationError
 from odoo.tools import pycompat
 
+FIELD_KEYS = {0: "field", 1: "label", 2: "field_type", 3: "required"}
+FIELD_VALS = [
+    ["order_group", "Group", "float", True],
+    ["product_id", "Line Product", "char", True],
+    ["line_name", "Line Description", "char", False],
+    ["price_unit", "Line Unit Price", "float", True],
+    ["product_qty", "Line Qty", "float", True],
+    ["taxes_id", "Line Tax", "char", False],
+    ["partner_name", "Customer", "char", True],
+    ["pricelist_id", "Pricelist", "char", True],
+    ["warehouse_id", "Warehouse", "char", True],
+    ["notes", "Notes", "char", False],
+    ["carrier_id", "Carrier", "char", False],
+    ["team_id", "Team", "char", True],
+    ["partner_tel", "Customer Phone/Mobile", "char", True],
+]
 FIELDS_TO_IMPORT = [
     "Group",
     "Customer",
@@ -28,6 +44,7 @@ FIELDS_TO_IMPORT = [
 
 class ImportSale(models.TransientModel):
     _name = "import.sale"
+    _inherit = "data.import"
 
     @api.model
     def _default_picking_policy(self):
@@ -75,7 +92,6 @@ class ImportSale(models.TransientModel):
     @api.model
     def _get_order_value_dict(
         self,
-        row,
         error_vals,
         partner_tel,
         product_id,
@@ -92,69 +108,30 @@ class ImportSale(models.TransientModel):
         carrier_dict,
     ):
         """Get order value dict"""
-        partner_value = row[partner_tel].strip()
+        partner_value = partner_tel
+        ctx = self._context.copy()
 
-        if not partner_value:
-            error_vals["error_message"] = (
-                error_vals["error_message"]
-                + _('Column "Customer Phone/Mobile" cannot be empty.')
-                + "\n"
-            )
-            error_vals["error"] = True
-        else:
-            ctx = self._context.copy()
+        partner_name_value = False
+        if self._context.get("partner_name", False):
+            partner_name_value = self._context["partner_name"].strip()
+            ctx.update({"partner_name": partner_name_value})
+        self.with_context(**ctx)._get_partner_dict(partner_value, partner_dict)
 
-            partner_name_value = False
-            if self._context.get("partner_name", False):
-                partner_name_value = row[self._context["partner_name"]].strip()
-                ctx.update({"partner_name": partner_name_value})
-            self.with_context(**ctx)._get_partner_dict(partner_value, partner_dict)
+        product_id_value = product_id
+        self._get_product_dict(product_id_value, product_dict, error_vals)
 
-        product_id_value = row[product_id].strip()
-        if not product_id_value:
-            error_vals["error_message"] = (
-                error_vals["error_message"]
-                + _('Column "Line Product" cannot be empty.')
-                + "\n"
-            )
-            error_vals["error"] = True
-        else:
-            self._get_product_dict(product_id_value, product_dict, error_vals)
+        pricelist_value = pricelist_id
+        self._get_pricelist_dict(pricelist_value, pricelist_dict, error_vals)
 
-        pricelist_value = row[pricelist_id].strip()
-        if not pricelist_value:
-            error_vals["error_message"] = (
-                error_vals["error_message"]
-                + _('Column "Pricelist" cannot be empty.')
-                + "\n"
-            )
-            error_vals["error"] = True
-        else:
-            self._get_pricelist_dict(pricelist_value, pricelist_dict, error_vals)
+        warehouse_value = warehouse_id
+        self._get_picking_dict(
+            warehouse_value, picking_dict, warehouse_dict, error_vals
+        )
 
-        warehouse_value = row[warehouse_id].strip()
-        if not warehouse_value:
-            error_vals["error_message"] = (
-                error_vals["error_message"]
-                + _('Column "Warehouse" cannot be empty.')
-                + "\n"
-            )
-            error_vals["error"] = True
-        else:
-            self._get_picking_dict(
-                warehouse_value, picking_dict, warehouse_dict, error_vals
-            )
+        team_value = team_id
+        self._get_team_dict(team_value, team_dict, error_vals)
 
-        team_value = row[team_id].strip()
-        if not team_value:
-            error_vals["error_message"] = (
-                error_vals["error_message"] + _('Column "Team" cannot be empty.') + "\n"
-            )
-            error_vals["error"] = True
-        else:
-            self._get_team_dict(team_value, team_dict, error_vals)
-
-        carrier_value = row[carrier_id].strip()
+        carrier_value = carrier_id
         if carrier_value:
             self._get_carrier_dict(carrier_value, carrier_dict, error_vals)
 
@@ -168,72 +145,53 @@ class ImportSale(models.TransientModel):
         )
 
     @api.model
-    def _get_order_value(
-        self, row, error_vals, taxes, price_unit, taxes_id, product_qty
-    ):
+    def _get_order_value(self, error_vals, taxes, price_unit, taxes_id, product_qty):
         """Get order value"""
-        tax_from_chunk = row[taxes_id].strip()
+        tax_from_chunk = taxes_id
         if tax_from_chunk:
             self._get_taxes(tax_from_chunk, taxes, error_vals)
 
-        qty = row[product_qty].strip()
-        if not qty:
-            error_vals["error_message"] = (
-                error_vals["error_message"]
-                + _('Column "Line Qty" cannot be empty.')
-                + "\n"
-            )
-            error_vals["error"] = True
-        else:
-            try:
-                qty = float(qty)
-                if qty <= 0:
-                    error_vals["error_message"] = (
-                        error_vals["error_message"]
-                        + _('Column "Line Qty" must be greater than 0.')
-                        + "\n"
-                    )
-                    error_vals["error"] = True
-            except ValueError:
+        qty = product_qty
+        try:
+            qty = float(qty)
+            if qty <= 0:
                 error_vals["error_message"] = (
                     error_vals["error_message"]
-                    + _('Column "Line Qty" must be a number.')
+                    + _('Column "Line Qty" must be greater than 0.')
                     + "\n"
                 )
                 error_vals["error"] = True
+        except ValueError:
+            error_vals["error_message"] = (
+                error_vals["error_message"]
+                + _('Column "Line Qty" must be a number.')
+                + "\n"
+            )
+            error_vals["error"] = True
 
-        price_unit_value = row[price_unit].strip()
-        if not price_unit_value:
-            error_vals["error_message"] = (
-                error_vals["error_message"]
-                + _('Column "Line Unit Price" cannot be empty.')
-                + "\n"
-            )
-            error_vals["error"] = True
-        else:
-            try:
-                price_unit_value = float(price_unit_value)
-                if price_unit_value <= 0:
-                    error_vals["error_message"] = (
-                        error_vals["error_message"]
-                        + _('Column "Line Unit Price" must be greater than 0.')
-                        + "\n"
-                    )
-                    error_vals["error"] = True
-            except ValueError:
+        price_unit_value = price_unit
+        try:
+            price_unit_value = float(price_unit_value)
+            if price_unit_value <= 0:
                 error_vals["error_message"] = (
                     error_vals["error_message"]
-                    + _('Column "Line Unit Price" must be a number.')
+                    + _('Column "Line Unit Price" must be greater than 0.')
                     + "\n"
                 )
                 error_vals["error"] = True
+        except ValueError:
+            error_vals["error_message"] = (
+                error_vals["error_message"]
+                + _('Column "Line Unit Price" must be a number.')
+                + "\n"
+            )
+            error_vals["error"] = True
         return qty, price_unit_value
 
     @api.model
     def _get_order_item_dict(
         self,
         data_import_log_id,
-        row,
         order,
         taxes,
         line_name,
@@ -245,7 +203,7 @@ class ImportSale(models.TransientModel):
     ):
         """Get order item dict"""
         if not data_import_log_id:
-            name = row[line_name].strip()
+            name = line_name
             product_data = self.env["product.product"].browse(
                 product_dict[product_id_value]
             )
@@ -302,7 +260,6 @@ class ImportSale(models.TransientModel):
         carrier_value,
         warehouse_dict,
         warehouse_value,
-        row,
         notes,
     ):
         """Get order dict"""
@@ -330,7 +287,7 @@ class ImportSale(models.TransientModel):
                     if carrier_value
                     else False,
                     "warehouse_id": warehouse_dict[warehouse_value],
-                    "note": row[notes].strip(),
+                    "note": notes,
                 }
 
     @api.model
@@ -558,32 +515,60 @@ class ImportSale(models.TransientModel):
                 _("Following columns are missing: \n %s") % "\n".join(missing_columns)
             )
 
-        order_group = sheet_fields.index("Group")
+        # order_group = sheet_fields.index("Group")
         # missing_columns.append("Group")
-        partner_name = sheet_fields.index("Customer")
-        partner_tel = sheet_fields.index("Customer Phone/Mobile")
-        product_id = sheet_fields.index("Line Product")
-        line_name = sheet_fields.index("Line Description")
-        price_unit = sheet_fields.index("Line Unit Price")
-        product_qty = sheet_fields.index("Line Qty")
-        taxes_id = sheet_fields.index("Line Tax")
-        notes = sheet_fields.index("Notes")
-        pricelist_id = sheet_fields.index("Pricelist")
-        warehouse_id = sheet_fields.index("Warehouse")
-        team_id = sheet_fields.index("Team")
-        carrier_id = sheet_fields.index("Carrier")
+        # partner_name = sheet_fields.index("Customer")
+        # partner_tel = sheet_fields.index("Customer Phone/Mobile")
+        # product_id = sheet_fields.index("Line Product")
+        # line_name = sheet_fields.index("Line Description")
+        # price_unit = sheet_fields.index("Line Unit Price")
+        # product_qty = sheet_fields.index("Line Qty")
+        # taxes_id = sheet_fields.index("Line Tax")
+        # notes = sheet_fields.index("Notes")
+        # pricelist_id = sheet_fields.index("Pricelist")
+        # warehouse_id = sheet_fields.index("Warehouse")
+        # team_id = sheet_fields.index("Team")
+        # carrier_id = sheet_fields.index("Carrier")
+        field_defs = self._get_field_defs(FIELD_KEYS, FIELD_VALS)
 
         for row in csv_iterator:
+            row_dict, error_list = self._check_field_vals(field_defs, row, sheet_fields)
+            order_group = row_dict.get("order_group")
+            partner_name = row_dict.get("partner_name")
+            partner_tel = row_dict.get("partner_tel")
+            product_id = row_dict.get("product_id")
+            line_name = row_dict.get("line_name")
+            price_unit = row_dict.get("price_unit")
+            product_qty = row_dict.get("product_qty")
+            taxes_id = row_dict.get("taxes_id")
+            notes = row_dict.get("notes")
+            pricelist_id = row_dict.get("pricelist_id")
+            warehouse_id = row_dict.get("warehouse_id")
+            team_id = row_dict.get("team_id")
+            carrier_id = row_dict.get("carrier_id")
+            error_vals = {"error_message": "", "error": False}
             check_list = []
             # if row values are empty in all columns then skip that line.
-            if not bool(row[order_group].strip()):
+            if not bool(order_group):
                 for r in row:
                     if bool(r.strip()):
                         check_list.append(r)
                 if not check_list:
                     continue
+            order = order_group
+            if error_list:
+                error_vals["error_message"] = "\n".join(error_list)
+                error_vals["error"] = True
+                data_import_log_id = self._update_data_import_log(
+                    data_import_log_id,
+                    error_vals,
+                    ir_attachment,
+                    model,
+                    csv_iterator.line_num,
+                    order,
+                )
+                continue
 
-            error_vals = {"error_message": "", "error": False}
             ctx.update({"partner_name": partner_name})
             (
                 partner_value,
@@ -593,7 +578,6 @@ class ImportSale(models.TransientModel):
                 team_value,
                 carrier_value,
             ) = self.with_context(**ctx)._get_order_value_dict(
-                row,
                 error_vals,
                 partner_tel,
                 product_id,
@@ -612,10 +596,9 @@ class ImportSale(models.TransientModel):
 
             taxes = []
             qty, price_unit_value = self._get_order_value(
-                row, error_vals, taxes, price_unit, taxes_id, product_qty
+                error_vals, taxes, price_unit, taxes_id, product_qty
             )
             picking_policy = self.picking_policy
-            order = row[order_group].strip()
             data_import_log_id = self._update_data_import_log(
                 data_import_log_id,
                 error_vals,
@@ -627,7 +610,6 @@ class ImportSale(models.TransientModel):
 
             self._get_order_item_dict(
                 data_import_log_id,
-                row,
                 order,
                 taxes,
                 line_name,
@@ -654,7 +636,6 @@ class ImportSale(models.TransientModel):
                 carrier_value,
                 warehouse_dict,
                 warehouse_value,
-                row,
                 notes,
             )
 
@@ -702,6 +683,7 @@ class ImportSale(models.TransientModel):
         res["domain"] = str([("id", "in", [data_import_log_id])])
         return res
 
+    @api.model
     def _process_order(
         self,
         order_data,
