@@ -7,8 +7,16 @@
         <field name="arch" type="xml">
             <xpath expr="//filter[@name='late']" position="after">
                 <separator />
-                <filter name="not_delivered" string="To Be Delivered" domain="[('delivery_done','=',False)]"/>
-                <filter name="delivered" string="Delivered" domain="[('delivery_done','=',True)]"/>
+                <filter
+                    name="not_delivered"
+                    string="To Be Delivered"
+                    domain="[('delivery_done','=',False)]"
+                />
+                <filter
+                    name="delivered"
+                    string="Delivered"
+                    domain="[('delivery_done','=',True)]"
+                />
             </xpath>
         </field>
     </record>
@@ -18,7 +26,10 @@
         <field name="inherit_id" ref="account.invoice_form" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='quantity']" position="after">
-                <field name="is_delivered" attrs="{'column_invisible': [('parent.type', '!=', 'out_invoice')]}" />
+                <field
+                    name="is_delivered"
+                    attrs="{'column_invisible': [('parent.type', '!=', 'out_invoice')]}"
+                />
             </xpath>
         </field>
     </record>
@@ -28,7 +39,11 @@
         <field name="inherit_id" ref="account.invoice_tree" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='amount_total_signed']" position="before">
-                <field name="amount_total_delivered_signed" string="Total Delivered" sum="Total" />
+                <field
+                    name="amount_total_delivered_signed"
+                    string="Total Delivered"
+                    sum="Total"
+                />
             </xpath>
         </field>
     </record>
