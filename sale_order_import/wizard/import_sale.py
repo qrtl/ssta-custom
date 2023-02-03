@@ -61,16 +61,13 @@ class ImportSale(models.TransientModel):
         """Get customer payment journal"""
         return self.env.user.company_id.customer_payment_journal_id
 
-    def _picking_policy_selection(self):
-        return self.env["sale.order"]._fields["picking_policy"].selection
-
     input_file = fields.Binary(
         string="Sale Order File (.csv Format)",
         required=True,
     )
     datas_fname = fields.Char(string="File Path")
     picking_policy = fields.Selection(
-        _picking_policy_selection,
+        [("direct", "As soon as possible"), ("one", "When all products are ready")],
         string="Shipping Policy",
         required=True,
         default=_default_picking_policy,

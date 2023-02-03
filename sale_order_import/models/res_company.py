@@ -7,11 +7,8 @@ from odoo import fields, models
 class ResCompany(models.Model):
     _inherit = "res.company"
 
-    def _picking_policy_selection(self):
-        return self.env["sale.order"]._fields["picking_policy"].selection
-
     picking_policy = fields.Selection(
-        _picking_policy_selection,
+        [("direct", "As soon as possible"), ("one", "When all products are ready")],
         string="Shipping Policy",
     )
     customer_invoice_journal_id = fields.Many2one(
