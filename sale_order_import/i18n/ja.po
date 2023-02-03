@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-27 02:20+0000\n"
-"PO-Revision-Date: 2023-01-27 02:20+0000\n"
+"POT-Creation-Date: 2023-02-03 09:01+0000\n"
+"PO-Revision-Date: 2023-02-03 09:01+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -31,7 +31,13 @@ msgstr " 見つかりません!"
 msgid ""
 "<span>This wizard will create sales orders using imported .csv file. It will"
 " also validate sales order, validate invoice and pay the invoice.</span>"
-msgstr ""
+msgstr "<span>このウィザードは、インポートされた.csvファイルを使って受注を作成します。また、受注確認、請求書の検証、請求書の支払を行います。</span>"
+
+#. module: sale_order_import
+#: model:ir.model.fields.selection,name:sale_order_import.selection__import_sale__picking_policy__direct
+#: model:ir.model.fields.selection,name:sale_order_import.selection__res_company__picking_policy__direct
+msgid "As soon as possible"
+msgstr "なるべく早く"
 
 #. module: sale_order_import
 #: model_terms:ir.ui.view,arch_db:sale_order_import.import_sale_view_form
@@ -43,24 +49,6 @@ msgstr "取消"
 #, python-format
 msgid "Carrier: "
 msgstr "配送方法: "
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
-msgid "Column \"Customer Phone/Mobile\" cannot be empty."
-msgstr "「Customer Phone/Mobile」列の値は空にできません。"
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
-msgid "Column \"Line Product\" cannot be empty."
-msgstr "「Line Product」列の値は空にできません。"
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
-msgid "Column \"Line Qty\" cannot be empty."
-msgstr "「Line Qty」列の値は空にできません。"
 
 #. module: sale_order_import
 #: code:addons/sale_order_import/wizard/import_sale.py:0
@@ -77,12 +65,6 @@ msgstr "「Line Qty」列は0または負数にできません。"
 #. module: sale_order_import
 #: code:addons/sale_order_import/wizard/import_sale.py:0
 #, python-format
-msgid "Column \"Line Unit Price\" cannot be empty."
-msgstr "「Line Unit Price」列の値は空にできません。"
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
 msgid "Column \"Line Unit Price\" must be a number."
 msgstr "「Line Unit Price」列は数字以外の値にできません。"
 
@@ -93,59 +75,29 @@ msgid "Column \"Line Unit Price\" must be greater than 0."
 msgstr "「Line Unit Price」列は0または負数にできません。"
 
 #. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
-msgid "Column \"Pricelist\" cannot be empty."
-msgstr "「Pricelist」列の値は空にできません。"
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
-msgid "Column \"Team\" cannot be empty."
-msgstr "「Team」列の値は空にできません。"
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
-msgid "Column \"Warehouse\" cannot be empty."
-msgstr "「Warehouse」列の値は空にできません。"
-
-#. module: sale_order_import
-#: model:ir.model.constraint,message:sale_order_import.constraint_sale_import_default_name_company_uniq
-msgid "Companies must be unique!"
-msgstr "会社は一意でなくてはなりません。"
-
-#. module: sale_order_import
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default__company_id
-msgid "Company"
+#: model:ir.model,name:sale_order_import.model_res_company
+msgid "Companies"
 msgstr "会社"
 
 #. module: sale_order_import
-#: model:ir.ui.menu,name:sale_order_import.import_data_config
-msgid "Configuration"
-msgstr "設定"
-
-#. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__create_uid
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default__create_uid
 msgid "Created by"
 msgstr "作成者"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__create_date
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default__create_date
 msgid "Created on"
 msgstr "作成日"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__customer_invoice_journal_id
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default__customer_invoice_journal_id
+#: model:ir.model.fields,field_description:sale_order_import.field_res_company__customer_invoice_journal_id
 msgid "Customer Invoice Journal"
 msgstr "会計仕訳帳"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__customer_payment_journal_id
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default__customer_payment_journal_id
+#: model:ir.model.fields,field_description:sale_order_import.field_res_company__customer_payment_journal_id
 msgid "Customer Payment Journal"
 msgstr "支払仕訳"
 
@@ -155,22 +107,19 @@ msgid "Data Import Log"
 msgstr "データインポートログ"
 
 #. module: sale_order_import
-#: model:ir.model.fields.selection,name:sale_order_import.selection__import_sale__picking_policy__one
-#: model:ir.model.fields.selection,name:sale_order_import.selection__sale_import_default__picking_policy__one
-msgid "Deliver all products at once"
-msgstr "全ての製品を一緒に配達"
-
-#. module: sale_order_import
-#: model:ir.model.fields.selection,name:sale_order_import.selection__import_sale__picking_policy__direct
-#: model:ir.model.fields.selection,name:sale_order_import.selection__sale_import_default__picking_policy__direct
-msgid "Deliver each product when available"
-msgstr "利用可能になった時に各製品を配達"
-
-#. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__display_name
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default__display_name
 msgid "Display Name"
 msgstr "表示名"
+
+#. module: sale_order_import
+#: model:ir.model.fields,field_description:sale_order_import.field_import_sale__import_file
+msgid "File"
+msgstr "ファイル"
+
+#. module: sale_order_import
+#: model:ir.model.fields,field_description:sale_order_import.field_import_sale__file_name
+msgid "File Name"
+msgstr "ファイル名"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__datas_fname
@@ -188,7 +137,6 @@ msgstr "以下の列がCSVファイルに見つかりません: \n"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__id
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default__id
 msgid "ID"
 msgstr "ID"
 
@@ -225,19 +173,16 @@ msgstr "インポート"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale____last_update
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default____last_update
 msgid "Last Modified on"
 msgstr "最終更新日"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__write_uid
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default__write_uid
 msgid "Last Updated by"
 msgstr "最終更新者"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__write_date
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default__write_date
 msgid "Last Updated on"
 msgstr "最終更新日"
 
@@ -280,10 +225,9 @@ msgid "Related Sale Orders"
 msgstr "関連受注"
 
 #. module: sale_order_import
-#: model:ir.actions.act_window,name:sale_order_import.sale_import_default_action
-#: model:ir.ui.menu,name:sale_order_import.sale_import_default_menu
-msgid "Sale Import Defaults"
-msgstr "販売データインポートデフォルト"
+#: model_terms:ir.ui.view,arch_db:sale_order_import.view_company_form_inherit
+msgid "Sale Import Information"
+msgstr "販売データインポート情報"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__input_file
@@ -302,7 +246,7 @@ msgstr "販売オーダ"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__picking_policy
-#: model:ir.model.fields,field_description:sale_order_import.field_sale_import_default__picking_policy
+#: model:ir.model.fields,field_description:sale_order_import.field_res_company__picking_policy
 msgid "Shipping Policy"
 msgstr "出荷方針"
 
@@ -325,6 +269,12 @@ msgid "Warehouse: "
 msgstr "倉庫: "
 
 #. module: sale_order_import
+#: model:ir.model.fields.selection,name:sale_order_import.selection__import_sale__picking_policy__one
+#: model:ir.model.fields.selection,name:sale_order_import.selection__res_company__picking_policy__one
+msgid "When all products are ready"
+msgstr "全プロダクトが準備できてから"
+
+#. module: sale_order_import
 #: model:ir.model,name:sale_order_import.model_import_sale
 msgid "import.sale"
 msgstr "import.sale"
@@ -333,8 +283,3 @@ msgstr "import.sale"
 #: model_terms:ir.ui.view,arch_db:sale_order_import.import_sale_view_form
 msgid "or"
 msgstr "または"
-
-#. module: sale_order_import
-#: model:ir.model,name:sale_order_import.model_sale_import_default
-msgid "sale.import.default"
-msgstr "sale.import.default"
