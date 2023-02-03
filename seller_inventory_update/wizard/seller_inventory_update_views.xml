@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="seller_inventory_update_wizard_form" model="ir.ui.view">
+        <field name="name">seller.inventory.update.wizard.form</field>
+        <field name="model">seller.inventory.update.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Inventory Update">
+                <group>
+                    <group>
+                        <field name="warehouse_id" />
+                        <field name="company_id" invisible="1" />
+                    </group>
+                </group>
+                <footer>
+                    <button
+                        name="update_seller_inventory"
+                        string="Update Seller Inventory"
+                        type="object"
+                        class="oe_highlight"
+                    />
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+    <record
+        id="action_view_product_template_update_seller_inventory"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Update Seller Inventory</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">seller.inventory.update.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="product.model_product_template" />
+        <field name="binding_view_types">list</field>
+    </record>
+    <record
+        id="action_view_product_update_seller_inventory"
+        model="ir.actions.act_window"
+    >
+        <field name="name">Update Seller Inventory</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">seller.inventory.update.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="product.model_product_product" />
+        <field name="binding_view_types">list</field>
+    </record>
+</odoo>
