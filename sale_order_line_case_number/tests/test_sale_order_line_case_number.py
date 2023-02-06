@@ -17,7 +17,7 @@ class TestSaleOrderLineCaseNumber(TransactionCase):
                 "name": "Product2",
                 "list_price": 100.00,
                 "default_code": "Test2",
-                "case_number": "123",
+                "case_number": "456",
             }
         )
         self.partner = self.env["res.partner"].create({"name": "Customer - test"})
@@ -51,4 +51,4 @@ class TestSaleOrderLineCaseNumber(TransactionCase):
         order = self._create_sale_order(self.product2)
         order_line = order.order_line
         order_line.product_id_change()
-        self.assertEqual(order_line.name, "[Test2][123] Product2")
+        self.assertEqual(order_line.name, "[Test2][456] Product2")
