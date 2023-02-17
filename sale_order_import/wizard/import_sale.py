@@ -49,17 +49,17 @@ class ImportSale(models.TransientModel):
     @api.model
     def _default_picking_policy(self):
         """Get picking policy"""
-        return self.env.user.company_id.picking_policy
+        return self.env.company.picking_policy
 
     @api.model
     def _default_customer_invoice_journal(self):
         """Get customer invoice journal"""
-        return self.env.user.company_id.customer_invoice_journal_id
+        return self.env.company.customer_invoice_journal_id
 
     @api.model
     def _default_customer_payment_journal(self):
         """Get customer payment journal"""
-        return self.env.user.company_id.customer_payment_journal_id
+        return self.env.company.customer_payment_journal_id
 
     input_file = fields.Binary(
         string="Sale Order File (.csv Format)",
@@ -83,7 +83,7 @@ class ImportSale(models.TransientModel):
         string="Customer Payment Journal",
         default=_default_customer_payment_journal,
     )
-    asynchronous = fields.Boolean(string="Process import asynchronously", default=True)
+    asynchronous = fields.Boolean(string="Import Asynchronously", default=True)
     process_payment = fields.Boolean("Process Payments")
 
     @api.model
@@ -106,13 +106,10 @@ class ImportSale(models.TransientModel):
     ):
         """Get order value dict"""
         partner_value = partner_tel
-        ctx = self._context.copy()
-
-        partner_name_value = False
-        if self._context.get("partner_name", False):
-            partner_name_value = self._context["partner_name"].strip()
-            ctx.update({"partner_name": partner_name_value})
-        self.with_context(**ctx)._get_partner_dict(partner_value, partner_dict)
+        partner_name = self._context.get("partner_name")
+        if partner_name:
+            self = self.with_context(partner_name=partner_name.strip())
+        self._get_partner_dict(partner_value, partner_dict)
 
         product_id_value = product_id
         self._get_product_dict(product_id_value, product_dict, error_vals)
@@ -142,48 +139,11 @@ class ImportSale(models.TransientModel):
         )
 
     @api.model
-    def _get_order_value(self, error_vals, taxes, price_unit, taxes_id, product_qty):
+    def _get_order_value(self, error_vals, taxes, taxes_id):
         """Get order value"""
         tax_from_chunk = taxes_id
         if tax_from_chunk:
             self._get_taxes(tax_from_chunk, taxes, error_vals)
-
-        qty = product_qty
-        try:
-            qty = float(qty)
-            if qty <= 0:
-                error_vals["error_message"] = (
-                    error_vals["error_message"]
-                    + _('Column "Line Qty" must be greater than 0.')
-                    + "\n"
-                )
-                error_vals["error"] = True
-        except ValueError:
-            error_vals["error_message"] = (
-                error_vals["error_message"]
-                + _('Column "Line Qty" must be a number.')
-                + "\n"
-            )
-            error_vals["error"] = True
-
-        price_unit_value = price_unit
-        try:
-            price_unit_value = float(price_unit_value)
-            if price_unit_value <= 0:
-                error_vals["error_message"] = (
-                    error_vals["error_message"]
-                    + _('Column "Line Unit Price" must be greater than 0.')
-                    + "\n"
-                )
-                error_vals["error"] = True
-        except ValueError:
-            error_vals["error_message"] = (
-                error_vals["error_message"]
-                + _('Column "Line Unit Price" must be a number.')
-                + "\n"
-            )
-            error_vals["error"] = True
-        return qty, price_unit_value
 
     @api.model
     def _get_order_item_dict(
@@ -512,22 +472,7 @@ class ImportSale(models.TransientModel):
                 _("Following columns are missing: \n %s") % "\n".join(missing_columns)
             )
 
-        # order_group = sheet_fields.index("Group")
-        # missing_columns.append("Group")
-        # partner_name = sheet_fields.index("Customer")
-        # partner_tel = sheet_fields.index("Customer Phone/Mobile")
-        # product_id = sheet_fields.index("Line Product")
-        # line_name = sheet_fields.index("Line Description")
-        # price_unit = sheet_fields.index("Line Unit Price")
-        # product_qty = sheet_fields.index("Line Qty")
-        # taxes_id = sheet_fields.index("Line Tax")
-        # notes = sheet_fields.index("Notes")
-        # pricelist_id = sheet_fields.index("Pricelist")
-        # warehouse_id = sheet_fields.index("Warehouse")
-        # team_id = sheet_fields.index("Team")
-        # carrier_id = sheet_fields.index("Carrier")
         field_defs = self._get_field_defs(FIELD_KEYS, FIELD_VALS)
-
         for row in csv_iterator:
             row_dict, error_list = self._check_field_vals(field_defs, row, sheet_fields)
             order_group = row_dict.get("order_group")
@@ -592,9 +537,9 @@ class ImportSale(models.TransientModel):
             )
 
             taxes = []
-            qty, price_unit_value = self._get_order_value(
-                error_vals, taxes, price_unit, taxes_id, product_qty
-            )
+            self._get_order_value(error_vals, taxes, taxes_id)
+            qty = float(product_qty)
+            price_unit_value = float(price_unit)
             picking_policy = self.picking_policy
             data_import_log_id = self._update_data_import_log(
                 data_import_log_id,

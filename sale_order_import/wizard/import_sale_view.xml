@@ -64,7 +64,14 @@
         id="sale_import_wiz_menu"
         name="Import Sale Order"
         action="import_sale_action"
-        parent="base_data_import.data_import_main_menu"
+        parent="sale.sale_menu_root"
         sequence="10"
+    />
+    <menuitem
+        id="sale_import_log_menu"
+        name="Sale Import Log"
+        parent="sale.sale_menu_root"
+        action="base_data_import.data_import_log_action"
+        sequence="20"
     />
 </odoo>
