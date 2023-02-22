@@ -139,11 +139,30 @@ class ImportSale(models.TransientModel):
         )
 
     @api.model
-    def _get_order_value(self, error_vals, taxes, taxes_id):
+    def _get_order_value(self, error_vals, taxes, price_unit, taxes_id, product_qty):
         """Get order value"""
         tax_from_chunk = taxes_id
         if tax_from_chunk:
             self._get_taxes(tax_from_chunk, taxes, error_vals)
+
+        product_qty = float(product_qty)
+        if product_qty <= 0:
+            error_vals["error_message"] = (
+                error_vals["error_message"]
+                + _('Column "Line Qty" must be greater than 0.')
+                + "\n"
+            )
+            error_vals["error"] = True
+
+        price_unit = float(price_unit)
+        if price_unit <= 0:
+            error_vals["error_message"] = (
+                error_vals["error_message"]
+                + _('Column "Line Unit Price" must be greater than 0.')
+                + "\n"
+            )
+            error_vals["error"] = True
+        return product_qty, price_unit
 
     @api.model
     def _get_order_item_dict(
@@ -537,9 +556,9 @@ class ImportSale(models.TransientModel):
             )
 
             taxes = []
-            self._get_order_value(error_vals, taxes, taxes_id)
-            qty = float(product_qty)
-            price_unit_value = float(price_unit)
+            qty, price_unit_value = self._get_order_value(
+                error_vals, taxes, price_unit, taxes_id, product_qty
+            )
             picking_policy = self.picking_policy
             data_import_log_id = self._update_data_import_log(
                 data_import_log_id,
