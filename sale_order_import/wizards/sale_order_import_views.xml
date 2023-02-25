@@ -5,7 +5,6 @@
         <field name="model">import.sale</field>
         <field name="arch" type="xml">
             <form string="Import">
-                <separator string="Import Sale Orders" />
                 <span
                 >This wizard will create sales orders using imported .csv file. It will also validate sales order, validate invoice and pay the invoice.</span>
                 <group>
@@ -52,7 +51,7 @@
         </field>
     </record>
     <record id="import_sale_action" model="ir.actions.act_window">
-        <field name="name">Import Sale Order</field>
+        <field name="name">Import Sales Orders</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">import.sale</field>
         <field name="view_mode">form</field>
@@ -62,16 +61,9 @@
     </record>
     <menuitem
         id="sale_import_wiz_menu"
-        name="Import Sale Order"
+        name="Import Sales Orders"
         action="import_sale_action"
-        parent="sale.sale_menu_root"
+        parent="sale.sale_order_menu"
         sequence="10"
-    />
-    <menuitem
-        id="sale_import_log_menu"
-        name="Sale Import Log"
-        parent="sale.sale_menu_root"
-        action="base_data_import.data_import_log_action"
-        sequence="20"
     />
 </odoo>

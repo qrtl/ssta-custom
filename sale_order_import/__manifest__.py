@@ -17,7 +17,7 @@
         "views/data_import_logs_views.xml",
         "views/res_company_views.xml",
         "views/sale_order_views.xml",
-        "wizard/import_sale_view.xml",
+        "wizards/sale_order_import_views.xml",
     ],
     "installable": True,
 }

@@ -207,7 +207,7 @@ class TestSaleOrderImport(common.TransactionCase):
 
         # Compare the errors name while importing the test_error_sale_order.csv.
         self.assertEqual(
-            data_import_log_id.error_ids[0].error_message, "Product: NPD Not Found!\n"
+            data_import_log_id.error_ids[0].error_message, "Product: NPD not found!\n"
         )
 
         # Compare the row no from the error sale order csv file..
@@ -218,7 +218,7 @@ class TestSaleOrderImport(common.TransactionCase):
 
         # Compare the errors name while importing the test_error_sale_order.csv.
         self.assertEqual(
-            data_import_log_id.error_ids[1].error_message, "Product: JKL Not Found!\n"
+            data_import_log_id.error_ids[1].error_message, "Product: JKL not found!\n"
         )
 
         # Compare the row no from the error sale order csv file..

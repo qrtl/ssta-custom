@@ -104,7 +104,6 @@ class ImportSale(models.TransientModel):
         team_dict,
         carrier_dict,
     ):
-        """Get order value dict"""
         partner_value = partner_tel
         partner_name = self._context.get("partner_name")
         if partner_name:
@@ -139,26 +138,18 @@ class ImportSale(models.TransientModel):
         )
 
     @api.model
-    def _get_order_value(self, error_vals, taxes, price_unit, taxes_id, product_qty):
-        """Get order value"""
+    def _get_order_value(self, error_vals, taxes, taxes_id, price_unit, product_qty):
         tax_from_chunk = taxes_id
         if tax_from_chunk:
             self._get_taxes(tax_from_chunk, taxes, error_vals)
-
-        product_qty = float(product_qty)
-        if product_qty <= 0:
-            error_vals["error_message"] = (
-                error_vals["error_message"]
-                + _('Column "Line Qty" must be greater than 0.')
-                + "\n"
-            )
-            error_vals["error"] = True
-
         price_unit = float(price_unit)
-        if price_unit <= 0:
+        product_qty = float(product_qty)
+        for k, v in {_("Quantity"): product_qty, _("Unit Price"): price_unit}.items():
+            if v > 0:
+                continue
             error_vals["error_message"] = (
                 error_vals["error_message"]
-                + _('Column "Line Unit Price" must be greater than 0.')
+                + _("Value must be greater than 0: %s") % k
                 + "\n"
             )
             error_vals["error"] = True
@@ -177,7 +168,6 @@ class ImportSale(models.TransientModel):
         qty,
         price_unit_value,
     ):
-        """Get order item dict"""
         if not data_import_log_id:
             name = line_name
             product_data = self.env["product.product"].browse(
@@ -268,7 +258,6 @@ class ImportSale(models.TransientModel):
 
     @api.model
     def _get_partner_dict(self, partner_value, partner_dict):
-        """Get partner dict"""
         if partner_value not in partner_dict.keys():
             Partner = self.env["res.partner"]
             partner = Partner.search(
@@ -295,7 +284,6 @@ class ImportSale(models.TransientModel):
 
     @api.model
     def _get_product_dict(self, product_id_value, product_dict, error_vals):
-        """Get product dict"""
         if product_id_value not in product_dict.keys():
             product_product = self.env["product.product"]
             product = product_product.search([("default_code", "=", product_id_value)])
@@ -304,7 +292,7 @@ class ImportSale(models.TransientModel):
                     error_vals["error_message"]
                     + _("Product: ")
                     + product_id_value
-                    + _(" Not Found!")
+                    + _(" not found!")
                     + "\n"
                 )
                 error_vals["error"] = True
@@ -313,7 +301,6 @@ class ImportSale(models.TransientModel):
 
     @api.model
     def _get_pricelist_dict(self, pricelist_value, pricelist_dict, error_vals):
-        """Get pricelist dict"""
         if pricelist_value not in pricelist_dict.keys():
             product_pricelist = self.env["product.pricelist"]
             pricelist = product_pricelist.search([("name", "=", pricelist_value)])
@@ -322,7 +309,7 @@ class ImportSale(models.TransientModel):
                     error_vals["error_message"]
                     + _("Pricelist: ")
                     + pricelist_value
-                    + _(" Not Found!")
+                    + _(" not found!")
                     + "\n"
                 )
                 error_vals["error"] = True
@@ -333,7 +320,6 @@ class ImportSale(models.TransientModel):
     def _get_picking_dict(
         self, warehouse_value, picking_dict, warehouse_dict, error_vals
     ):
-        """Get picking dict"""
         stock_warehouse = self.env["stock.warehouse"]
         warehouse_id = stock_warehouse.search([("name", "=", warehouse_value)]).id
         if not warehouse_id:
@@ -341,7 +327,7 @@ class ImportSale(models.TransientModel):
                 error_vals["error_message"]
                 + _("Warehouse: ")
                 + warehouse_value
-                + _(" Not Found!")
+                + _(" not found!")
                 + "\n"
             )
             error_vals["error"] = True
@@ -355,7 +341,6 @@ class ImportSale(models.TransientModel):
 
     @api.model
     def _get_carrier_dict(self, carrier_value, carrier_dict, error_vals):
-        """get carrier dict"""
         carrier_obj = self.env["delivery.carrier"]
         carrier_id = carrier_obj.search([("name", "=", carrier_value)])
         if not carrier_id:
@@ -363,7 +348,7 @@ class ImportSale(models.TransientModel):
                 error_vals["error_message"]
                 + _("Carrier: ")
                 + carrier_value
-                + _(" Not Found!")
+                + _(" not found!")
                 + "\n"
             )
             error_vals["error"] = True
@@ -373,7 +358,6 @@ class ImportSale(models.TransientModel):
 
     @api.model
     def _get_team_dict(self, team_value, team_dict, error_vals):
-        """get team dict"""
         crm_team = self.env["crm.team"]
         team_id = crm_team.search([("name", "=", team_value)])
         if not team_id:
@@ -381,7 +365,7 @@ class ImportSale(models.TransientModel):
                 error_vals["error_message"]
                 + _("Team: ")
                 + team_value
-                + _(" Not Found!")
+                + _(" not found!")
                 + "\n"
             )
             error_vals["error"] = True
@@ -391,7 +375,6 @@ class ImportSale(models.TransientModel):
 
     @api.model
     def _get_taxes(self, tax_from_chunk, taxes, error_vals):
-        """Get taxes"""
         tax_name_list = tax_from_chunk.split(",")
         for tax_name in tax_name_list:
             tax = self.env["account.tax"].search([("name", "=", tax_name)], limit=1)
@@ -400,7 +383,7 @@ class ImportSale(models.TransientModel):
                     error_vals["error_message"]
                     + _("Tax: ")
                     + tax_name
-                    + _(" Not Found!")
+                    + _(" not found!")
                     + "\n"
                 )
                 error_vals["error"] = True
@@ -557,7 +540,7 @@ class ImportSale(models.TransientModel):
 
             taxes = []
             qty, price_unit_value = self._get_order_value(
-                error_vals, taxes, price_unit, taxes_id, product_qty
+                error_vals, taxes, taxes_id, price_unit, product_qty
             )
             picking_policy = self.picking_policy
             data_import_log_id = self._update_data_import_log(

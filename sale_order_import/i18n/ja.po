@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-03 09:01+0000\n"
-"PO-Revision-Date: 2023-02-03 09:01+0000\n"
+"POT-Creation-Date: 2023-02-25 10:04+0000\n"
+"PO-Revision-Date: 2023-02-25 10:04+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,22 +16,23 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#: code:addons/sale_order_import/wizard/import_sale.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
-msgid " Not Found!"
-msgstr " 見つかりません!"
+msgid " not found!"
+msgstr " が見つかりません。"
 
 #. module: sale_order_import
 #: model_terms:ir.ui.view,arch_db:sale_order_import.import_sale_view_form
 msgid ""
 "<span>This wizard will create sales orders using imported .csv file. It will"
 " also validate sales order, validate invoice and pay the invoice.</span>"
-msgstr "<span>このウィザードは、インポートされた.csvファイルを使って受注を作成します。また、受注確認、請求書の検証、請求書の支払を行います。</span>"
+msgstr ""
+"<span>このウィザードは、インポートされた.csvファイルを使って販売オーダを作成します。また、オーダ確認、請求書の検証、支払処理を行います。</span>"
 
 #. module: sale_order_import
 #: model:ir.model.fields.selection,name:sale_order_import.selection__import_sale__picking_policy__direct
@@ -45,34 +46,10 @@ msgid "Cancel"
 msgstr "取消"
 
 #. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
 msgid "Carrier: "
 msgstr "配送方法: "
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
-msgid "Column \"Line Qty\" must be a number."
-msgstr "「Line Qty」列は数字以外の値にできません。"
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
-msgid "Column \"Line Qty\" must be greater than 0."
-msgstr "「Line Qty」列は0または負数にできません。"
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
-msgid "Column \"Line Unit Price\" must be a number."
-msgstr "「Line Unit Price」列は数字以外の値にできません。"
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
-#, python-format
-msgid "Column \"Line Unit Price\" must be greater than 0."
-msgstr "「Line Unit Price」列は0または負数にできません。"
 
 #. module: sale_order_import
 #: model:ir.model,name:sale_order_import.model_res_company
@@ -127,7 +104,7 @@ msgid "File Path"
 msgstr "ファイルパス"
 
 #. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
 msgid ""
 "Following columns are missing: \n"
@@ -138,12 +115,17 @@ msgstr "以下の列がCSVファイルに見つかりません: \n"
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: sale_order_import
 #: model_terms:ir.ui.view,arch_db:sale_order_import.import_sale_view_form
 msgid "Import"
 msgstr "インポート"
+
+#. module: sale_order_import
+#: model:ir.model.fields,field_description:sale_order_import.field_import_sale__asynchronous
+msgid "Import Asynchronously"
+msgstr "非同期でインポート"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_sale_order__data_import_log_id
@@ -153,13 +135,8 @@ msgstr "インポート履歴"
 #. module: sale_order_import
 #: model:ir.actions.act_window,name:sale_order_import.import_sale_action
 #: model:ir.ui.menu,name:sale_order_import.sale_import_wiz_menu
-msgid "Import Sale Order"
-msgstr "販売データをインポート"
-
-#. module: sale_order_import
-#: model_terms:ir.ui.view,arch_db:sale_order_import.import_sale_view_form
-msgid "Import Sale Orders"
-msgstr "販売データをインポート"
+msgid "Import Sales Orders"
+msgstr "販売データインポート"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_sale_order__invoiceable
@@ -192,16 +169,16 @@ msgid "Order Reference"
 msgstr "オーダ参照"
 
 #. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
 msgid "Please import a CSV file with UTF-8 encoding."
-msgstr "CSV ファイルの文字コードが「UTF-8」であることを確認ください。"
+msgstr "CSVファイルの文字コードがUTF-8であることを確認ください。"
 
 #. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
 msgid "Pricelist: "
-msgstr "価格表: "
+msgstr "価格リスト: "
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__process_payment
@@ -209,15 +186,16 @@ msgid "Process Payments"
 msgstr "支払登録する"
 
 #. module: sale_order_import
-#: model:ir.model.fields,field_description:sale_order_import.field_import_sale__asynchronous
-msgid "Process import asynchronously"
-msgstr "インポートを非同期で処理"
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
 msgid "Product: "
 msgstr "プロダクト: "
+
+#. module: sale_order_import
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
+#, python-format
+msgid "Quantity"
+msgstr "数量"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_data_import_log__sale_order_ids
@@ -232,17 +210,22 @@ msgstr "販売データインポート情報"
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__input_file
 msgid "Sale Order File (.csv Format)"
-msgstr "見積/オーダファイル （CSV フォーマット）"
+msgstr "見積/オーダファイル(CSV形式)"
 
 #. module: sale_order_import
 #: model_terms:ir.ui.view,arch_db:sale_order_import.data_import_log_form_inherit
 msgid "Sale Orders"
-msgstr "受注"
+msgstr "販売オーダ"
 
 #. module: sale_order_import
 #: model:ir.model,name:sale_order_import.model_sale_order
 msgid "Sales Order"
 msgstr "販売オーダ"
+
+#. module: sale_order_import
+#: model:ir.ui.menu,name:sale_order_import.sale_import_log_menu
+msgid "Sales Order Import Log"
+msgstr "販売オーダインポートログ"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__picking_policy
@@ -251,19 +234,31 @@ msgid "Shipping Policy"
 msgstr "出荷方針"
 
 #. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
 msgid "Tax: "
 msgstr "税: "
 
 #. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
 msgid "Team: "
 msgstr "販売チャネル: "
 
 #. module: sale_order_import
-#: code:addons/sale_order_import/wizard/import_sale.py:0
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
+#, python-format
+msgid "Unit Price"
+msgstr "単価"
+
+#. module: sale_order_import
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
+#, python-format
+msgid "Value must be greater than 0: %s"
+msgstr "値は0より大きくなければなりません: %s"
+
+#. module: sale_order_import
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
 msgid "Warehouse: "
 msgstr "倉庫: "
@@ -277,7 +272,7 @@ msgstr "全プロダクトが準備できてから"
 #. module: sale_order_import
 #: model:ir.model,name:sale_order_import.model_import_sale
 msgid "import.sale"
-msgstr "import.sale"
+msgstr ""
 
 #. module: sale_order_import
 #: model_terms:ir.ui.view,arch_db:sale_order_import.import_sale_view_form
