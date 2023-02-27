@@ -136,7 +136,7 @@ msgstr "インポート履歴"
 #: model:ir.actions.act_window,name:sale_order_import.import_sale_action
 #: model:ir.ui.menu,name:sale_order_import.sale_import_wiz_menu
 msgid "Import Sales Orders"
-msgstr "販売データインポート"
+msgstr "販売オーダインポート"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_sale_order__invoiceable
@@ -205,7 +205,7 @@ msgstr "関連受注"
 #. module: sale_order_import
 #: model_terms:ir.ui.view,arch_db:sale_order_import.view_company_form_inherit
 msgid "Sale Import Information"
-msgstr "販売データインポート情報"
+msgstr "販売オーダインポート情報"
 
 #. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_import_sale__input_file
