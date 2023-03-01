@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* stock_request_seller_check
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-02-24 03:50+0000\n"
+"PO-Revision-Date: 2023-02-24 03:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: stock_request_seller_check
+#: code:addons/stock_request_seller_check/models/stock_request_order.py:0
+#, python-format
+msgid "Only seller products can be selected."
+msgstr "出品者のプロダクトのみ選択できます。"
+
+#. module: stock_request_seller_check
+#: model:ir.model,name:stock_request_seller_check.model_stock_request_order
+msgid "Stock Request Order"
+msgstr ""
