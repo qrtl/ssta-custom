@@ -9,6 +9,10 @@ class AccountPartialReconcile(models.Model):
     _inherit = "account.partial.reconcile"
 
     def unlink(self):
-        if not self.user_has_groups("account.group_account_manager"):
-            raise ValidationError(_("Only an accounting manager can unreconcile "))
+        if not self.env.user.has_group("account.group_account_manager"):
+            raise ValidationError(
+                _(
+                    "You need to be an accounting manager to be able to unreconcile records."
+                )
+            )
         return super(AccountPartialReconcile, self).unlink()

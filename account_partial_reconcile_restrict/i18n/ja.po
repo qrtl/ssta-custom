@@ -18,8 +18,8 @@ msgstr ""
 #. module: account_partial_reconcile_restrict
 #: code:addons/account_partial_reconcile_restrict/models/account_partial_reconcile.py:0
 #, python-format
-msgid "Only an accounting manager can unreconcile "
-msgstr "請求の管理者のみが消込取消できます。"
+msgid "You need to be an accounting manager to be able to unreconcile records."
+msgstr "消込取消するためには請求管理者である必要があります。"
 
 #. module: account_partial_reconcile_restrict
 #: model:ir.model,name:account_partial_reconcile_restrict.model_account_partial_reconcile
