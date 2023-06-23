@@ -141,6 +141,11 @@ msgid "Seller Settlement Report Debit Comment"
 msgstr "精算書デビットコメント"
 
 #. module: report_account_move_settlement
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__seller_settlement_report_settlement_comment
+msgid "Seller Settlement Report Settlement Comment"
+msgstr "精算書精算金額コメント"
+
+#. module: report_account_move_settlement
 #: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__seller_settlement_report_title
 msgid "Seller Settlement Report Title"
 msgstr "精算一覧書タイトル"
