@@ -49,6 +49,7 @@ class CommissionSettlement(models.Model):
             "product_id": self.agent_id.listing_fee_product_id.id,
             "quantity": sum(settlement.number_of_items for settlement in self),
             "price_unit": self.agent_id.listing_fee_product_id.list_price * -1,
+            "tax_ids": self.agent_id.listing_fee_product_id.supplier_taxes_id,
         }
 
     def _prepare_invoice(self, journal, product, date=False):
