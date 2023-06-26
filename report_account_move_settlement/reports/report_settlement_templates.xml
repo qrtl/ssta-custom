@@ -203,6 +203,9 @@
                                         </td>
                                     </tr>
                                     </table>
+                                    <span
+                                        t-field="company.seller_settlement_report_settlement_comment"
+                                    />
                                 </div>
                             </div>
                         </div>

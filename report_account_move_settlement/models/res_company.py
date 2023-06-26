@@ -18,3 +18,7 @@ class Company(models.Model):
         help="Comment to show below the total amount on the seller settlement report "
         "when the balance is negative."
     )
+    seller_settlement_report_settlement_comment = fields.Text(
+        help="Comment to show below the total amount of Sold Items on the seller "
+        "settlement report "
+    )

@@ -10,6 +10,7 @@
                     <field name="seller_settlement_report_title" />
                     <field name="seller_settlement_report_debit_comment" />
                     <field name="seller_settlement_report_credit_comment" />
+                    <field name="seller_settlement_report_settlement_comment" />
                 </group>
             </xpath>
         </field>
