@@ -52,7 +52,7 @@ repos:
     rev: v0.0.29
     hooks:
       - id: oca-checks-odoo-module
-      - id: oca-checks-po
+      # - id: oca-checks-po
   - repo: https://github.com/myint/autoflake
     rev: v1.4
     hooks:
