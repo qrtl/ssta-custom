@@ -49,7 +49,7 @@ msgstr "表示名"
 #: model:ir.model.fields,field_description:purchase_channel_attribute.field_purchase_category__id
 #: model:ir.model.fields,field_description:purchase_channel_attribute.field_request_medium__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: purchase_channel_attribute
 #: model:ir.model.fields,field_description:purchase_channel_attribute.field_purchase_category____last_update
@@ -123,9 +123,9 @@ msgstr "担当店舗"
 #. module: purchase_channel_attribute
 #: model:ir.model,name:purchase_channel_attribute.model_purchase_category
 msgid "purchase.category"
-msgstr "purchase.category"
+msgstr ""
 
 #. module: purchase_channel_attribute
 #: model:ir.model,name:purchase_channel_attribute.model_request_medium
 msgid "request.medium"
-msgstr "request.medium"
+msgstr ""

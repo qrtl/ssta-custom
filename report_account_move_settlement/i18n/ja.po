@@ -65,16 +65,14 @@ msgstr "箱番号"
 msgid ""
 "Comment to show below the total amount on the seller settlement report when "
 "the balance is negative."
-msgstr ""
-"差引合計がマイナスの場合に精算書の同項目の下に表示するコメント"
+msgstr "差引合計がマイナスの場合に精算書の同項目の下に表示するコメント"
 
 #. module: report_account_move_settlement
 #: model:ir.model.fields,help:report_account_move_settlement.field_res_company__seller_settlement_report_debit_comment
 msgid ""
 "Comment to show below the total amount on the seller settlement report when "
 "the balance is positive."
-msgstr ""
-"差引合計がプラスの場合に精算書の同項目の下に表示するコメント"
+msgstr "差引合計がプラスの場合に精算書の同項目の下に表示するコメント"
 
 #. module: report_account_move_settlement
 #: model:ir.model,name:report_account_move_settlement.model_res_company
