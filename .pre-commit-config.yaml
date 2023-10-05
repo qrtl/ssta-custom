@@ -49,7 +49,7 @@ repos:
           - --repo-name=rmm-custom
           - --if-source-changed
   - repo: https://github.com/OCA/odoo-pre-commit-hooks
-    rev: v0.0.25
+    rev: v0.0.29
     hooks:
       - id: oca-checks-odoo-module
       - id: oca-checks-po
