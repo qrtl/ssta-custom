@@ -6,6 +6,12 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form" />
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='function']" position="after">
+                <field name="gender" widget="radio" />
+            </xpath>
+            <xpath expr="//field[@name='user_ids']" position="after">
+                <field name="fax" />
+            </xpath>
             <xpath expr="//notebook/page[@name='internal_notes']" position="after">
                 <page string="Secondhand Attributes" name="secondhand_attributes">
                     <group>
@@ -24,6 +30,19 @@
                 <field name="occupation_id" />
                 <field name="identification_type_id" />
                 <field name="identification_number" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_res_partner_filter" model="ir.ui.view">
+        <field name="name">res.partner.select</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <field
+                    name="phone"
+                    filter_domain="['|', ('phone', 'ilike', self), ('mobile', 'ilike', self)]"
+                />
             </xpath>
         </field>
     </record>

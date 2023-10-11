@@ -12,5 +12,7 @@ class ResPartner(models.Model):
         string="Identification Type",
     )
     identification_number = fields.Char()
+    fax = fields.Char()
+    gender = fields.Selection([("male", "Male"), ("female", "Female")])
     occupation_id = fields.Many2one("res.occupation", "Occupation")
     date_birth = fields.Date("Date of Birth")
