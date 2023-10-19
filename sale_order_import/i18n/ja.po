@@ -109,7 +109,8 @@ msgstr "ファイルパス"
 msgid ""
 "Following columns are missing: \n"
 " %s"
-msgstr "以下の列がCSVファイルに見つかりません: \n"
+msgstr ""
+"以下の列がCSVファイルに見つかりません: \n"
 " %s"
 
 #. module: sale_order_import

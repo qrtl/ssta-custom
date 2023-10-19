@@ -48,7 +48,7 @@ msgstr "表示名"
 #: model:ir.model.fields,field_description:partner_secondhand_dealer.field_identification_type__id
 #: model:ir.model.fields,field_description:partner_secondhand_dealer.field_res_occupation__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: partner_secondhand_dealer
 #: model:ir.model.fields,field_description:partner_secondhand_dealer.field_res_partner__identification_number
@@ -119,9 +119,9 @@ msgstr "仕入先"
 #. module: partner_secondhand_dealer
 #: model:ir.model,name:partner_secondhand_dealer.model_identification_type
 msgid "identification.type"
-msgstr "identification.type"
+msgstr ""
 
 #. module: partner_secondhand_dealer
 #: model:ir.model,name:partner_secondhand_dealer.model_res_occupation
 msgid "res.occupation"
-msgstr "res.occupation"
+msgstr ""

@@ -16,11 +16,6 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: base_report_info
-#: model:ir.model.fields,field_description:base_report_info.field_res_company__description
-msgid "Report Description"
-msgstr "レポート用説明"
-
-#. module: base_report_info
 #: model:ir.model.fields,field_description:base_report_info.field_res_company__bank_info
 msgid "Bank Info"
 msgstr "銀行"
@@ -29,6 +24,11 @@ msgstr "銀行"
 #: model:ir.model,name:base_report_info.model_res_company
 msgid "Companies"
 msgstr "会社"
+
+#. module: base_report_info
+#: model:ir.model.fields,field_description:base_report_info.field_res_company__description
+msgid "Report Description"
+msgstr "レポート用説明"
 
 #. module: base_report_info
 #: model_terms:ir.ui.view,arch_db:base_report_info.view_company_form
