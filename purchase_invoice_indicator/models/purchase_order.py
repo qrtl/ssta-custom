@@ -9,5 +9,8 @@ class PurchaseOrder(models.Model):
 
     def _prepare_invoice(self):
         invoice_vals = super()._prepare_invoice()
-        invoice_vals["is_invoice_issuer"] = self.partner_id.is_invoice_issuer
+        invoice_vals["is_invoice_issuer"] = (
+            self.partner_id.is_invoice_issuer
+            or self.partner_id.commercial_partner_id.is_invoice_issuer
+        )
         return invoice_vals

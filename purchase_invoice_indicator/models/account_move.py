@@ -12,4 +12,7 @@ class AccountMove(models.Model):
     @api.onchange("partner_id")
     def onchange_invoice_partner_id(self):
         if self.partner_id:
-            self.is_invoice_issuer = self.partner_id.is_invoice_issuer
+            self.is_invoice_issuer = (
+                self.partner_id.is_invoice_issuer
+                or self.partner_id.commercial_partner_id.is_invoice_issuer
+            )
