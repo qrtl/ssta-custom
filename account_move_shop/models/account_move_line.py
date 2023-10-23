@@ -4,11 +4,11 @@
 from odoo import fields, models
 
 
-class AccountInvoiceLine(models.Model):
-    _inherit = "account.invoice.line"
+class AccountMoveLine(models.Model):
+    _inherit = "account.move.line"
 
     shop_id = fields.Many2one(
-        related="invoice_id.shop_id",
+        related="move_id.shop_id",
         string="Shop",
         readonly=True,
     )

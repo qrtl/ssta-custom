@@ -4,8 +4,8 @@
 from odoo import fields, models
 
 
-class AccountInvoice(models.Model):
-    _inherit = "account.invoice"
+class AccountMove(models.Model):
+    _inherit = "account.move"
 
     shop_id = fields.Many2one(
         "stock.warehouse",
