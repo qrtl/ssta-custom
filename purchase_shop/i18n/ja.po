@@ -1,14 +1,14 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-# * purchase_shop
+# 	* purchase_shop
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 11.0\n"
+"Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-15 08:24+0000\n"
-"PO-Revision-Date: 2023-08-15 08:24+0000\n"
-"Last-Translator: <>\n"
+"POT-Creation-Date: 2023-12-14 06:08+0000\n"
+"PO-Revision-Date: 2023-12-14 06:08+0000\n"
+"Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -16,7 +16,7 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: purchase_shop
-#: model:ir.model.fields,field_description:purchase_shop.field_purchase_order_purchased_by_id
+#: model:ir.model.fields,field_description:purchase_shop.field_purchase_order__purchased_by_id
 msgid "Buyer"
 msgstr "買取担当者"
 
@@ -26,17 +26,45 @@ msgid "Employee"
 msgstr "従業員"
 
 #. module: purchase_shop
-#: model:ir.model,name:purchase_shop.model_account_invoice
-msgid "Invoice"
-msgstr "請求書"
+#: model:ir.model.fields,field_description:purchase_shop.field_product_product__evaluated_by_id
+#: model:ir.model.fields,field_description:purchase_shop.field_product_template__evaluated_by_id
+msgid "Evaluated By"
+msgstr "査定担当"
+
+#. module: purchase_shop
+#: model:ir.model,name:purchase_shop.model_account_move
+msgid "Journal Entry"
+msgstr "仕訳"
+
+#. module: purchase_shop
+#: model:ir.model,name:purchase_shop.model_product_template
+msgid "Product Template"
+msgstr "プロダクトテンプレート"
 
 #. module: purchase_shop
 #: model:ir.model,name:purchase_shop.model_purchase_order
 msgid "Purchase Order"
-msgstr "発注"
+msgstr "購買オーダ"
 
 #. module: purchase_shop
-#: model:ir.model.fields,field_description:purchase_shop.field_hr_employee_shop_id
-#: model:ir.model.fields,field_description:purchase_shop.field_purchase_order_shop_id
+#: model:ir.model.fields,field_description:purchase_shop.field_product_product__purchased_by_id
+#: model:ir.model.fields,field_description:purchase_shop.field_product_template__purchased_by_id
+msgid "Purchased By"
+msgstr "買取担当"
+
+#. module: purchase_shop
+#: model:ir.model.fields,field_description:purchase_shop.field_purchase_order__employee_id
+msgid "Received By"
+msgstr "受付担当"
+
+#. module: purchase_shop
+#: model:ir.model.fields,field_description:purchase_shop.field_hr_employee__shop_id
+#: model:ir.model.fields,field_description:purchase_shop.field_purchase_order__shop_id
 msgid "Shop"
 msgstr "担当店舗"
+
+#. module: purchase_shop
+#: model:ir.model.fields,field_description:purchase_shop.field_product_product__shop_id
+#: model:ir.model.fields,field_description:purchase_shop.field_product_template__shop_id
+msgid "Shop Purchased"
+msgstr "買取店舗"

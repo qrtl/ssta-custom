@@ -56,7 +56,6 @@ class PurchaseOrder(models.Model):
                 self.picking_type_id = picking_type_id
         return {"domain": {"purchased_by_id": ids}}
 
-    @api.multi
     def write(self, vals):
         res = super().write(vals)
         if (
