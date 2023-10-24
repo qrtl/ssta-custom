@@ -1,14 +1,12 @@
 # Copyright 2018 Quartile Limited
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 {
     "name": "Stock Virtual Available Adjust",
-    "version": "11.0.1.2.2",
+    "version": "15.0.1.0.0",
     "author": "Quartile Limited",
     "website": "https://www.quartile.co",
     "category": "Warehouse",
-    "license": "AGPL-3",
-    "summary": """""",
+    "license": "LGPL-3",
     "depends": ["stock", "website_sale"],
-    "data": ["views/product_views.xml"],
     "installable": True,
 }

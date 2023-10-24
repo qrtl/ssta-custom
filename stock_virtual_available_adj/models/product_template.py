@@ -1,23 +1,22 @@
 # Copyright 2018 Quartile Limited
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
-from odoo import api, fields, models
+from odoo import api, models
 
 
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    website_sale_available_qty = fields.Float(
-        "Available Quantity in eCommerce",
-        compute="_compute_website_sale_available_qty",
-        help="Available quantity of the product in eCommerce, excluding the "
-        "quantities in sent and draft sales order as well",
+    @api.depends(
+        "product_variant_ids.qty_available",
+        "product_variant_ids.virtual_available",
+        "product_variant_ids.incoming_qty",
+        "product_variant_ids.outgoing_qty",
     )
-
-    @api.multi
-    def _compute_website_sale_available_qty(self):
+    def _compute_quantities(self):
+        super()._compute_quantities()
         for pt in self:
+            pt.virtual_available = 0.00
             for pp in pt.product_variant_ids:
-                pt.website_sale_available_qty += (
-                    pp.virtual_available - pp.sent_sale_qty - pp.draft_sale_qty
-                )
+                pt.virtual_available += pp.virtual_available
+        return

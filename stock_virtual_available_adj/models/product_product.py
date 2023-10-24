@@ -1,5 +1,5 @@
 # Copyright 2018 Quartile Limited
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 
 from odoo import api, fields, models
 
@@ -17,14 +17,7 @@ class ProductProduct(models.Model):
         compute="_compute_sale_quantities",
         help="Total quantity of the product in sent sales order(s)",
     )
-    website_sale_available_qty = fields.Float(
-        "Available Quantity in eCommerce",
-        compute="_compute_website_sale_available_qty",
-        help="Available quantity of the product in eCommerce, excluding the "
-        "quantities in sent and draft sales order as well",
-    )
 
-    @api.multi
     def _compute_sale_quantities(self):
         for product in self:
             sale_lines = self.env["sale.order.line"].search(
@@ -41,11 +34,22 @@ class ProductProduct(models.Model):
                 )
             )
 
-    @api.multi
-    def _compute_website_sale_available_qty(self):
+    @api.depends("stock_move_ids.product_qty", "stock_move_ids.state")
+    @api.depends_context(
+        "lot_id",
+        "owner_id",
+        "package_id",
+        "from_date",
+        "to_date",
+        "location",
+        "warehouse",
+    )
+    def _compute_quantities(self):
+        super()._compute_quantities()
         for product in self:
-            product.website_sale_available_qty = (
+            product.virtual_available = (
                 product.virtual_available
                 - product.sent_sale_qty
                 - product.draft_sale_qty
             )
+        return
