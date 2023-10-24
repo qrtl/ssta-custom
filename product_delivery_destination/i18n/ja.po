@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* product_delivery_destination
+# * product_delivery_destination
 #
 msgid ""
 msgstr ""
@@ -62,7 +62,7 @@ msgstr "表示名"
 #. module: product_delivery_destination
 #: model:ir.model.fields,field_description:product_delivery_destination.field_delivery_city_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: product_delivery_destination
 #: model:ir.model.fields,field_description:product_delivery_destination.field_res_country_state_is_deliverable
@@ -93,10 +93,9 @@ msgstr "プロダクトテンプレート"
 #: model:ir.model.fields,field_description:product_delivery_destination.field_product_product_selectable_delivery_city_ids
 #: model:ir.model.fields,field_description:product_delivery_destination.field_product_template_selectable_delivery_city_ids
 msgid "Selectable Delivery City"
-msgstr "Selectable Delivery City"
+msgstr ""
 
 #. module: product_delivery_destination
 #: model:ir.model.fields,field_description:product_delivery_destination.field_delivery_city_state_id
 msgid "State"
 msgstr "都道府県・州"
-
