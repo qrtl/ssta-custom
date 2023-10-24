@@ -6,25 +6,25 @@
         </field>
         <field name="model">product.template</field>
         <field
-      name="inherit_id"
-      ref="stock.product_template_form_view_procurement_button"
-    />
+            name="inherit_id"
+            ref="stock.product_template_form_view_procurement_button"
+        />
         <field name="arch" type="xml">
             <xpath expr="//button[@name='action_open_quants']" position="after">
                 <button
-          type="object"
-          name="website_publish_button"
-          attrs="{'invisible':[('type', '!=', 'product')]}"
-          class="oe_stat_button"
-          icon="fa-building-o"
-        >
+                    type="object"
+                    name="website_publish_button"
+                    attrs="{'invisible':[('type', '!=', 'product')]}"
+                    class="oe_stat_button"
+                    icon="fa-building-o"
+                >
                     <div class="o_field_widget o_stat_info">
                         <span class="o_stat_value">
                             <field
-                name="website_sale_available_qty"
-                widget="statinfo"
-                nolabel="1"
-              />
+                                name="website_sale_available_qty"
+                                widget="statinfo"
+                                nolabel="1"
+                            />
                         </span>
                         <span class="o_stat_text">Website Available</span>
                     </div>
