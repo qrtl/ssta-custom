@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* purchase_shop
+# * purchase_shop
 #
 msgid ""
 msgstr ""
@@ -40,4 +40,3 @@ msgstr "発注"
 #: model:ir.model.fields,field_description:purchase_shop.field_purchase_order_shop_id
 msgid "Shop"
 msgstr "担当店舗"
-
