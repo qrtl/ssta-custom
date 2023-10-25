@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* purchase_order_tags
+# * purchase_order_tags
 #
 msgid ""
 msgstr ""
@@ -43,7 +43,7 @@ msgstr "表示名"
 #. module: purchase_order_tags
 #: model:ir.model.fields,field_description:purchase_order_tags.field_purchase_order_tag_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: purchase_order_tags
 #: model:ir.model.fields,field_description:purchase_order_tags.field_purchase_order_tag___last_update
@@ -91,5 +91,4 @@ msgstr "このアクティブな項目はそのタグを削除することなく
 #. module: purchase_order_tags
 #: model:ir.model,name:purchase_order_tags.model_purchase_order_tag
 msgid "purchase.order.tag"
-msgstr "purchase.order.tag"
-
+msgstr ""

@@ -33,10 +33,10 @@
     </record>
 
     <menuitem
-    id="menu_purchase_order_tag"
-    parent="purchase.menu_purchase_config"
-    sequence="40"
-    action="action_purchase_order_tag_view"
-  />
+        id="menu_purchase_order_tag"
+        parent="purchase.menu_purchase_config"
+        sequence="40"
+        action="action_purchase_order_tag_view"
+    />
 
 </odoo>
