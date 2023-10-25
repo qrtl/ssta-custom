@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* product_shelf_info
+# * product_shelf_info
 #
 msgid ""
 msgstr ""
@@ -30,4 +30,3 @@ msgstr "保管ID"
 #: model:ir.ui.view,arch_db:product_shelf_info.report_delivery_document
 msgid "Shelf:"
 msgstr "保管:"
-
