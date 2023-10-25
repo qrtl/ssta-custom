@@ -72,7 +72,7 @@
                 <attribute name="invisible">True</attribute>
             </xpath>
             <xpath expr="//field[@name='invoice_status']" position="after">
-                <field name="id" widget="open_tab" nolabel="1"/>
+                <field name="id" widget="open_tab" nolabel="1" />
             </xpath>
         </field>
     </record>

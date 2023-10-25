@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* purchase_ext_sst
+# * purchase_ext_sst
 #
 msgid ""
 msgstr ""
@@ -43,7 +43,7 @@ msgstr "従業員"
 #. module: purchase_ext_sst
 #: model:ir.model.fields,field_description:purchase_ext_sst.field_purchase_order_line_hook_onchange_product_id_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: purchase_ext_sst
 #: model:ir.model.fields,field_description:purchase_ext_sst.field_purchase_order_line_hook_onchange_product_id___last_update
@@ -58,7 +58,7 @@ msgstr "過去予定日"
 #. module: purchase_ext_sst
 #: model:ir.model,name:purchase_ext_sst.model_purchase_order_line_hook_onchange_product_id
 msgid "Provide hook point for onchange_product_id method"
-msgstr "Provide hook point for onchange_product_id method"
+msgstr ""
 
 #. module: purchase_ext_sst
 #: model:ir.model,name:purchase_ext_sst.model_purchase_order
@@ -100,4 +100,3 @@ msgstr "本日予定日"
 #: model:ir.ui.view,arch_db:purchase_ext_sst.view_purchase_order_filter
 msgid "Upcoming Schedule"
 msgstr "将来予定日"
-
