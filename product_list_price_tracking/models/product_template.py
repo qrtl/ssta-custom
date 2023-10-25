@@ -7,4 +7,4 @@ from odoo import fields, models
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    list_price = fields.Float(track_visibility="onchange")
+    list_price = fields.Float(tracking=True)
