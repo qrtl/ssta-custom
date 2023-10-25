@@ -18,7 +18,5 @@ class PurchaseOrder(models.Model):
         if "order_line" in vals or "purchase_category_id" in vals:
             for order in self:
                 products = order.order_line.mapped("product_id")
-                products.write(
-                    {"purchase_category_id": order.purchase_category_id.id}
-                )
+                products.write({"purchase_category_id": order.purchase_category_id.id})
         return res

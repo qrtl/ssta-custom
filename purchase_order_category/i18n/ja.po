@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* purchase_order_category
+# * purchase_order_category
 #
 msgid ""
 msgstr ""
@@ -43,7 +43,7 @@ msgstr "表示名"
 #. module: purchase_order_category
 #: model:ir.model.fields,field_description:purchase_order_category.field_purchase_category_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: purchase_order_category
 #: model:ir.model.fields,field_description:purchase_order_category.field_purchase_category___last_update
@@ -91,5 +91,4 @@ msgstr "付番"
 #. module: purchase_order_category
 #: model:ir.model,name:purchase_order_category.model_purchase_category
 msgid "purchase.category"
-msgstr "purchase.category"
-
+msgstr ""
