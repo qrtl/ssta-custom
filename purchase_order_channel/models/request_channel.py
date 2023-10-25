@@ -10,7 +10,7 @@ class RequestChannel(models.Model):
 
     name = fields.Char(required=True)
     sequence = fields.Integer(default=10)
-    active = fields.Boolean("Active", default=True)
+    active = fields.Boolean(default=True)
     company_id = fields.Many2one(
         "res.company",
         "Company",
