@@ -13,10 +13,20 @@
             </xpath>
         </field>
     </record>
-    <record id="purchase_order_tree" model="ir.ui.view">
+    <record id="purchase_order_kpis_tree" model="ir.ui.view">
         <field name="name">purchase.order.tree</field>
         <field name="model">purchase.order</field>
-        <field name="inherit_id" ref="purchase.purchase_order_tree" />
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="purchase_category_id" />
+            </xpath>
+        </field>
+    </record>
+        <record id="purchase_order_view_tree" model="ir.ui.view">
+        <field name="name">purchase.order.tree</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_tree" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
                 <field name="purchase_category_id" />
@@ -27,6 +37,16 @@
         <field name="name">request.quotation.select</field>
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.view_purchase_order_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="before">
+                <field name="purchase_category_id" />
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase_order_view_search" model="ir.ui.view">
+        <field name="name">request.quotation.select</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_search" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_id']" position="before">
                 <field name="purchase_category_id" />
