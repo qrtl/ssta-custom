@@ -8,5 +8,6 @@ class StockQuant(models.Model):
     _inherit = "stock.quant"
 
     sales_channel_id = fields.Many2one(
-        related="product_tmpl_id.sales_channel_id", string="Exp. Sales Channel",
+        related="product_tmpl_id.sales_channel_id",
+        string="Exp. Sales Channel",
     )

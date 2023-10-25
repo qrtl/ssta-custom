@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* stock_quant_sales_channel
+# * stock_quant_sales_channel
 #
 msgid ""
 msgstr ""
@@ -24,4 +24,3 @@ msgstr "販売候補"
 #: model:ir.model,name:stock_quant_sales_channel.model_stock_quant
 msgid "Quants"
 msgstr "保管ロット"
-

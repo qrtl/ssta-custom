@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* product_sales_channel
+# * product_sales_channel
 #
 msgid ""
 msgstr ""
@@ -25,4 +25,3 @@ msgstr "販売候補"
 #: model:ir.model,name:product_sales_channel.model_product_template
 msgid "Product Template"
 msgstr "プロダクトテンプレート"
-
