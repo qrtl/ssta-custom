@@ -1,5 +1,5 @@
 # Copyright 2017-2023 Quartile Limited
-# License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from odoo import _, api, fields, models
 from odoo.exceptions import UserError
@@ -13,7 +13,6 @@ class PurchaseOrder(models.Model):
     date_planned = fields.Datetime(compute=False)
     sale_prediction_amount = fields.Monetary("Sales Prediction")
 
-    @api.multi
     def button_confirm(self):
         for order in self:
             if self.is_default_partner(order.partner_id.id):
@@ -28,19 +27,7 @@ class PurchaseOrder(models.Model):
 
     def is_default_partner(self, partner_id):
         company = self.env.user.company_id
-        default_id = (
-            self.env["ir.default"].get(
-                "purchase.order",
-                "partner_id",
-                user_id=self.env.uid,
-                company_id=company.id,
-            )
-            or self.env["ir.default"].get(
-                "purchase.order", "partner_id", user_id=False, company_id=company.id
-            )
-            or False
-        )
-        return partner_id == default_id
+        return partner_id == company.purchase_default_partner_id.id
 
     @api.onchange("date_planned")
     def onchange_date_planned(self):
