@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* purchase_order_channel
+# * purchase_order_channel
 #
 msgid ""
 msgstr ""
@@ -49,7 +49,7 @@ msgstr "表示名"
 #: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel_id
 #: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium_id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: purchase_order_channel
 #: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel___last_update
@@ -120,10 +120,9 @@ msgstr "付番"
 #. module: purchase_order_channel
 #: model:ir.model,name:purchase_order_channel.model_request_channel
 msgid "request.channel"
-msgstr "request.channel"
+msgstr ""
 
 #. module: purchase_order_channel
 #: model:ir.model,name:purchase_order_channel.model_request_medium
 msgid "request.medium"
-msgstr "request.medium"
-
+msgstr ""
