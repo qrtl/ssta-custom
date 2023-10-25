@@ -5,9 +5,9 @@
         <field name="name">purchase.order.tag.tree</field>
         <field name="model">purchase.order.tag</field>
         <field name="arch" type="xml">
-            <tree string="Purchase Order Tags" editable="top">
+            <tree editable="top">
                 <field name="name" />
-                <field name="color" />
+                <field name="color" widget="color_picker" />
                 <field name="active" />
             </tree>
         </field>
@@ -17,7 +17,7 @@
         <field name="name">purchase.order.tag.search</field>
         <field name="model">purchase.order.tag</field>
         <field name="arch" type="xml">
-            <search string="Purchase Order Tags">
+            <search>
                 <field name="name" />
             </search>
         </field>
