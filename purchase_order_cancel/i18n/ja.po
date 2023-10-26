@@ -58,7 +58,7 @@ msgstr "表示名"
 #. module: purchase_order_cancel
 #: model:ir.model.fields,field_description:purchase_order_cancel.field_purchase_order_cancel__id
 msgid "ID"
-msgstr "ID"
+msgstr ""
 
 #. module: purchase_order_cancel
 #: model:ir.model.fields,field_description:purchase_order_cancel.field_purchase_order_cancel____last_update
@@ -83,4 +83,4 @@ msgstr "または"
 #. module: purchase_order_cancel
 #: model:ir.model,name:purchase_order_cancel.model_purchase_order_cancel
 msgid "purchase.order.cancel"
-msgstr "purchase.order.cancel"
+msgstr ""
