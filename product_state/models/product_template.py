@@ -8,4 +8,4 @@ from odoo import fields, models
 class ProductTemplate(models.Model):
     _inherit = "product.template"
 
-    product_state_id = fields.Many2one("product.state", "Product State")
+    product_state_id = fields.Many2one("product.state")
