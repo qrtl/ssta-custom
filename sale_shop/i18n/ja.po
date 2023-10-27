@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* sale_shop
+# * sale_shop
 #
 msgid ""
 msgstr ""
@@ -19,4 +19,3 @@ msgstr ""
 #: model:ir.model,name:sale_shop.model_account_invoice_line
 msgid "Invoice Line"
 msgstr "請求書行"
-
