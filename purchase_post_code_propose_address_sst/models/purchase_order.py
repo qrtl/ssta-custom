@@ -17,25 +17,13 @@ class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
     country_id = fields.Many2one(
-        string="Country", default=lambda self: self.env.ref("base.jp")
+        "res.country", string="Country", default=lambda self: self.env.ref("base.jp")
     )
-    state_id = fields.Many2one(
-        "res.country.state",
-        string="Prefecture",
-    )
-    city = fields.Char(
-        string="City",
-    )
-    street = fields.Char(
-        oldname="address",
-        string="Street",
-    )
-    street2 = fields.Char(
-        string="Street2",
-    )
-    zipcode = fields.Char(
-        string="Post Code (Search)",
-    )
+    state_id = fields.Many2one("res.country.state", string="Prefecture")
+    city = fields.Char()
+    street = fields.Char()
+    street2 = fields.Char()
+    zipcode = fields.Char(string="Post Code (Search)")
     zip = fields.Char(
         related="partner_id.zip",
         string="Post Code (Supplier)",
@@ -96,7 +84,7 @@ class PurchaseOrder(models.Model):
                     "message": _("Only digits are allowed."),
                 }
             }
-        if len(field) != 7:
+        elif len(field) != 7:
             field = False
             msg = {
                 "warning": {
@@ -106,7 +94,6 @@ class PurchaseOrder(models.Model):
             }
         return field, msg
 
-    @api.multi
     def write(self, vals):
         res = super(PurchaseOrder, self).write(vals)
         for order in self:
