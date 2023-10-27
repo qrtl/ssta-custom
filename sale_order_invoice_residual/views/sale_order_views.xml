@@ -18,10 +18,10 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='payment_term_id']" position="after">
                 <field
-          name="invoice_residual"
-          widget="monetary"
-          attrs="{'invisible': [('state', 'not in', ['sale', 'done'])]}"
-        />
+                    name="invoice_residual"
+                    widget="monetary"
+                    attrs="{'invisible': [('state', 'not in', ['sale', 'done'])]}"
+                />
             </xpath>
         </field>
     </record>
