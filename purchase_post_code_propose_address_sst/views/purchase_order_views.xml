@@ -21,7 +21,7 @@
         <field name="inherit_id" ref="purchase.purchase_order_form" />
         <field name="arch" type="xml">
             <xpath expr="//sheet/group" position="inside">
-                <group>            
+                <group>
                     <label for="zip" />
                         <div>
                             〒
@@ -36,23 +36,27 @@
                         <div class="o_address_format">
                             <div>
                                 <field
-                                    name="state_id"
-                                    class="o_address_state"
-                                    placeholder="State"
-                                    domain="[('country_id','=',country_id)]"
-                                />
-                                <field name="city" class="o_address_city" placeholder="City" />
+                                name="state_id"
+                                class="o_address_state"
+                                placeholder="State"
+                                domain="[('country_id','=',country_id)]"
+                            />
+                                <field
+                                name="city"
+                                class="o_address_city"
+                                placeholder="City"
+                            />
                             </div>
                             <field
-                                name="street"
-                                class="o_address_street"
-                                placeholder="Street..."
-                            />
+                            name="street"
+                            class="o_address_street"
+                            placeholder="Street..."
+                        />
                             <field
-                                name="street2"
-                                class="o_address_street"
-                                placeholder="Street 2..."
-                            />
+                            name="street2"
+                            class="o_address_street"
+                            placeholder="Street 2..."
+                        />
                             <field name="country_id" invisible="1" />
                         </div>
                 </group>
@@ -63,7 +67,7 @@
         <field name="name">request.quotation.select</field>
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.view_purchase_order_filter" />
-        <field name="priority" eval="18"/>
+        <field name="priority" eval="18" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="before">
                 <field name="zipcode" />

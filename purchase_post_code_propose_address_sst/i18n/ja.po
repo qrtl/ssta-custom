@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* purchase_post_code_propose_address_sst
+# * purchase_post_code_propose_address_sst
 #
 msgid ""
 msgstr ""
@@ -95,4 +95,3 @@ msgstr "町名番地…"
 #: model:ir.model.fields,field_description:purchase_post_code_propose_address_sst.field_purchase_order_street2
 msgid "Street2"
 msgstr "町名番地2"
-
