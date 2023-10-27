@@ -1,21 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <odoo>
-    <record id="product_template_form_view" model="ir.ui.view">
-        <field name="name">product.template.common.form</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_form_view" />
-        <field name="arch" type="xml">
-            <xpath expr="//h1" position="replace">
-                <h2>
-                    <field name="name" placeholder="Product Name" />
-                </h2>
-            </xpath>
-            <xpath expr="//field[@name='image_medium']" position="replace" />
-            <xpath expr="//div[@name='options']" position="inside">
-                <field name="image_medium" widget="image" class="oe_avatar" />
-            </xpath>
-        </field>
-    </record>
     <record id="product_template_tree_view" model="ir.ui.view">
         <field name="name">product.template.product.tree</field>
         <field name="model">product.template</field>
@@ -25,25 +9,14 @@
                 <attribute name="editable">top</attribute>
             </xpath>
             <xpath expr="//field[@name='name']" position="after">
-                <field name="image_medium" widget="image" />
-                <field name="website_published" string="Visible in Website" />
-                <field name="public_categ_ids" widget="many2many_tags" />
-            </xpath>
-            <xpath expr="//field[@name='type']" position="attributes">
-                <attribute name="invisible">True</attribute>
+                <field
+                    name="image_1920"
+                    widget="image"
+                    options="{'preview_image': 'image_128'}"
+                />
             </xpath>
             <xpath expr="//field[@name='active']" position="after">
                 <field name="id" widget="open_tab" nolabel="1" />
-            </xpath>
-        </field>
-    </record>
-    <record id="product_template_search_view" model="ir.ui.view">
-        <field name="name">product.template.search</field>
-        <field name="model">product.template</field>
-        <field name="inherit_id" ref="product.product_template_search_view" />
-        <field name="arch" type="xml">
-            <xpath expr="//field[@name='categ_id']" position="after">
-                <field name="public_categ_ids" />
             </xpath>
         </field>
     </record>
@@ -52,7 +25,7 @@
         <field name="model">product.template</field>
         <field eval="20" name="priority" />
         <field name="arch" type="xml">
-            <tree string="Product" editable="top">
+            <tree editable="top">
                 <field name="sequence" widget="handle" />
                 <field name="default_code" />
                 <field name="shop_id" />
@@ -64,7 +37,6 @@
                 <field name="standard_price" />
                 <field name="auction_start_price" />
                 <field name="auction_buyout_price" />
-
                 <field name="list_price" />
                 <field name="carrier_id" />
                 <field name="carrier_size_id" />
@@ -73,7 +45,7 @@
                 <field name="delivery_city_id" />
                 <field name="yahoo_product_state_id" />
                 <field name="staff_in_charge" />
-                <field name="website_sale_available_qty" />
+                <field name="virtual_available" />
                 <field name="type" invisible="1" />
                 <field
                     name="uom_id"
@@ -85,7 +57,7 @@
             </tree>
         </field>
     </record>
-    <record id="product.product_template_action" model="ir.actions.act_window">
+    <record id="sale.product_template_action" model="ir.actions.act_window">
         <field name="view_id" ref="sale_product_template_tree_view" />
     </record>
 </odoo>

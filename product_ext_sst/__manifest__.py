@@ -2,7 +2,7 @@
 # License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl).
 {
     "name": "Extension for product",
-    "version": "11.0.3.0.0",
+    "version": "15.0.1.0.0",
     "author": "Quartile Limited",
     "website": "https://www.quartile.co",
     "category": "Product",
