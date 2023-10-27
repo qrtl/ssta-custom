@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* product_ext_sst
+# * product_ext_sst
 #
 msgid ""
 msgstr ""
@@ -62,5 +62,4 @@ msgstr "ウェブサイトに表示"
 #. module: product_ext_sst
 #: model:ir.model,name:product_ext_sst.model_product_price_record
 msgid "product.price.record"
-msgstr "product.price.record"
-
+msgstr ""

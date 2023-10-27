@@ -33,7 +33,7 @@
                 <attribute name="invisible">True</attribute>
             </xpath>
             <xpath expr="//field[@name='active']" position="after">
-                <field name="id" widget="open_tab" nolabel="1"/>
+                <field name="id" widget="open_tab" nolabel="1" />
             </xpath>
         </field>
     </record>
@@ -81,7 +81,7 @@
                     groups="product.group_uom"
                 />
                 <field name="active" invisible="1" />
-                <field name="id" widget="open_tab" nolabel="1"/>
+                <field name="id" widget="open_tab" nolabel="1" />
             </tree>
         </field>
     </record>
