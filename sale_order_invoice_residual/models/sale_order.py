@@ -18,13 +18,17 @@ class SaleOrder(models.Model):
     )
 
     def _compute_invoice_residual(self):
-        for order in self.filtered(lambda r: r.state in ["sale", "done"]):
-            order.invoice_residual = order.amount_total
-            if order.invoice_ids:
-                # we do not cover refund invoices (origin != order.name) here
-                # (it is out of scope)
-                order.invoice_residual -= sum(
-                    order.invoice_ids.filtered(
-                        lambda r: r.origin == order.name and r.state in ["open", "paid"]
-                    ).mapped(lambda r: r.amount_total - r.residual)
-                )
+        for order in self:
+            if order.state in ["sale", "done"]:
+                order.invoice_residual = order.amount_total
+                if order.invoice_ids:
+                    # we do not cover refund invoices (origin != order.name) here
+                    # (it is out of scope)
+                    order.invoice_residual -= sum(
+                        order.invoice_ids.filtered(
+                            lambda r: r.invoice_origin == order.name
+                            and r.state == "posted"
+                        ).mapped(lambda r: r.amount_total - r.amount_residual)
+                    )
+            else:
+                order.invoice_residual = 0.00
