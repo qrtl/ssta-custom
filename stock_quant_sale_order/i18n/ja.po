@@ -1,6 +1,6 @@
 # Translation of Odoo Server.
 # This file contains the translation of the following modules:
-#	* stock_quant_sale_order
+# * stock_quant_sale_order
 #
 msgid ""
 msgstr ""
@@ -69,7 +69,9 @@ msgstr "最終更新日"
 #. module: stock_quant_sale_order
 #: code:addons/stock_quant_sale_order/wizard/stock_quant_sale_order.py:39
 #, python-format
-msgid "Please select quants that are in the internal location to create the sales order."
+msgid ""
+"Please select quants that are in the internal location to create the sales "
+"order."
 msgstr "内部ロケーション内の保管ロットを選択してください。"
 
 #. module: stock_quant_sale_order
@@ -92,13 +94,17 @@ msgstr "選択した保管ロットのロケーションがどの倉庫に属し
 #. module: stock_quant_sale_order
 #: code:addons/stock_quant_sale_order/wizard/stock_quant_sale_order.py:52
 #, python-format
-msgid "There is at least one active sales order that uses the product of a selected quant: %s"
+msgid ""
+"There is at least one active sales order that uses the product of a selected"
+" quant: %s"
 msgstr "選択された保管ロットのプロダクトを使用したアクティブな販売オーダが少なくとも1つあります: %s"
 
 #. module: stock_quant_sale_order
 #: code:addons/stock_quant_sale_order/wizard/stock_quant_sale_order.py:57
 #, python-format
-msgid "You cannot create sales order from stock quants that belongs to other company."
+msgid ""
+"You cannot create sales order from stock quants that belongs to other "
+"company."
 msgstr "他の会社の保管ロットから販売オーダを作成することはできません。"
 
 #. module: stock_quant_sale_order
@@ -109,5 +115,4 @@ msgstr "または"
 #. module: stock_quant_sale_order
 #: model:ir.model,name:stock_quant_sale_order.model_quant_sale_order_wizard
 msgid "quant.sale.order.wizard"
-msgstr "quant.sale.order.wizard"
-
+msgstr ""
