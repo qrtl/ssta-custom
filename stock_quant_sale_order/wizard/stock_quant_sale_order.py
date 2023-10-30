@@ -62,7 +62,6 @@ class QuantSaleOrderWizard(models.TransientModel):
             )
         return super(QuantSaleOrderWizard, self).default_get(fields)
 
-    @api.multi
     def action_create_sale_order(self):
         """This method create a sale order."""
         context = dict(self._context or {})
@@ -83,10 +82,6 @@ class QuantSaleOrderWizard(models.TransientModel):
         sale_order.onchange_partner_id()
         sale_order.team_id = self.team_id.id
         sale_order.user_id = self.env.uid
-
-        # A list to store the values of sale.order.line's required fieds
-        # order_lines_value_list = []
-        # A dict to store the tax_id of each product
         for quant in quant_ids:
             line_vals = {
                 "product_id": quant.product_id.id,
