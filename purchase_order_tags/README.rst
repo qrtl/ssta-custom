@@ -24,7 +24,7 @@ Purchase Order Tags
 
 This module does the following:
 
-- Add tag field to purchase order.
+-  Add tag field to purchase order.
 
 **Table of contents**
 
@@ -45,12 +45,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/purchase_order_tags>`_ project on GitHub.
 
