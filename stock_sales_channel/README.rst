@@ -22,7 +22,8 @@ Stock Sales Channel
 
 |badge1| |badge2| |badge3|
 
-This module adds sales channel field in both product.template and stock.quant.
+This module adds sales channel field in both product.template and
+stock.quant.
 
 **Table of contents**
 
@@ -43,12 +44,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/stock_sales_channel>`_ project on GitHub.
 

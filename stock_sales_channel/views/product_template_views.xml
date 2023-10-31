@@ -23,7 +23,7 @@
                 <attribute name="editable">top</attribute>
             </xpath>
             <xpath expr="//field[@name='name']" position="after">
-                <field name="sales_channel_id" />
+                <field name="sales_channel_id" optional="show" />
             </xpath>
         </field>
     </record>
