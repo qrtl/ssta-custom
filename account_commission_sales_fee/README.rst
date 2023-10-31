@@ -22,8 +22,8 @@ Account Commission Sales Fee
 
 |badge1| |badge2| |badge3|
 
-This module adds the "Sales Fee" line to the vendor bill created from a settlement
-according to the commission configuration.
+This module adds the "Sales Fee" line to the vendor bill created from a
+settlement according to the commission configuration.
 
 **Table of contents**
 
@@ -44,12 +44,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/account_commission_sales_fee>`_ project on GitHub.
 

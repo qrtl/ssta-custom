@@ -22,8 +22,9 @@ Stock Request Seller Check
 
 |badge1| |badge2| |badge3|
 
-This module limits the user of stock requests only to seller products, since there is no
-business scenario where stock requests should be created for non-seller products.
+This module limits the user of stock requests only to seller products,
+since there is no business scenario where stock requests should be
+created for non-seller products.
 
 **Table of contents**
 
@@ -44,12 +45,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/stock_request_seller_check>`_ project on GitHub.
 

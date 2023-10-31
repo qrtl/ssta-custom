@@ -22,7 +22,9 @@ Add supplier phone and mobile in purchase
 
 |badge1| |badge2| |badge3|
 
-This module adds supplier's phone and mobile fields to purchase.order, add this fields in purchase order tree view and also add this fields in search view of purchase order.
+This module adds supplier's phone and mobile fields to purchase.order,
+add this fields in purchase order tree view and also add this fields in
+search view of purchase order.
 
 **Table of contents**
 
@@ -43,12 +45,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/purchase_order_supplier_phone>`_ project on GitHub.
 

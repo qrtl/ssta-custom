@@ -24,7 +24,7 @@ Commission Disable Regenerate Agent
 
 This module does the following:
 
-- Hide regenerate agents button in sale order and invoice.
+-  Hide regenerate agents button in sale order and invoice.
 
 **Table of contents**
 
@@ -45,12 +45,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/commission_disable_regenerate_agent>`_ project on GitHub.
 

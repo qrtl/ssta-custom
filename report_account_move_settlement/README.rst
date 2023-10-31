@@ -24,10 +24,10 @@ Report Account Move with Settlement
 
 This module does the following:
 
-- Adds settlement report print function to account.move
+-  Adds settlement report print function to account.move
 
-The added function is intended to be used by auction sellers so that they can keep
-the details of the settlement invoice for their record.
+The added function is intended to be used by auction sellers so that
+they can keep the details of the settlement invoice for their record.
 
 **Table of contents**
 
@@ -39,9 +39,9 @@ Configuration
 
 Update following fields in the company.
 
-* Seller Settlement Report Title
-* Seller Settlement Report Debit Comment
-* Seller Settlement Report Credit Comment
+-  Seller Settlement Report Title
+-  Seller Settlement Report Debit Comment
+-  Seller Settlement Report Credit Comment
 
 Bug Tracker
 ===========
@@ -57,12 +57,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/report_account_move_settlement>`_ project on GitHub.
 

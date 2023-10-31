@@ -22,7 +22,8 @@ Web Hide User Menu Item
 
 |badge1| |badge2| |badge3|
 
-This module hides some of the user menu items on the top-right corner of the webclient.
+This module hides some of the user menu items on the top-right corner of
+the webclient.
 
 **Table of contents**
 
@@ -43,12 +44,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/web_hide_user_menu_item>`_ project on GitHub.
 

@@ -24,7 +24,8 @@ Partner Secondhand Dealer
 
 This module does the following:
 
-- Adds some fields to res.partner to record the vendor particulars required by the Secondhand Articles Dealer Act (古物営業法).
+-  Adds some fields to res.partner to record the vendor particulars
+   required by the Secondhand Articles Dealer Act (古物営業法).
 
 **Table of contents**
 
@@ -45,12 +46,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/partner_secondhand_dealer>`_ project on GitHub.
 

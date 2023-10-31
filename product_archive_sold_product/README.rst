@@ -26,8 +26,10 @@ This module provides the function to archive "sold" products with cron.
 
 Assumptions:
 
-* Physical products (stockable/consumable) are created per piece with no exceptions.
-* Product variant feature is not enabled (i.e. there is just one variant per template).
+-  Physical products (stockable/consumable) are created per piece with
+   no exceptions.
+-  Product variant feature is not enabled (i.e. there is just one
+   variant per template).
 
 **Table of contents**
 
@@ -48,12 +50,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/product_archive_sold_product>`_ project on GitHub.
 

@@ -24,8 +24,10 @@ Auciton Custom Filter
 
 This module does the following:
 
-- Gvies auction users readonly access to ir.filters.group difined by base_custom_filter (auction users cannot use filters, otherwisse)
-- If auction_share in if.filters record is True, the filter can be used by auction users.
+-  Gvies auction users readonly access to ir.filters.group difined by
+   base_custom_filter (auction users cannot use filters, otherwisse)
+-  If auction_share in if.filters record is True, the filter can be used
+   by auction users.
 
 **Table of contents**
 
@@ -46,12 +48,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/auction_custom_filter>`_ project on GitHub.
 

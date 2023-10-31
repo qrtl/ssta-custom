@@ -32,11 +32,16 @@ This module creates My Page app in home screen.
 Usage
 =====
 
-Upon installing the module, My Page app will appear in the home screen to look like the below image:
-  .. image:: https://raw.githubusercontent.com/qrtl/rmm-custom/15.0/web_portal_link/static/img/app.png
+| Upon installing the module, My Page app will appear in the home screen
+  to look like the below image:
+| |image|
 
-When you click My Page app, it will open your portal view like below image
-  .. image:: https://raw.githubusercontent.com/qrtl/rmm-custom/15.0/web_portal_link/static/img/portalview.png
+| When you click My Page app, it will open your portal view like below
+  image
+| |image1|
+
+.. |image| image:: https://raw.githubusercontent.com/qrtl/rmm-custom/15.0/web_portal_link/static/img/app.png
+.. |image1| image:: https://raw.githubusercontent.com/qrtl/rmm-custom/15.0/web_portal_link/static/img/portalview.png
 
 Bug Tracker
 ===========
@@ -52,12 +57,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/web_portal_link>`_ project on GitHub.
 

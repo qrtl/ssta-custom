@@ -24,9 +24,10 @@ Auction Seller Invoice
 
 This module does the following:
 
-- Adds vendor bill views to show the relevant records to sellers, and a kanban tile to the seller dashboard to open the views.
-- Hides actions and reports that portal users do not need to use.
-- Prevents portal users to see other users' settlement records.
+-  Adds vendor bill views to show the relevant records to sellers, and a
+   kanban tile to the seller dashboard to open the views.
+-  Hides actions and reports that portal users do not need to use.
+-  Prevents portal users to see other users' settlement records.
 
 **Table of contents**
 
@@ -47,12 +48,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/auction_seller_invoice>`_ project on GitHub.
 

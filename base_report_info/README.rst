@@ -24,8 +24,8 @@ Base Report Information
 
 This module does the following:
 
-- Add new tab "Report Information" on Company
-- Add fields under the "Report Information"
+-  Add new tab "Report Information" on Company
+-  Add fields under the "Report Information"
 
 **Table of contents**
 
@@ -46,12 +46,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/base_report_info>`_ project on GitHub.
 
