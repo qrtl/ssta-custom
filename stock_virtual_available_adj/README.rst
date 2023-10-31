@@ -24,7 +24,8 @@ Stock Virtual Available Adjust
 
 This module does the following:
 
-* Deduct quantities of unconfirmed sales orders from forcasted quantity calculation.
+-  Deduct quantities of unconfirmed sales orders from forcasted quantity
+   calculation.
 
 **Table of contents**
 
@@ -45,12 +46,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/stock_virtual_available_adj>`_ project on GitHub.
 
