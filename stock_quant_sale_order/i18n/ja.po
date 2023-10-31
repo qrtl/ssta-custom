@@ -18,42 +18,42 @@ msgstr ""
 #. module: stock_quant_sale_order
 #: model_terms:ir.ui.view,arch_db:stock_quant_sale_order.quant_sale_order_wizard_form
 msgid "Cancel"
-msgstr ""
+msgstr "取消"
 
 #. module: stock_quant_sale_order
 #: model_terms:ir.ui.view,arch_db:stock_quant_sale_order.quant_sale_order_wizard_form
 msgid "Create Sales Order"
-msgstr ""
+msgstr "販売オーダ作成"
 
 #. module: stock_quant_sale_order
 #: model:ir.actions.act_window,name:stock_quant_sale_order.action_view_stock_quant_create_sale_order
 msgid "Create Sales Orders"
-msgstr ""
+msgstr "販売オーダ作成"
 
 #. module: stock_quant_sale_order
 #: model_terms:ir.ui.view,arch_db:stock_quant_sale_order.quant_sale_order_wizard_form
 msgid "Create sales order for selected quants."
-msgstr ""
+msgstr "選択した保管ロットの販売オーダを作成します。"
 
 #. module: stock_quant_sale_order
 #: model:ir.model.fields,field_description:stock_quant_sale_order.field_quant_sale_order_wizard__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "作成者"
 
 #. module: stock_quant_sale_order
 #: model:ir.model.fields,field_description:stock_quant_sale_order.field_quant_sale_order_wizard__create_date
 msgid "Created on"
-msgstr ""
+msgstr "作成日"
 
 #. module: stock_quant_sale_order
 #: model:ir.model.fields,field_description:stock_quant_sale_order.field_quant_sale_order_wizard__partner_id
 msgid "Customer"
-msgstr ""
+msgstr "顧客"
 
 #. module: stock_quant_sale_order
 #: model:ir.model.fields,field_description:stock_quant_sale_order.field_quant_sale_order_wizard__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "表示名"
 
 #. module: stock_quant_sale_order
 #: model:ir.model.fields,field_description:stock_quant_sale_order.field_quant_sale_order_wizard__id
@@ -63,17 +63,17 @@ msgstr ""
 #. module: stock_quant_sale_order
 #: model:ir.model.fields,field_description:stock_quant_sale_order.field_quant_sale_order_wizard____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: stock_quant_sale_order
 #: model:ir.model.fields,field_description:stock_quant_sale_order.field_quant_sale_order_wizard__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "最終更新者"
 
 #. module: stock_quant_sale_order
 #: model:ir.model.fields,field_description:stock_quant_sale_order.field_quant_sale_order_wizard__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "最終更新日"
 
 #. module: stock_quant_sale_order
 #: code:addons/stock_quant_sale_order/wizard/stock_quant_sale_order.py:0
@@ -92,7 +92,7 @@ msgstr "同じロケーション内の保管ロットを選択してください
 #. module: stock_quant_sale_order
 #: model:ir.model.fields,field_description:stock_quant_sale_order.field_quant_sale_order_wizard__team_id
 msgid "Sales Channel"
-msgstr ""
+msgstr "販売チャネル"
 
 #. module: stock_quant_sale_order
 #: code:addons/stock_quant_sale_order/wizard/stock_quant_sale_order.py:0
@@ -119,7 +119,7 @@ msgstr "他の会社の保管ロットから販売オーダを作成すること
 #. module: stock_quant_sale_order
 #: model_terms:ir.ui.view,arch_db:stock_quant_sale_order.quant_sale_order_wizard_form
 msgid "or"
-msgstr ""
+msgstr "または"
 
 #. module: stock_quant_sale_order
 #: model:ir.model,name:stock_quant_sale_order.model_quant_sale_order_wizard

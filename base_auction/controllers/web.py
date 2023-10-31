@@ -19,11 +19,8 @@ class Home(web.Home):
         return super(Home, self).index(*args, **kw)
 
     def _login_redirect(self, uid, redirect=None):
-        if (
-            request.env["res.users"]
-            .sudo()
-            .browse(uid)
-            .has_group("base_auction.group_auction_user")
+        if not redirect and request.env["res.users"].sudo().browse(uid).has_group(
+            "base_auction.group_auction_user"
         ):
             redirect = "/web"
         return super(Home, self)._login_redirect(uid, redirect=redirect)

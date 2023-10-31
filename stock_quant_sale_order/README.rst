@@ -24,7 +24,7 @@ Stock Quant Sale Order
 
 This module does the following:
 
-* Create sale order for selected stock quant(s).
+-  Create sale order for selected stock quant(s).
 
 **Table of contents**
 
@@ -45,12 +45,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/stock_quant_sale_order>`_ project on GitHub.
 
