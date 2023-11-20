@@ -22,10 +22,12 @@ Account Commission listing Fee
 
 |badge1| |badge2| |badge3|
 
-This module adds the "Listing Fee" line to the vendor bill created from a settlement according to the commission configuration.
+This module adds the "Listing Fee" line to the vendor bill created from
+a settlement according to the commission configuration.
 
-This module depends on "product_event_link" module for using "event_ids" of product and
-"auction_seller" module for using "seller_id" for product.
+This module depends on "product_event_link" module for using "event_ids"
+of product and "auction_seller" module for using "seller_id" for
+product.
 
 **Table of contents**
 
@@ -46,12 +48,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/account_commission_listing_fee>`_ project on GitHub.
 

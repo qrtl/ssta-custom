@@ -28,12 +28,13 @@ We regard service lines and credit notes as "delivered."
 
 Background:
 
-There are cases where user issues an invoice to the customer upfront in a business transaction,
-just for the sake of convenience, even when the goods are yet to be delivered to them.
-In such case, technically speaking, revenue should not be recognized until the delivery is done.
+There are cases where user issues an invoice to the customer upfront in
+a business transaction, just for the sake of convenience, even when the
+goods are yet to be delivered to them. In such case, technically
+speaking, revenue should not be recognized until the delivery is done.
 
-This module intends to make the "real" sales amount visible in the invoice views by computing
-the delivered amount.
+This module intends to make the "real" sales amount visible in the
+invoice views by computing the delivered amount.
 
 **Table of contents**
 
@@ -54,12 +55,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/account_move_delivered_amount>`_ project on GitHub.
 

@@ -24,8 +24,8 @@ Product Prep State
 
 This module does the following:
 
-* Adds prep_state_id field to product.template to manage the state of product
-  preparation.
+-  Adds prep_state_id field to product.template to manage the state of
+   product preparation.
 
 **Table of contents**
 
@@ -46,12 +46,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/product_prep_state>`_ project on GitHub.
 

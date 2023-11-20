@@ -24,7 +24,7 @@ Products' Yahoo Auction information
 
 This module does the following:
 
-* Added fields to hold " "information from Yahoo Auctions to product
+-  Added fields to hold " "information from Yahoo Auctions to product
 
 **Table of contents**
 
@@ -45,12 +45,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/product_yahoo_auction_sst>`_ project on GitHub.
 

@@ -24,7 +24,8 @@ Purchase Channel Attribute
 
 This module does the following:
 
-- Adds some fields to purchase.order to record the purchase particulars required
+-  Adds some fields to purchase.order to record the purchase particulars
+   required
 
 **Table of contents**
 
@@ -45,12 +46,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/purchase_channel_attribute>`_ project on GitHub.
 

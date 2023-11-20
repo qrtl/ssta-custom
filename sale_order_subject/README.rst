@@ -22,11 +22,11 @@ Sale Order Subject
 
 |badge1| |badge2| |badge3|
 
-This module adds subject field to sale.order. The subject will be passed over to the
-invoice.
+This module adds subject field to sale.order. The subject will be passed
+over to the invoice.
 
-Note that if an invoice is created out of multiple sales orders, only the subject of
-an order will be passed to the invoice.
+Note that if an invoice is created out of multiple sales orders, only
+the subject of an order will be passed to the invoice.
 
 **Table of contents**
 
@@ -47,12 +47,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/sale_order_subject>`_ project on GitHub.
 

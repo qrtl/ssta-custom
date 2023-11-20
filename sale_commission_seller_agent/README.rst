@@ -24,7 +24,7 @@ Sale Commission Seller Agent
 
 This module does the following:
 
-- Adds seller of product in sale order agent line if seller is a agent.
+-  Adds seller of product in sale order agent line if seller is a agent.
 
 **Table of contents**
 
@@ -45,12 +45,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/sale_commission_seller_agent>`_ project on GitHub.
 

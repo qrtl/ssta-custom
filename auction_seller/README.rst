@@ -24,8 +24,8 @@ Auction Seller
 
 This module does the following:
 
-- Adds auction seller groups (Auction Seller).
-- Adds Apps view of products for auction sellers
+-  Adds auction seller groups (Auction Seller).
+-  Adds Apps view of products for auction sellers
 
 **Table of contents**
 
@@ -46,12 +46,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/auction_seller>`_ project on GitHub.
 
