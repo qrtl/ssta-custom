@@ -10,3 +10,4 @@ access_account_tax_group,account.tax.group.auction.seller,account.model_account_
 access_commission_settlement,commission.settlement,account_commission.model_commission_settlement,auction_seller.group_auction_seller,1,0,0,0
 access_commission_settlement_line,commission.settlement.line,account_commission.model_commission_settlement_line,auction_seller.group_auction_seller,1,0,0,0
 access_account_invoice_line_agent.auction.seller,account.invoice.line.agent.auction.seller,account_commission.model_account_invoice_line_agent,auction_seller.group_auction_seller,1,0,0,0
+access_account_fiscal_position_seller,account.fiscal.position seller,account.model_account_fiscal_position,auction_seller.group_auction_seller,1,0,0,0
