@@ -53,13 +53,23 @@
                                 t-field="o.partner_id"
                                 t-options='{"widget": "contact", "fields": ["name"], "no_marker": True}'
                             />
+                            <div t-if="o.partner_id.vat" class="mb-2">
+                                <span>登録番号:</span>
+                                <span t-field="o.partner_id.vat" />
+                            </div>
                         </div>
                     </div>
                     <div class="col-5">
+                        <!-- A blank line would appear in between Company and Registration Number without "style='margin-bottom: 0;'" -->
                         <address
                             t-field="company.partner_id"
                             t-options='{"widget": "contact", "fields": ["name", "address"], "no_marker": True}'
+                            style="margin-bottom: 0;"
                         />
+                        <div t-if="company.vat" class="mb-2">
+                            <span>登録番号:</span>
+                            <span t-field="company.vat" />
+                        </div>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 20px;">
