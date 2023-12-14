@@ -24,8 +24,8 @@ Product Carousel Image Attachment
 
 This module does the following:
 
-- When an image (.jpg/.png/.gif/.bmp) is attached to a product, create a corresponding product.image record
-  for the attached file.
+-  When an image (.jpg/.png/.gif/.bmp) is attached to a product, create
+   a corresponding product.image record for the attached file.
 
 **Table of contents**
 
@@ -46,12 +46,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/product_carousel_image_attachment>`_ project on GitHub.
 
