@@ -3,7 +3,7 @@
 
     <record id="product_product_yu_pack" model="product.product">
         <field name="name">ゆうパック</field>
-        <field name="default_code">Delivery</field>
+        <field name="default_code">Delivery_Yu</field>
         <field name="type">service</field>
         <field name="categ_id" ref="product.product_category_all" />
         <field name="sale_ok" eval="False" />
@@ -23,7 +23,7 @@
 
     <record id="product_product_kazai_bin" model="product.product">
         <field name="name">家財便</field>
-        <field name="default_code">Delivery</field>
+        <field name="default_code">Delivery_Kazai</field>
         <field name="type">service</field>
         <field name="categ_id" ref="product.product_category_all" />
         <field name="sale_ok" eval="False" />

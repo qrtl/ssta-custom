@@ -22,7 +22,8 @@ Product Group Product Manager
 
 |badge1| |badge2| |badge3|
 
-This module adds a new group (group_product_manager) with permissions for creating, editing, and deleting products.
+This module adds a new group (group_product_manager) with permissions
+for creating, editing, and deleting products.
 
 **Table of contents**
 
@@ -43,12 +44,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/product_group_product_manager>`_ project on GitHub.
 
