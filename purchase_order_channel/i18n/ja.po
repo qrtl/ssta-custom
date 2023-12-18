@@ -1,0 +1,131 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* purchase_order_channel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-12-15 08:34+0000\n"
+"PO-Revision-Date: 2023-12-15 08:34+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel__active
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium__active
+msgid "Active"
+msgstr "有効"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_purchase_order__call_back
+msgid "Call Back"
+msgstr "折TEL"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel__company_id
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium__company_id
+msgid "Company"
+msgstr "会社"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel__create_uid
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium__create_uid
+msgid "Created by"
+msgstr "作成者"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel__create_date
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium__create_date
+msgid "Created on"
+msgstr "作成日"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel__display_name
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium__display_name
+msgid "Display Name"
+msgstr "表示名"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel__id
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium__id
+msgid "ID"
+msgstr ""
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel____last_update
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium____last_update
+msgid "Last Modified on"
+msgstr "最終更新日"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel__write_uid
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium__write_uid
+msgid "Last Updated by"
+msgstr "最終更新者"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel__write_date
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium__write_date
+msgid "Last Updated on"
+msgstr "最終更新日"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel__name
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium__name
+msgid "Name"
+msgstr "名称"
+
+#. module: purchase_order_channel
+#: model:ir.model,name:purchase_order_channel.model_purchase_order
+msgid "Purchase Order"
+msgstr "購買オーダ"
+
+#. module: purchase_order_channel
+#: model:ir.ui.menu,name:purchase_order_channel.menu_purchase_in_config_purchase
+msgid "Purchases"
+msgstr "購買"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_purchase_order__request_channel_id
+#: model_terms:ir.ui.view,arch_db:purchase_order_channel.form_view_request_channel
+msgid "Request Channel"
+msgstr "受付方法"
+
+#. module: purchase_order_channel
+#: model:ir.actions.act_window,name:purchase_order_channel.action_request_channel
+#: model:ir.ui.menu,name:purchase_order_channel.menu_request_channel
+msgid "Request Channels"
+msgstr "受付方法"
+
+#. module: purchase_order_channel
+#: model:ir.actions.act_window,name:purchase_order_channel.action_request_medium
+#: model:ir.ui.menu,name:purchase_order_channel.menu_request_medium
+msgid "Request Media"
+msgstr "媒体"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_purchase_order__request_medium_id
+#: model_terms:ir.ui.view,arch_db:purchase_order_channel.form_view_request_medium
+msgid "Request Medium"
+msgstr "媒体"
+
+#. module: purchase_order_channel
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_channel__sequence
+#: model:ir.model.fields,field_description:purchase_order_channel.field_request_medium__sequence
+msgid "Sequence"
+msgstr "付番"
+
+#. module: purchase_order_channel
+#: model:ir.model,name:purchase_order_channel.model_request_channel
+msgid "request.channel"
+msgstr ""
+
+#. module: purchase_order_channel
+#: model:ir.model,name:purchase_order_channel.model_request_medium
+msgid "request.medium"
+msgstr ""
