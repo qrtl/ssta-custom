@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_quant_sale_order_wizard_stock_manager,quant.sale.order.wizard,model_quant_sale_order_wizard,stock.group_stock_manager,1,1,1,1
+access_quant_sale_order_wizard_sale_manager,quant.sale.order.wizard,model_quant_sale_order_wizard,sales_team.group_sale_manager,1,1,1,1
