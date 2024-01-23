@@ -26,16 +26,13 @@
             </form>
         </field>
     </record>
-    <act_window
-        id="action_stock_quant_publish_window"
-        multi="True"
-        key2="client_action_multi"
-        name="Publish to website"
-        res_model="stock.quant.product.publish.wizard"
-        src_model="stock.quant"
-        view_id="stock_quant_product_publish_wizard_form"
-        view_mode="form"
-        target="new"
-        view_type="form"
-    />
+    <record id="action_stock_quant_publish_window" model="ir.actions.act_window">
+        <field name="name">Publish Product</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">stock.quant.product.publish.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="binding_model_id" ref="stock.model_stock_quant" />
+        <field name="binding_view_types">list</field>
+    </record>
 </odoo>
