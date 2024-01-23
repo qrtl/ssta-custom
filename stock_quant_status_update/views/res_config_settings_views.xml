@@ -10,11 +10,13 @@
                 <div class="row mt16 o_settings_container">
                     <div
                         class="col-xs-12 col-md-6 o_setting_box"
-                        id="picking_product_state_settins"
+                        id="picking_product_state_settings"
                         groups="base.group_no_one"
                     >
                         <div class="o_setting_right_pane">
-                            <label string="State For Finished Picking Product" />
+                            <span
+                                class="o_form_label"
+                            >State For Finished Picking Product</span>
                             <div class="content-group">
                                 <div class="row mt16">
                                     <label
