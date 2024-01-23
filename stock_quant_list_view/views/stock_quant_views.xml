@@ -40,10 +40,10 @@
     </record>
 
     <menuitem
-    action="action_stock_quant"
-    id="menu_stock_quant"
-    parent="stock.menu_warehouse_report"
-    sequence="10"
-  />
+        action="action_stock_quant"
+        id="menu_stock_quant"
+        parent="stock.menu_warehouse_report"
+        sequence="10"
+    />
 
 </odoo>
