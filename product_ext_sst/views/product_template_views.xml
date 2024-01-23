@@ -13,6 +13,7 @@
                     name="image_1920"
                     widget="image"
                     options="{'preview_image': 'image_128'}"
+                    optional="show"
                 />
             </xpath>
             <xpath expr="//field[@name='active']" position="after">
@@ -26,31 +27,32 @@
         <field eval="20" name="priority" />
         <field name="arch" type="xml">
             <tree editable="top">
-                <field name="sequence" widget="handle" />
-                <field name="default_code" />
-                <field name="shop_id" />
-                <field name="title" readonly="0" />
-                <field name="product_category" />
-                <field name="product_condition_comment" />
-                <field name="accessories" />
-                <field name="remark" />
-                <field name="standard_price" />
-                <field name="auction_start_price" />
-                <field name="auction_buyout_price" />
-                <field name="list_price" />
-                <field name="carrier_id" />
-                <field name="carrier_size_id" />
+                <field name="sequence" widget="handle" optional="show" />
+                <field name="default_code" optional="show" />
+                <field name="shop_id" optional="show" />
+                <field name="title" readonly="0" optional="show" />
+                <field name="product_category" optional="show" />
+                <field name="product_condition_comment" optional="show" />
+                <field name="accessories" optional="show" />
+                <field name="remark" optional="show" />
+                <field name="standard_price" optional="show" />
+                <field name="auction_start_price" optional="show" />
+                <field name="auction_buyout_price" optional="show" />
+                <field name="list_price" optional="show" />
+                <field name="carrier_id" optional="show" />
+                <field name="carrier_size_id" optional="show" />
                 <field name="selectable_delivery_city_ids" invisible="1" />
-                <field name="delivery_state_id" />
-                <field name="delivery_city_id" />
-                <!-- <field name="yahoo_product_state_id" /> -->
-                <field name="staff_in_charge" />
-                <field name="virtual_available" />
+                <field name="delivery_state_id" optional="show" />
+                <field name="delivery_city_id" optional="show" />
+                <field name="yahoo_product_state_id" optional="show" />
+                <field name="staff_in_charge" optional="show" />
+                <field name="virtual_available" optional="show" />
                 <field name="type" invisible="1" />
                 <field
                     name="uom_id"
                     options="{'no_open': True, 'no_create': True}"
                     groups="product.group_uom"
+                    optional="show"
                 />
                 <field name="active" invisible="1" />
                 <field name="id" widget="open_tab" nolabel="1" />

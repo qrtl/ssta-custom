@@ -43,12 +43,12 @@ Credits
 =======
 
 Authors
-~~~~~~~
+-------
 
 * Quartile Limited
 
 Maintainers
-~~~~~~~~~~~
+-----------
 
 This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/product_ext_sst>`_ project on GitHub.
 
