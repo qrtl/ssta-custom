@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-14 06:17+0000\n"
-"PO-Revision-Date: 2022-09-14 06:17+0000\n"
+"POT-Creation-Date: 2024-01-23 06:43+0000\n"
+"PO-Revision-Date: 2024-01-23 06:43+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,9 +16,25 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: purchase_order_supplier_phone
+#: code:addons/purchase_order_supplier_phone/models/purchase_order.py:0
+#: code:addons/purchase_order_supplier_phone/models/purchase_order.py:0
+#, python-format
+msgid ""
+"\n"
+"%(partner_name)s\n"
+"- Phone: %(phone)s\n"
+"- Mobile: %(mobile)s\n"
+msgstr ""
+
+#. module: purchase_order_supplier_phone
 #: model:ir.model.fields,field_description:purchase_order_supplier_phone.field_purchase_order__supplier_mobile
 msgid "Mobile"
 msgstr "携帯電話"
+
+#. module: purchase_order_supplier_phone
+#: model:ir.model.fields,field_description:purchase_order_supplier_phone.field_purchase_order__mobile_update
+msgid "Mobile Update"
+msgstr "携帯電話(更新用)"
 
 #. module: purchase_order_supplier_phone
 #: model:ir.model.fields,field_description:purchase_order_supplier_phone.field_purchase_order__supplier_phone
@@ -26,12 +42,42 @@ msgid "Phone"
 msgstr "電話"
 
 #. module: purchase_order_supplier_phone
+#: model:ir.model.fields,field_description:purchase_order_supplier_phone.field_purchase_order__phone_search
+msgid "Phone Search"
+msgstr "電話(検索用)"
+
+#. module: purchase_order_supplier_phone
+#: model:ir.model.fields,field_description:purchase_order_supplier_phone.field_purchase_order__phone_update
+msgid "Phone Update"
+msgstr "電話(更新用)"
+
+#. module: purchase_order_supplier_phone
 #: model:ir.model,name:purchase_order_supplier_phone.model_purchase_order
 msgid "Purchase Order"
 msgstr "購買オーダ"
 
 #. module: purchase_order_supplier_phone
+#: model_terms:ir.ui.view,arch_db:purchase_order_supplier_phone.purchase_order_form_inherit
+msgid "Supplier Name Update (Tentative Name)"
+msgstr "名称更新(仮称)"
+
+#. module: purchase_order_supplier_phone
+#: model_terms:ir.ui.view,arch_db:purchase_order_supplier_phone.purchase_order_view_search
 #: model_terms:ir.ui.view,arch_db:purchase_order_supplier_phone.view_purchase_order_filter
-#: model_terms:ir.ui.view,arch_db:purchase_order_supplier_phone.view_purchase_order_view_search
 msgid "Supplier Phone/Mobile"
 msgstr "電話/携帯電話(仕入先)"
+
+#. module: purchase_order_supplier_phone
+#: model:ir.model.fields,field_description:purchase_order_supplier_phone.field_purchase_order__tentative_name
+msgid "Tentative Name"
+msgstr "仮称"
+
+#. module: purchase_order_supplier_phone
+#: code:addons/purchase_order_supplier_phone/models/purchase_order.py:0
+#: code:addons/purchase_order_supplier_phone/models/purchase_order.py:0
+#, python-format
+msgid ""
+"The entered phone (%(phone)s) conflicts with the following user(s):\n"
+"%(conflict_users)s"
+msgstr "入力した電話（%s）につきコンフリクトがあります。下記のレコードを確認ください。"
+"%(conflict_users)s"
