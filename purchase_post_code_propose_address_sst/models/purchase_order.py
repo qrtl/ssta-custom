@@ -1,20 +1,12 @@
 # Copyright 2019 Quartile Limited
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-import json
-import logging
-import urllib
-
-from odoo import _, api, fields, models
-
-try:
-    import jaconv
-except (ImportError, IOError) as err:
-    logging.getLogger(__name__).warning(err)
+from odoo import api, fields, models
 
 
 class PurchaseOrder(models.Model):
-    _inherit = "purchase.order"
+    _name = "purchase.order"
+    _inherit = ["purchase.order", "zip.code.search.mixin"]
 
     country_id = fields.Many2one(
         "res.country", string="Country", default=lambda self: self.env.ref("base.jp")
@@ -23,7 +15,6 @@ class PurchaseOrder(models.Model):
     city = fields.Char()
     street = fields.Char()
     street2 = fields.Char()
-    zipcode = fields.Char(string="Post Code (Search)")
     zip = fields.Char(
         related="partner_id.zip",
         string="Post Code (Supplier)",
@@ -38,61 +29,6 @@ class PurchaseOrder(models.Model):
             self.city = self.partner_id.city
             self.street = self.partner_id.street
             self.street2 = self.partner_id.street2
-
-    @api.onchange("zipcode")
-    def _onchange_zipcode(self):
-        if self.zipcode:
-            self.zipcode, msg = self.check_zipcode(self.zipcode)
-            if not self.zipcode:
-                return msg
-            request_url = (
-                "http://zipcloud.ibsnet.co.jp/api/search?zipcode" "=%s" % self.zipcode
-            )
-            request = urllib.request.Request(request_url)
-            response_data = json.loads(
-                urllib.request.urlopen(request).read().decode("utf-8")
-            )
-            self.state_id = False
-            self.city = False
-            self.street = False
-            self.street2 = False
-            if response_data["status"] != 200:
-                self.zipcode = False
-                return {
-                    "warning": {
-                        "title": _("Error"),
-                        "message": response_data["message"],
-                    }
-                }
-            else:
-                address_data = response_data["results"]
-                if address_data:
-                    self.state_id = self.env["res.country.state"].search(
-                        [("name", "=", address_data[0]["address1"])], limit=1
-                    )
-                    self.city = address_data[0]["address2"]
-                    self.street = address_data[0]["address3"]
-
-    def check_zipcode(self, zipcode):
-        msg = {}
-        field = jaconv.z2h(zipcode, ascii=True, digit=True).replace("-", "")
-        if not field.isdigit():
-            field = False
-            msg = {
-                "warning": {
-                    "title": _("Error"),
-                    "message": _("Only digits are allowed."),
-                }
-            }
-        elif len(field) != 7:
-            field = False
-            msg = {
-                "warning": {
-                    "title": _("Error"),
-                    "message": _("Post code should be 7 digits."),
-                }
-            }
-        return field, msg
 
     def write(self, vals):
         res = super(PurchaseOrder, self).write(vals)
