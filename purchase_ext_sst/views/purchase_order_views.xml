@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="purchase.purchase_rfq" model="ir.actions.act_window">
+        <field name="context">{'search_default_draft':1, 'quotation_only': True}</field>
+        <field name="domain">[]</field>
+    </record>
+    <record id="purchase_order_form" model="ir.ui.view">
+        <field name="name">purchase.order.form</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form" />
+        <field name="priority" eval="22" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <button
+                    name="open_product_record"
+                    type="object"
+                    icon="fa-sign-in"
+                    class="oe_read_only"
+                />
+            </xpath>
+            <xpath expr="//notebook" position="before">
+                <group>
+                    <field name="remark" />
+                    <field name="sale_prediction_amount" />
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase_order_kpis_tree" model="ir.ui.view">
+        <field name="name">purchase.order.tree</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_kpis_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="editable">top</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute
+                    name="context"
+                >{'res_partner_search_mode': 'supplier', 'show_vat': True}</attribute>
+                <attribute name="widget">res_partner_many2one</attribute>
+                <attribute name="readonly">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="remark" />
+                <field name="sale_prediction_amount" />
+            </xpath>
+            <xpath expr="//field[@name='origin']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='invoice_status']" position="after">
+                <field name="id" widget="open_tab" nolabel="1" />
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase_order_view_tree" model="ir.ui.view">
+        <field name="name">purchase.order.tree</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_tree" />
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="attributes">
+                <attribute name="editable">top</attribute>
+            </xpath>
+            <xpath expr="//field[@name='partner_id']" position="attributes">
+                <attribute
+                    name="context"
+                >{'res_partner_search_mode': 'supplier', 'show_vat': True}</attribute>
+                <attribute name="widget">res_partner_many2one</attribute>
+                <attribute name="readonly">False</attribute>
+            </xpath>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="remark" />
+                <field name="sale_prediction_amount" />
+            </xpath>
+            <xpath expr="//field[@name='origin']" position="attributes">
+                <attribute name="optional">hide</attribute>
+            </xpath>
+            <xpath expr="//field[@name='invoice_status']" position="after">
+                <field name="id" widget="open_tab" nolabel="1" />
+            </xpath>
+        </field>
+    </record>
+    <record id="view_purchase_order_filter" model="ir.ui.view">
+        <field name="name">request.quotation.select</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.view_purchase_order_filter" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="remark" />
+            </xpath>
+            <xpath expr="//filter[@name='to_approve']" position="after">
+                <separator />
+                <filter
+                    string="Late Scheduled Date"
+                    name="schedule_overdue"
+                    domain="[('date_planned','&lt;',datetime.datetime.combine(context_today(),datetime.time(0,0,0)))]"
+                />
+                <filter
+                    string="Scheduled Today"
+                    name="schedule_today"
+                    domain="[('date_planned','&gt;=',datetime.datetime.combine(context_today(),datetime.time(0,0,0))),('date_planned','&lt;=',datetime.datetime.combine(context_today(),datetime.time(23,59,59)))]"
+                />
+                <filter
+                    string="Upcoming Schedule"
+                    name="schedule_upcoming"
+                    domain="[('date_planned','&gt;',datetime.datetime.combine(context_today(),datetime.time(23,59,59)))]"
+                />
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase_order_view_search" model="ir.ui.view">
+        <field name="name">purchase.order.select</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_view_search" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="remark" />
+            </xpath>
+            <xpath expr="//filter[@name='starred']" position="after">
+                <separator />
+                <filter
+                    name="approved"
+                    string="Purchase Orders"
+                    domain="[('state','in',('purchase','done'))]"
+                />
+            </xpath>
+            <xpath expr="//filter[@name='invoiced']" position="after">
+                <separator />
+                <filter
+                    string="Late Scheduled Date"
+                    name="schedule_overdue"
+                    domain="[('date_planned','&lt;',datetime.datetime.combine(context_today(),datetime.time(0,0,0)))]"
+                />
+                <filter
+                    string="Scheduled Today"
+                    name="schedule_today"
+                    domain="[('date_planned','&gt;=',datetime.datetime.combine(context_today(),datetime.time(0,0,0))),('date_planned','&lt;=',datetime.datetime.combine(context_today(),datetime.time(23,59,59)))]"
+                />
+                <filter
+                    string="Upcoming Schedule"
+                    name="schedule_upcoming"
+                    domain="[('date_planned','&gt;',datetime.datetime.combine(context_today(),datetime.time(23,59,59)))]"
+                />
+            </xpath>
+        </field>
+    </record>
+    <record id="purchase.purchase_form_action" model="ir.actions.act_window">
+        <field name="context">{'search_default_approved':1}</field>
+        <field name="domain">[]</field>
+    </record>
+</odoo>
