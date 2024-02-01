@@ -7,7 +7,7 @@
     "website": "https://www.quartile.co",
     "category": "Purchase",
     "license": "AGPL-3",
-    "depends": ["l10n_jp_partner_postcode_address", "purchase_ext_sst"],
+    "depends": ["l10n_jp_partner_zip_address", "purchase_ext_sst"],
     "data": ["views/purchase_order_views.xml"],
     "installable": True,
 }
