@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-27 03:54+0000\n"
-"PO-Revision-Date: 2023-10-27 03:54+0000\n"
+"POT-Creation-Date: 2024-02-08 06:59+0000\n"
+"PO-Revision-Date: 2024-02-08 06:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,34 +37,14 @@ msgid "Country"
 msgstr "国"
 
 #. module: purchase_post_code_propose_address_sst
-#: code:addons/purchase_post_code_propose_address_sst/models/purchase_order.py:0
-#: code:addons/purchase_post_code_propose_address_sst/models/purchase_order.py:0
-#: code:addons/purchase_post_code_propose_address_sst/models/purchase_order.py:0
-#, python-format
-msgid "Error"
-msgstr "エラー"
-
-#. module: purchase_post_code_propose_address_sst
-#: code:addons/purchase_post_code_propose_address_sst/models/purchase_order.py:0
-#, python-format
-msgid "Only digits are allowed."
-msgstr "数値のみで入力してください。"
-
-#. module: purchase_post_code_propose_address_sst
-#: model:ir.model.fields,field_description:purchase_post_code_propose_address_sst.field_purchase_order__zipcode
+#: model:ir.model.fields,field_description:purchase_post_code_propose_address_sst.field_purchase_order__zip
 msgid "Post Code (Search)"
 msgstr "郵便番号(検索用)"
 
 #. module: purchase_post_code_propose_address_sst
-#: model:ir.model.fields,field_description:purchase_post_code_propose_address_sst.field_purchase_order__zip
+#: model:ir.model.fields,field_description:purchase_post_code_propose_address_sst.field_purchase_order__partner_zip
 msgid "Post Code (Supplier)"
 msgstr "郵便番号(仕入先)"
-
-#. module: purchase_post_code_propose_address_sst
-#: code:addons/purchase_post_code_propose_address_sst/models/purchase_order.py:0
-#, python-format
-msgid "Post code should be 7 digits."
-msgstr "郵便番号には7桁の数値を入れてください。"
 
 #. module: purchase_post_code_propose_address_sst
 #: model:ir.model.fields,field_description:purchase_post_code_propose_address_sst.field_purchase_order__state_id
@@ -74,7 +54,7 @@ msgstr "都道府県"
 #. module: purchase_post_code_propose_address_sst
 #: model:ir.model,name:purchase_post_code_propose_address_sst.model_purchase_order
 msgid "Purchase Order"
-msgstr "発注"
+msgstr "購買オーダ"
 
 #. module: purchase_post_code_propose_address_sst
 #: model_terms:ir.ui.view,arch_db:purchase_post_code_propose_address_sst.purchase_order_form
