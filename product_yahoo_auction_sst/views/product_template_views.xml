@@ -39,7 +39,7 @@
         <field name="inherit_id" ref="product.product_template_tree_view" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='list_price']" position="before">
-                <field name="yahoo_product_state_id" />
+                <field name="yahoo_product_state_id" optional="show" />
                 <field name="auction_buyout_price" optional="show" />
             </xpath>
         </field>
