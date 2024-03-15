@@ -20,9 +20,9 @@
         <field name="inherit_id" ref="product.product_template_tree_view" />
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
-                <field name="evaluated_by_id" />
-                <field name="purchased_by_id" />
-                <field name="shop_id" />
+                <field name="evaluated_by_id" optional="show" />
+                <field name="purchased_by_id" optional="show" />
+                <field name="shop_id" optional="show" />
             </xpath>
         </field>
     </record>
