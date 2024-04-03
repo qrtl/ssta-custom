@@ -45,6 +45,7 @@
         <field name="res_model">stock.quant</field>
         <field name="type">ir.actions.act_window</field>
         <field name="view_id" ref="view_stock_quant_tree" />
+        <field name="domain">[('quantity', '&gt;', 0)]</field>
         <field name="context">{'search_default_internal_loc': 1}
         </field>
         <field name="search_view_id" ref="stock.quant_search_view" />
