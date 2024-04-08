@@ -24,6 +24,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
                 <field name="shop_id" />
+                <field name="picking_type_id" optional="hide" />
             </xpath>
             <xpath expr="//field[@name='date_order']" position="after">
                 <field name="employee_id" />
@@ -37,6 +38,7 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='name']" position="after">
                 <field name="shop_id" />
+                <field name="picking_type_id" optional="hide" />
             </xpath>
             <xpath expr="//field[@name='date_planned']" position="after">
                 <field name="employee_id" />
