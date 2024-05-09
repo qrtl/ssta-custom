@@ -42,8 +42,8 @@
                 <attribute name="readonly">False</attribute>
             </xpath>
             <xpath expr="//field[@name='company_id']" position="after">
-                <field name="remark" />
-                <field name="sale_prediction_amount" />
+                <field name="remark" optional="show" />
+                <field name="sale_prediction_amount" optional="show" />
             </xpath>
             <xpath expr="//field[@name='origin']" position="attributes">
                 <attribute name="optional">hide</attribute>
@@ -69,8 +69,8 @@
                 <attribute name="readonly">False</attribute>
             </xpath>
             <xpath expr="//field[@name='company_id']" position="after">
-                <field name="remark" />
-                <field name="sale_prediction_amount" />
+                <field name="remark" optional="show" />
+                <field name="sale_prediction_amount" optional="show" />
             </xpath>
             <xpath expr="//field[@name='origin']" position="attributes">
                 <attribute name="optional">hide</attribute>
