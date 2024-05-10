@@ -4,6 +4,9 @@
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.view_purchase_order_filter" />
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <xpath expr="//field[@name='product_id']" position="move" />
+            </xpath>
             <xpath expr="//field[@name='product_id']" position="after">
                 <field
                     name="order_line"
@@ -18,6 +21,9 @@
         <field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.purchase_order_view_search" />
         <field name="arch" type="xml">
+            <xpath expr="//field[@name='name']" position="before">
+                <xpath expr="//field[@name='product_id']" position="move" />
+            </xpath>
             <xpath expr="//field[@name='product_id']" position="after">
                 <field
                     name="order_line"
