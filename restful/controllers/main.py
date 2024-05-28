@@ -1,6 +1,5 @@
 import ast
 import functools
-import json
 import logging
 
 from odoo import http
@@ -128,19 +127,27 @@ class APIController(http.Controller):
             fields = []
         else:
             fields = fields.split(",")
-        payload = request.httprequest.data.decode()
-        payload = json.loads(payload)
         model = request.env[self._model].search([("model", "=", model)], limit=1)
+        # Retrieve the field definitions for the model
+        model_fields = request.env[model.model]._fields
         values = {}
         if model:
             try:
                 # changing IDs from string to int.
                 for k, v in payload.items():
-
                     if "__api__" in k:
                         values[k[7:]] = ast.literal_eval(v)
+                        continue
+                    # Determine the field type and convert the value
+                    field_type = model_fields[k].type if k in model_fields else None
+                    if field_type == "many2one":
+                        values[k] = int(v)  # Convert to integer
+                    elif field_type in ["integer", "float", "monetary"]:
+                        values[k] = ast.literal_eval(v)  # Convert to numeric types
+                    elif field_type == "boolean":
+                        values[k] = v.lower() in ["true", "1"]  # Convert to boolean
                     else:
-                        values[k] = v
+                        values[k] = v  # Keep as string or other types
 
                 resource = request.env[model.model].create(values)
             except Exception as e:
@@ -162,8 +169,6 @@ class APIController(http.Controller):
     def put(self, model=None, id=None, **payload):
         """."""
         values = {}
-        payload = request.httprequest.data.decode()
-        payload = json.loads(payload)
         try:
             _id = int(id)
         except Exception:
