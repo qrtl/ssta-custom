@@ -15,6 +15,7 @@
         "data/yahoo_product_state.xml",
         "views/product_template_views.xml",
         "views/yahoo_product_state_views.xml",
+        "views/delivery_carrier_size_views.xml",
     ],
     "installable": True,
 }
