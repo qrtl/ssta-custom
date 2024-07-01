@@ -278,15 +278,9 @@ class ImportSale(models.TransientModel):
                 )
                 partner_dict[partner_value] = partner_id.id
             else:
-                if len(partner) > 1:
-                    raise ValidationError(
-                        _(
-                            "There are multiple customers with the same "
-                            "phone or mobile number: %s"
-                        )
-                        % partner_value
-                    )
-                partner_dict[partner_value] = partner.id
+                #  pick the first partner that matches the domain
+                #  fixme logic should be further refined
+                partner_dict[partner_value] = partner[0].id
 
     @api.model
     def _get_product_dict(self, product_id_value, product_dict, error_vals):
@@ -302,14 +296,16 @@ class ImportSale(models.TransientModel):
                     + "\n"
                 )
                 error_vals["error"] = True
+            elif len(product) > 1:
+                error_vals["error_message"] = (
+                    error_vals["error_message"]
+                    + _("Product with internal reference ")
+                    + product_id_value
+                    + _(" is found more than once!")
+                    + "\n"
+                )
+                error_vals["error"] = True
             else:
-                if len(product) > 1:
-                    raise ValidationError(
-                        _(
-                            "There are multiple products with the same internal reference: %s"
-                        )
-                        % product_id_value
-                    )
                 product_dict[product_id_value] = product.id
 
     @api.model
