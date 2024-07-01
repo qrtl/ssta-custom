@@ -293,9 +293,9 @@ class ImportSale(models.TransientModel):
                     + _("Product: ")
                     + product_id_value
                     + (
-                        _(" not found!\n")
+                        _(" not found!")
                         if not product
-                        else _(" is found more than once!\n")
+                        else _(" is found more than once!")
                     )
                     + "\n"
                 )
