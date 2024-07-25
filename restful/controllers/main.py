@@ -154,7 +154,10 @@ class APIController(http.Controller):
                 request.env.cr.rollback()
                 return invalid_response("params", e)
             else:
-                data = resource.read(fields=fields)
+                # QRTL Edit
+                # To show only id value in response like old version
+                # data = resource.read(fields=fields)
+                data = {"id": resource.id}
                 if resource:
                     return valid_response(data)
                 else:
