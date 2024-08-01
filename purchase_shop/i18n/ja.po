@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-14 06:08+0000\n"
-"PO-Revision-Date: 2023-12-14 06:08+0000\n"
+"POT-Creation-Date: 2024-08-01 06:52+0000\n"
+"PO-Revision-Date: 2024-08-01 06:52+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -16,14 +16,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: purchase_shop
+#: model:ir.model,name:purchase_shop.model_hr_employee_base
+msgid "Basic Employee"
+msgstr "基本社員"
+
+#. module: purchase_shop
 #: model:ir.model.fields,field_description:purchase_shop.field_purchase_order__purchased_by_id
 msgid "Buyer"
 msgstr "買取担当者"
-
-#. module: purchase_shop
-#: model:ir.model,name:purchase_shop.model_hr_employee
-msgid "Employee"
-msgstr "従業員"
 
 #. module: purchase_shop
 #: model:ir.model.fields,field_description:purchase_shop.field_product_product__evaluated_by_id
@@ -59,6 +59,8 @@ msgstr "受付担当"
 
 #. module: purchase_shop
 #: model:ir.model.fields,field_description:purchase_shop.field_hr_employee__shop_id
+#: model:ir.model.fields,field_description:purchase_shop.field_hr_employee_base__shop_id
+#: model:ir.model.fields,field_description:purchase_shop.field_hr_employee_public__shop_id
 #: model:ir.model.fields,field_description:purchase_shop.field_purchase_order__shop_id
 msgid "Shop"
 msgstr "担当店舗"
