@@ -7,7 +7,7 @@
     "author": "Quartile Limited",
     "website": "https://www.quartile.co",
     "license": "AGPL-3",
-    "depends": ["purchase", "data_migration"],
+    "depends": ["purchase_order_old_record", "data_migration"],
     "data": [
         "security/ir.model.access.csv",
         "data/purchase_migration_scheduler.xml",
