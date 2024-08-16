@@ -124,7 +124,7 @@ class PurchaseOrderMigration(models.Model):
         purchase["state"] = False
         purchase["old_id"] = purchase["id"]
         order = env["purchase.order"].create(purchase)
-        self.create_purchase_order_line(order)
+        self.create_purchase_order_line(order, state)
         order.write(
             {
                 "amount_tax": purchase["amount_tax"],
@@ -134,8 +134,9 @@ class PurchaseOrderMigration(models.Model):
             }
         )
 
-    def create_purchase_order_line(self, order):
+    def create_purchase_order_line(self, order, state):
         required_fields = [
+            "product_id",
             "account_analytic_id",
             "analytic_tag_ids",
             "company_id",
@@ -171,7 +172,15 @@ class PurchaseOrderMigration(models.Model):
                 "product_uom": "uom.uom",
             }
             dummy_product_id = self.get_or_create_dummy_product()
-            line["product_id"] = dummy_product_id
+            if state == "draft":
+                product_id = self.map_many2one_field_by_name(
+                    env, "product.product", line["product_id"]
+                )
+                line["product_id"] = dummy_product_id
+                if product_id:
+                    line["product_id"] = product_id
+            else:
+                line["product_id"] = dummy_product_id
             for field, model in many2one_field_mapping.items():
                 if field in line and line[field]:
                     line[field] = self.map_many2one_field_by_name(
