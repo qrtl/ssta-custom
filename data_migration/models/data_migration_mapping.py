@@ -21,7 +21,7 @@ class DataMigrationMapping(models.AbstractModel):
             return field_value
 
         old_id, name = field_value
-        if model_name == "res.partner":
+        if model_name == "res.partner" or model_name == "product.product":
             record = env[model_name].search(
                 [("old_id", "=", old_id), ("active", "in", [True, False])], limit=1
             )
