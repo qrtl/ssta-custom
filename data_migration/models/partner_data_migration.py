@@ -61,6 +61,7 @@ class PartnerDataMigration(models.Model):
             "company_name",
             "fax",
             "gender",
+            "category_id",
         ]
         instance, uid_v11, models_v11 = self._data_migration_authentication()
         offset = 0
@@ -86,9 +87,15 @@ class PartnerDataMigration(models.Model):
             offset += limit
 
             for partner in top_level_partners:
+                if partner["category_id"]:
+                    if 20 in partner["category_id"]:
+                        continue
                 self.with_delay()._process_partner_migration(partner, is_child=False)
 
             for partner in child_partners:
+                if partner["category_id"]:
+                    if 20 in partner["category_id"]:
+                        continue
                 self.with_delay()._process_partner_migration(partner, is_child=True)
 
     def _process_partner_migration(self, partner, is_child=False):
