@@ -11,7 +11,10 @@ class CommissionSettlement(models.Model):
         return {
             "product_id": commission.sales_fee_product_id.id,
             "quantity": len(
-                self.line_ids.filtered(lambda line: line.commission_id == commission)
+                self.line_ids.filtered(
+                    lambda line: line.commission_id == commission
+                    and line.settled_amount > 0.0
+                )
             ),
             "price_unit": commission.sales_fee_product_id.list_price * -1,
             "tax_ids": [(6, 0, commission.sales_fee_product_id.supplier_taxes_id.ids)],
