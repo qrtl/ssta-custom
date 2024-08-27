@@ -71,6 +71,7 @@ class PurchaseOrderMigration(models.Model):
             "shop_id",
             "purchase_by_id",
             "allow_convert",
+            "invoice_status",
             # 'sale_order_id', # To check need to migrate or not
         ]
         instance, uid_v11, models_v11 = self._data_migration_authentication()
@@ -133,6 +134,7 @@ class PurchaseOrderMigration(models.Model):
                 "state": state,
             }
         )
+        order.invoice_status = purchase["invoice_status"]
 
     def create_purchase_order_line(self, order, state):
         required_fields = [
