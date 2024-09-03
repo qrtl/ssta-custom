@@ -91,9 +91,9 @@ class QuantSaleOrderWizard(models.TransientModel):
             sale_order_line_obj.sudo().create(line_vals)
 
         action = self.env.ref("sale.action_quotations")
-        action_vals = action.read()[0]
-        action_vals["domain"] = str([("id", "=", sale_order.id)])
-        return action_vals
+        action = self.env["ir.actions.act_window"]._for_xml_id("sale.action_quotations")
+        action["domain"] = str([("id", "=", sale_order.id)])
+        return action
 
     def get_warehouse_id(self, location_id):
         stock_warehouse_obj = self.env["stock.warehouse"]
