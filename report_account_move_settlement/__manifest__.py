@@ -17,6 +17,7 @@
         "reports/account_move_report.xml",
         "reports/report_settlement_templates.xml",
         "views/res_company_views.xml",
+        "views/res_partner_views.xml",
     ],
     "installable": True,
 }

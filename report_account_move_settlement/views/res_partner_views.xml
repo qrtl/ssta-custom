@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record id="view_partner_form_agent" model="ir.ui.view">
+        <field name="name">res.partner.form.agent</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="commission.view_partner_form_agent" />
+        <field name="arch" type="xml">
+            <field name="settlement" position="after">
+                <field name="settlement_report_type_id" />
+            </field>
+        </field>
+    </record>
+</odoo>

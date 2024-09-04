@@ -35,7 +35,10 @@
                         style="max-height: 45px;"
                         alt="Logo"
                     />
-                    <t t-if="company.seller_settlement_report_title">
+                    <t t-if="report.seller_settlement_report_title">
+                        <span t-field="report.seller_settlement_report_title" />
+                    </t>
+                    <t t-elif="company.seller_settlement_report_title">
                         <span t-field="company.seller_settlement_report_title" />
                     </t>
                     <t t-else="">
@@ -61,15 +64,20 @@
                     </div>
                     <div class="col-5">
                         <!-- A blank line would appear in between Company and Registration Number without "style='margin-bottom: 0;'" -->
-                        <address
-                            t-field="company.partner_id"
-                            t-options='{"widget": "contact", "fields": ["name", "address"], "no_marker": True}'
-                            style="margin-bottom: 0;"
-                        />
-                        <div t-if="company.vat" class="mb-2">
-                            <span>登録番号:</span>
-                            <span t-field="company.vat" />
-                        </div>
+                        <t t-if="report.company_address">
+                            <address t-field="report.company_address" />
+                        </t>
+                        <t t-else="">
+                            <address
+                                t-field="company.partner_id"
+                                t-options='{"widget": "contact", "fields": ["name", "address"], "no_marker": True}'
+                                style="margin-bottom: 0;"
+                            />
+                            <div t-if="company.vat" class="mb-2">
+                                <span>登録番号:</span>
+                                <span t-field="company.vat" />
+                            </div>
+                        </t>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 20px;">
@@ -81,14 +89,28 @@
                             </div>
                         </h3>
                         <div t-if="o.move_type == 'in_invoice'">
-                            <span
-                                t-field="company.seller_settlement_report_debit_comment"
-                            />
+                            <t t-if="report.seller_settlement_report_debit_comment">
+                                <span
+                                    t-field="report.seller_settlement_report_debit_comment"
+                                />
+                            </t>
+                            <t t-else="">
+                                <span
+                                    t-field="company.seller_settlement_report_debit_comment"
+                                />
+                            </t>
                         </div>
                         <div t-if="o.move_type == 'in_refund'">
-                            <span
-                                t-field="company.seller_settlement_report_credit_comment"
-                            />
+                            <t t-if="report.seller_settlement_report_credit_comment">
+                                <span
+                                    t-field="report.seller_settlement_report_credit_comment"
+                                />
+                            </t>
+                            <t t-else="">
+                                <span
+                                    t-field="company.seller_settlement_report_credit_comment"
+                                />
+                            </t>
                         </div>
                     </div>
                     <div t-if="o.move_type == 'in_refund'" class="col-5">
@@ -163,7 +185,9 @@
                         <table class="table table-sm table-striped">
                             <thead>
                                 <tr class="bg-success">
-                                    <th>Case Number</th>
+                                    <t t-if="report.case_number">
+                                        <th>Case Number</th>
+                                    </t>
                                     <th>Product</th>
                                     <th class="text-right">Amount settled</th>
                                 </tr>
@@ -171,11 +195,13 @@
                             <tbody>
                                 <t t-set="settle_total" t-value="0" />
                                 <tr t-foreach="o.settlement_ids.line_ids" t-as="l">
-                                    <td>
-                                        <span
-                                            t-field="l.sudo().product_id.case_number"
-                                        />
-                                    </td>
+                                    <t t-if="report.case_number">
+                                        <td>
+                                            <span
+                                                t-field="l.sudo().product_id.case_number"
+                                            />
+                                        </td>
+                                    </t>
                                     <td>
                                         <span t-field="l.sudo().product_id" />
                                     </td>
@@ -213,9 +239,18 @@
                                         </td>
                                     </tr>
                                     </table>
-                                    <span
-                                        t-field="company.seller_settlement_report_settlement_comment"
-                                    />
+                                    <t
+                                        t-if="report.seller_settlement_report_settlement_comment"
+                                    >
+                                        <span
+                                            t-field="report.seller_settlement_report_settlement_comment"
+                                        />
+                                    </t>
+                                    <t t-else="">
+                                        <span
+                                            t-field="company.seller_settlement_report_settlement_comment"
+                                        />
+                                    </t>
                                 </div>
                             </div>
                         </div>
@@ -229,6 +264,8 @@
             <t t-foreach="docs" t-as="o">
                 <t t-set="lang" t-value="o.partner_id.lang" />
                 <t t-set="company" t-value="o.company_id" />
+                <t t-set="partner" t-value="o.partner_id" />
+                <t t-set="report" t-value="o.partner_id.settlement_report_type_id" />
                 <t
                     t-call="report_account_move_settlement.commission_settlement_main"
                     t-lang="o.partner_id.lang"
