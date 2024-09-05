@@ -264,7 +264,6 @@
             <t t-foreach="docs" t-as="o">
                 <t t-set="lang" t-value="o.partner_id.lang" />
                 <t t-set="company" t-value="o.company_id" />
-                <t t-set="partner" t-value="o.partner_id" />
                 <t t-set="report" t-value="o.partner_id.settlement_report_type_id" />
                 <t
                     t-call="report_account_move_settlement.commission_settlement_main"

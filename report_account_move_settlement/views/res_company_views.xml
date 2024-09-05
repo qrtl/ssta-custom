@@ -18,8 +18,8 @@
                             <field name="name" />
                             <field name="company_id" />
                             <field name="seller_settlement_report_title" />
+                            <field name="case_number" />
                             <field name="company_address" />
-                            <field name="seller_settlement_report_title" />
                             <field name="seller_settlement_report_debit_comment" />
                             <field name="seller_settlement_report_credit_comment" />
                             <field name="seller_settlement_report_settlement_comment" />
