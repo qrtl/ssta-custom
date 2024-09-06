@@ -35,15 +35,7 @@
                         style="max-height: 45px;"
                         alt="Logo"
                     />
-                    <t t-if="report.report_title">
-                        <span t-field="report.report_title" />
-                    </t>
-                    <t t-elif="company.report_title">
-                        <span t-field="company.report_title" />
-                    </t>
-                    <t t-else="">
-                        <span>精算一覧書</span>
-                    </t>
+                    <t t-esc="o._get_report_title()" />
                 </h2>
                 <div class="row" style="padding-top: 60px;">
                     <div class="col-7 mb-4">
@@ -89,20 +81,10 @@
                             </div>
                         </h3>
                         <div t-if="o.move_type == 'in_invoice'">
-                            <t t-if="report.debit_comment">
-                                <span t-field="report.debit_comment" />
-                            </t>
-                            <t t-else="">
-                                <span t-field="company.debit_comment" />
-                            </t>
+                            <t t-esc="o._get_debit_comment()" />
                         </div>
                         <div t-if="o.move_type == 'in_refund'">
-                            <t t-if="report.credit_comment">
-                                <span t-field="report.credit_comment" />
-                            </t>
-                            <t t-else="">
-                                <span t-field="company.credit_comment" />
-                            </t>
+                            <t t-esc="o._get_credit_comment()" />
                         </div>
                     </div>
                     <div t-if="o.move_type == 'in_refund'" class="col-5">
@@ -177,7 +159,7 @@
                         <table class="table table-sm table-striped">
                             <thead>
                                 <tr class="bg-success">
-                                    <t t-if="not report or report.case_number">
+                                    <t t-if="o._show_case_number()">
                                         <th>Case Number</th>
                                     </t>
                                     <th>Product</th>
@@ -187,7 +169,7 @@
                             <tbody>
                                 <t t-set="settle_total" t-value="0" />
                                 <tr t-foreach="o.settlement_ids.line_ids" t-as="l">
-                                    <t t-if="not report or report.case_number">
+                                    <t t-if="o._show_case_number()">
                                         <td>
                                             <span
                                                 t-field="l.sudo().product_id.case_number"
@@ -231,12 +213,7 @@
                                         </td>
                                     </tr>
                                     </table>
-                                    <t t-if="report.settlement_comment">
-                                        <span t-field="report.settlement_comment" />
-                                    </t>
-                                    <t t-else="">
-                                        <span t-field="company.settlement_comment" />
-                                    </t>
+                                    <t t-esc="o._get_settlement_comment()" />
                                 </div>
                             </div>
                         </div>

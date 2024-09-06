@@ -37,3 +37,32 @@ class AccountMove(models.Model):
                 r"\u00a0", r"\u00a0-"
             )
         return
+
+    def _get_settlement_value(self, field_name, default_value=None):
+        self.ensure_one()
+        partner_value = getattr(
+            self.partner_id.settlement_report_type_id, field_name, None
+        )
+        company_value = getattr(self.company_id, field_name, None)
+
+        if partner_value:
+            return partner_value
+        elif company_value:
+            return company_value
+        else:
+            return default_value
+
+    def _get_report_title(self):
+        return self._get_settlement_value("report_title", "精算一覧書")
+
+    def _get_debit_comment(self):
+        return self._get_settlement_value("debit_comment")
+
+    def _get_credit_comment(self):
+        return self._get_settlement_value("credit_comment")
+
+    def _get_settlement_comment(self):
+        return self._get_settlement_value("settlement_comment")
+
+    def _show_case_number(self):
+        return bool(self._get_settlement_value("case_number"))
