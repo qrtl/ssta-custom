@@ -177,7 +177,7 @@
                         <table class="table table-sm table-striped">
                             <thead>
                                 <tr class="bg-success">
-                                    <t t-if="report.case_number">
+                                    <t t-if="not report or report.case_number">
                                         <th>Case Number</th>
                                     </t>
                                     <th>Product</th>
@@ -187,7 +187,7 @@
                             <tbody>
                                 <t t-set="settle_total" t-value="0" />
                                 <tr t-foreach="o.settlement_ids.line_ids" t-as="l">
-                                    <t t-if="report.case_number">
+                                    <t t-if="not report or report.case_number">
                                         <td>
                                             <span
                                                 t-field="l.sudo().product_id.case_number"
