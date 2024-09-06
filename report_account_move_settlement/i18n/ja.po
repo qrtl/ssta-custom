@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-05 09:43+0000\n"
-"PO-Revision-Date: 2024-09-05 09:43+0000\n"
+"POT-Creation-Date: 2024-09-06 00:54+0000\n"
+"PO-Revision-Date: 2024-09-06 00:54+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -77,24 +77,24 @@ msgid "Case Number"
 msgstr "箱番号"
 
 #. module: report_account_move_settlement
-#: model:ir.model.fields,help:report_account_move_settlement.field_res_company__seller_settlement_report_settlement_comment
-#: model:ir.model.fields,help:report_account_move_settlement.field_settlement_report_type__seller_settlement_report_settlement_comment
+#: model:ir.model.fields,help:report_account_move_settlement.field_res_company__settlement_comment
+#: model:ir.model.fields,help:report_account_move_settlement.field_settlement_report_type__settlement_comment
 msgid ""
 "Comment to show below the total amount of Sold Items on the seller "
 "settlement report "
 msgstr "精算レポートの落札済商品一覧の下に表示するコメント"
 
 #. module: report_account_move_settlement
-#: model:ir.model.fields,help:report_account_move_settlement.field_res_company__seller_settlement_report_credit_comment
-#: model:ir.model.fields,help:report_account_move_settlement.field_settlement_report_type__seller_settlement_report_credit_comment
+#: model:ir.model.fields,help:report_account_move_settlement.field_res_company__credit_comment
+#: model:ir.model.fields,help:report_account_move_settlement.field_settlement_report_type__credit_comment
 msgid ""
 "Comment to show below the total amount on the seller settlement report when "
 "the balance is negative."
 msgstr "差引合計がマイナスの場合に精算書の同項目の下に表示するコメント"
 
 #. module: report_account_move_settlement
-#: model:ir.model.fields,help:report_account_move_settlement.field_res_company__seller_settlement_report_debit_comment
-#: model:ir.model.fields,help:report_account_move_settlement.field_settlement_report_type__seller_settlement_report_debit_comment
+#: model:ir.model.fields,help:report_account_move_settlement.field_res_company__debit_comment
+#: model:ir.model.fields,help:report_account_move_settlement.field_settlement_report_type__debit_comment
 msgid ""
 "Comment to show below the total amount on the seller settlement report when "
 "the balance is positive."
@@ -129,6 +129,18 @@ msgstr "作成者"
 #: model:ir.model.fields,field_description:report_account_move_settlement.field_settlement_report_type__create_date
 msgid "Created on"
 msgstr "作成日"
+
+#. module: report_account_move_settlement
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__credit_comment
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_settlement_report_type__credit_comment
+msgid "Credit Comment"
+msgstr "クレジットコメント"
+
+#. module: report_account_move_settlement
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__debit_comment
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_settlement_report_type__debit_comment
+msgid "Debit Comment"
+msgstr "デビットコメント"
 
 #. module: report_account_move_settlement
 #: model:ir.model.fields,field_description:report_account_move_settlement.field_settlement_report_type__display_name
@@ -210,28 +222,21 @@ msgid "Quantity"
 msgstr "数量"
 
 #. module: report_account_move_settlement
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__seller_settlement_report_credit_comment
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_settlement_report_type__seller_settlement_report_credit_comment
-msgid "Seller Settlement Report Credit Comment"
-msgstr "精算書クレジットコメント"
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__report_title
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_settlement_report_type__report_title
+msgid "Report Title"
+msgstr "レポートタイトル"
 
 #. module: report_account_move_settlement
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__seller_settlement_report_debit_comment
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_settlement_report_type__seller_settlement_report_debit_comment
-msgid "Seller Settlement Report Debit Comment"
-msgstr "精算書デビットコメント"
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__settlement_comment
+#: model:ir.model.fields,field_description:report_account_move_settlement.field_settlement_report_type__settlement_comment
+msgid "Settlement Comment"
+msgstr "精算金額コメント"
 
 #. module: report_account_move_settlement
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__seller_settlement_report_settlement_comment
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_settlement_report_type__seller_settlement_report_settlement_comment
-msgid "Seller Settlement Report Settlement Comment"
-msgstr "精算書精算金額コメント"
-
-#. module: report_account_move_settlement
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_res_company__seller_settlement_report_title
-#: model:ir.model.fields,field_description:report_account_move_settlement.field_settlement_report_type__seller_settlement_report_title
-msgid "Seller Settlement Report Title"
-msgstr "精算一覧書タイトル"
+#: model_terms:ir.ui.view,arch_db:report_account_move_settlement.view_company_form
+msgid "Settlement Report"
+msgstr "精算レポート"
 
 #. module: report_account_move_settlement
 #: model:ir.model,name:report_account_move_settlement.model_settlement_report_type
@@ -256,7 +261,7 @@ msgid "Sold Items"
 msgstr "落札済商品一覧"
 
 #. module: report_account_move_settlement
-#: model:ir.model.fields,help:report_account_move_settlement.field_res_company__seller_settlement_report_title
-#: model:ir.model.fields,help:report_account_move_settlement.field_settlement_report_type__seller_settlement_report_title
+#: model:ir.model.fields,help:report_account_move_settlement.field_res_company__report_title
+#: model:ir.model.fields,help:report_account_move_settlement.field_settlement_report_type__report_title
 msgid "Title to show on the seller settlement report."
 msgstr "精算書に表示するタイトル"

@@ -10,18 +10,16 @@ class Company(models.Model):
     settlement_report_type_ids = fields.One2many(
         "settlement.report.type", "company_id", string="Settlement Report Types"
     )
-    seller_settlement_report_title = fields.Char(
-        help="Title to show on the seller settlement report."
-    )
-    seller_settlement_report_debit_comment = fields.Text(
+    report_title = fields.Char(help="Title to show on the seller settlement report.")
+    debit_comment = fields.Text(
         help="Comment to show below the total amount on the seller settlement report "
         "when the balance is positive."
     )
-    seller_settlement_report_credit_comment = fields.Text(
+    credit_comment = fields.Text(
         help="Comment to show below the total amount on the seller settlement report "
         "when the balance is negative."
     )
-    seller_settlement_report_settlement_comment = fields.Text(
+    settlement_comment = fields.Text(
         help="Comment to show below the total amount of Sold Items on the seller "
         "settlement report "
     )

@@ -10,24 +10,22 @@ class SettlementReportType(models.Model):
 
     name = fields.Char()
     company_id = fields.Many2one("res.company", required=True)
-    seller_settlement_report_title = fields.Char(
-        help="Title to show on the seller settlement report."
-    )
+    report_title = fields.Char(help="Title to show on the seller settlement report.")
     case_number = fields.Boolean(
         help="Show case number on the seller settlement report.", default=True
     )
     company_address = fields.Text(
         help="Address to show on the seller settlement report."
     )
-    seller_settlement_report_debit_comment = fields.Text(
+    debit_comment = fields.Text(
         help="Comment to show below the total amount on the seller settlement report "
         "when the balance is positive."
     )
-    seller_settlement_report_credit_comment = fields.Text(
+    credit_comment = fields.Text(
         help="Comment to show below the total amount on the seller settlement report "
         "when the balance is negative."
     )
-    seller_settlement_report_settlement_comment = fields.Text(
+    settlement_comment = fields.Text(
         help="Comment to show below the total amount of Sold Items on the seller "
         "settlement report "
     )
