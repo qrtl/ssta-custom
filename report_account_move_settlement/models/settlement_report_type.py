@@ -1,4 +1,4 @@
-# Copyright 2024 Quartile Limited (https://www.quartile.co)
+# Copyright 2024 Quartile (https://www.quartile.co)
 # License AGPL-3.0 or later (https://www.gnu.org/licenses/agpl).
 
 from odoo import fields, models
@@ -29,4 +29,3 @@ class SettlementReportType(models.Model):
         help="Comment to show below the total amount of Sold Items on the seller "
         "settlement report "
     )
-    active = fields.Boolean(default=True)

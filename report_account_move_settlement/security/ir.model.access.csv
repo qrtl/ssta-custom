@@ -1,3 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_settlement_report_type_manager,settlement.report.type.manager,model_settlement_report_type,base.group_user,1,1,1,1
 access_settlement_report_type_user,settlement.report.type.user,model_settlement_report_type,base.group_user,1,0,0,0
+access_settlement_report_type_system,settlement.report.type.system,model_settlement_report_type,base.group_system,1,1,1,1
