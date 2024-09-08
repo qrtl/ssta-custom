@@ -41,7 +41,7 @@ class TestAccountCommissionSalesFee(TestAccountCommission):
 
     def test_multiple_account_commission_sales_fee(self):
         agent = self.agent_monthly
-        commission = self.commission_section_invoice
+        commission = self.commission_net_invoice
         commission.write(
             {
                 "calculate_sales_fee": True,
