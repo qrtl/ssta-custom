@@ -13,10 +13,12 @@
     ],
     "website": "https://www.quartile.co",
     "data": [
+        "security/ir.model.access.csv",
         "data/report_paperformat_data.xml",
         "reports/account_move_report.xml",
         "reports/report_settlement_templates.xml",
         "views/res_company_views.xml",
+        "views/res_partner_views.xml",
     ],
     "installable": True,
 }
