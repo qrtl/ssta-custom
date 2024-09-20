@@ -1,6 +1,6 @@
-============
-Stock Seller
-============
+==============
+Product Seller
+==============
 
 .. 
    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -17,7 +17,7 @@ Stock Seller
     :target: http://www.gnu.org/licenses/lgpl-3.0-standalone.html
     :alt: License: LGPL-3
 .. |badge3| image:: https://img.shields.io/badge/github-qrtl%2Frmm--custom-lightgray.png?logo=github
-    :target: https://github.com/qrtl/rmm-custom/tree/15.0/stock_seller
+    :target: https://github.com/qrtl/rmm-custom/tree/15.0/product_seller
     :alt: qrtl/rmm-custom
 
 |badge1| |badge2| |badge3|
@@ -37,7 +37,7 @@ Bug Tracker
 Bugs are tracked on `GitHub Issues <https://github.com/qrtl/rmm-custom/issues>`_.
 In case of trouble, please check there if your issue has already been reported.
 If you spotted it first, help us to smash it by providing a detailed and welcomed
-`feedback <https://github.com/qrtl/rmm-custom/issues/new?body=module:%20stock_seller%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+`feedback <https://github.com/qrtl/rmm-custom/issues/new?body=module:%20product_seller%0Aversion:%2015.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
 
 Do not contact contributors directly about support or help with technical issues.
 
@@ -52,6 +52,6 @@ Authors
 Maintainers
 -----------
 
-This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/stock_seller>`_ project on GitHub.
+This module is part of the `qrtl/rmm-custom <https://github.com/qrtl/rmm-custom/tree/15.0/product_seller>`_ project on GitHub.
 
 You are welcome to contribute.
