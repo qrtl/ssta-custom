@@ -8,8 +8,9 @@
     "category": "Stock",
     "license": "AGPL-3",
     "depends": [
-        "stock_sales_channel",  # sales_channel_id
         "product_yahoo_auction_sst",  # yahoo_product_state_id
+        "stock_sales_channel",  # sales_channel_id
+        "stock_seller",  # seller_id
     ],
     "data": ["views/stock_quant_views.xml"],
     "installable": True,

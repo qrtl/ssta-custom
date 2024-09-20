@@ -10,4 +10,5 @@ class StockQuant(models.Model):
     yahoo_product_state_id = fields.Many2one(
         related="product_id.yahoo_product_state_id",
         string="Yahoo Product State",
+        store=True,
     )
