@@ -48,8 +48,14 @@
         <field name="arch" type="xml">
             <xpath expr="//field[@name='product_id']" position="after">
                 <field name="seller_id" />
+                <field name="yahoo_product_state_id" />
             </xpath>
             <xpath expr="//filter[@name='productgroup']" position="after">
+                <filter
+                    name="seller_id"
+                    string="Seller"
+                    context="{'group_by':'seller_id'}"
+                />
                 <filter
                     name="yahoo_product_state_id"
                     string="Yahoo Product State"
