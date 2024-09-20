@@ -21,6 +21,7 @@
                             <field name="accessories" />
                             <field name="remark" />
                             <field name="staff_in_charge" />
+                            <field name="staff_initial" />
                         </group>
                         <group>
                             <field name="auction_start_price" widget='monetary' />
@@ -30,6 +31,8 @@
                             <field name="carrier_size_id" />
                             <field name="deliver_prefecture" />
                             <field name="delivery_cites" />
+                            <field name="stock_time" />
+                            <field name="stock_date" />
                         </group>
                     </group>
                 </page>

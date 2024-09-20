@@ -13,6 +13,7 @@ class ProductTemplate(models.Model):
     accessories = fields.Char()
     remark = fields.Text()
     staff_in_charge = fields.Many2one("res.users", domain="[('share', '=', False)]")
+    staff_initial = fields.Char(size=4)
     auction_start_price = fields.Float(
         string="Auction Starting Price", digits="Product Price"
     )
@@ -22,6 +23,8 @@ class ProductTemplate(models.Model):
     carrier_size_id = fields.Many2one("delivery.carrier.size", string="Delivery Size")
     deliver_prefecture = fields.Char(string="Delivery Prefecture")
     delivery_cites = fields.Char(string="Delivery Cities")
+    stock_time = fields.Integer()
+    stock_date = fields.Date()
     yahoo_product_state_id = fields.Many2one(
         "yahoo.product.state",
         string="Yahoo Product State",
