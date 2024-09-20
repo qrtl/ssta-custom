@@ -7,4 +7,4 @@ from odoo import fields, models
 class StockQuant(models.Model):
     _inherit = "stock.quant"
 
-    seller_id = fields.Many2one(related="product_id.seller_id")
+    seller_id = fields.Many2one(related="product_id.seller_id", store=True)
