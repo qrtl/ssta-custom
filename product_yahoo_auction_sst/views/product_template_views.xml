@@ -31,7 +31,7 @@
                             <field name="carrier_size_id" />
                             <field name="deliver_prefecture" />
                             <field name="delivery_cites" />
-                            <field name="stock_time" />
+                            <field name="stock_time" widget="float_time" />
                             <field name="stock_date" />
                         </group>
                     </group>

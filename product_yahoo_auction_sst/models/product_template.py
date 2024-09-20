@@ -23,7 +23,7 @@ class ProductTemplate(models.Model):
     carrier_size_id = fields.Many2one("delivery.carrier.size", string="Delivery Size")
     deliver_prefecture = fields.Char(string="Delivery Prefecture")
     delivery_cites = fields.Char(string="Delivery Cities")
-    stock_time = fields.Integer()
+    stock_time = fields.Float()
     stock_date = fields.Date()
     yahoo_product_state_id = fields.Many2one(
         "yahoo.product.state",
