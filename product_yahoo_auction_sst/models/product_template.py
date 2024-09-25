@@ -13,7 +13,7 @@ class ProductTemplate(models.Model):
     accessories = fields.Char()
     remark = fields.Text()
     staff_in_charge = fields.Many2one("res.users", domain="[('share', '=', False)]")
-    staff_initial = fields.Char(size=4)
+    staff_initial = fields.Char()
     auction_start_price = fields.Float(
         string="Auction Starting Price", digits="Product Price"
     )
