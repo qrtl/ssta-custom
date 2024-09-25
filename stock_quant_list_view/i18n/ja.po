@@ -26,7 +26,17 @@ msgid "Reserved"
 msgstr "引当済"
 
 #. module: stock_quant_list_view
+#: model_terms:ir.ui.view,arch_db:stock_quant_list_view.quant_search_view
+msgid "Seller"
+msgstr "出品者"
+
+#. module: stock_quant_list_view
 #: model:ir.actions.act_window,name:stock_quant_list_view.action_stock_quant
 #: model:ir.ui.menu,name:stock_quant_list_view.menu_stock_quant
 msgid "Stock Quant"
 msgstr "店舗在庫"
+
+#. module: stock_quant_list_view
+#: model_terms:ir.ui.view,arch_db:stock_quant_list_view.quant_search_view
+msgid "Yahoo Product State"
+msgstr "商品化ステータス"

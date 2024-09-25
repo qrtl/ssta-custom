@@ -7,6 +7,7 @@
         <field name="arch" type="xml">
             <tree create="0" delete="0" decoration-danger="quantity &lt; 0">
                 <field name="product_id" optional="show" />
+                <field name="seller_id" optional="show" />
                 <field name="yahoo_product_state_id" optional="show" />
                 <field name="sales_channel_id" optional="show" />
                 <field name="location_id" optional="show" />
@@ -38,6 +39,29 @@
                     optional="show"
                 />
             </tree>
+        </field>
+    </record>
+    <record id="quant_search_view" model="ir.ui.view">
+        <field name="name">stock.quant.search</field>
+        <field name="model">stock.quant</field>
+        <field name="inherit_id" ref="stock.quant_search_view" />
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <field name="seller_id" />
+                <field name="yahoo_product_state_id" />
+            </xpath>
+            <xpath expr="//filter[@name='productgroup']" position="after">
+                <filter
+                    name="seller_id"
+                    string="Seller"
+                    context="{'group_by':'seller_id'}"
+                />
+                <filter
+                    name="yahoo_product_state_id"
+                    string="Yahoo Product State"
+                    context="{'group_by':'yahoo_product_state_id'}"
+                />
+            </xpath>
         </field>
     </record>
     <record id="action_stock_quant" model="ir.actions.act_window">
