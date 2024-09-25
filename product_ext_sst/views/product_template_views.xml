@@ -46,6 +46,9 @@
                 <field name="delivery_city_id" optional="show" />
                 <field name="yahoo_product_state_id" optional="show" />
                 <field name="staff_in_charge" optional="show" />
+                <field name="staff_initial" optional="show" />
+                <field name="stock_time" optional="show" widget="float_time" />
+                <field name="stock_date" optional="show" />
                 <field name="virtual_available" optional="show" />
                 <field name="type" invisible="1" />
                 <field
