@@ -9,5 +9,4 @@ def post_init_hook(cr, registry):
     cancel_pos = env["purchase.order"].search([("state", "=", "cancel")])
     products = cancel_pos.mapped("order_line.product_id")
     products.write({"active": False})
-    products_tmpl = products.mapped("product_tmpl_id")
-    products_tmpl.write({"active": False})
+    products.mapped("product_tmpl_id").write({"active": False})
