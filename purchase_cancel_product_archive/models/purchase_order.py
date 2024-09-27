@@ -7,15 +7,14 @@ from odoo import models
 class PurchaseOrder(models.Model):
     _inherit = "purchase.order"
 
-    def write(self, vals):
-        if not vals.get("state"):
-            return super().write(vals)
-        for rec in self:
-            products = rec.order_line.mapped("product_id")
-            if rec.state == "cancel":
-                products.write({"active": True})
-                products.mapped("product_tmpl_id").write({"active": True})
-            elif vals["state"] == "cancel":
-                products.write({"active": False})
-                products.mapped("product_tmpl_id").write({"active": False})
-        return super().write(vals)
+    def button_draft(self):
+        products = self.order_line.mapped("product_id")
+        products.write({"active": True})
+        products.mapped("product_tmpl_id").write({"active": True})
+        return super().button_draft()
+
+    def button_cancel(self):
+        products = self.order_line.mapped("product_id")
+        products.write({"active": False})
+        products.mapped("product_tmpl_id").write({"active": False})
+        return super().button_cancel()
