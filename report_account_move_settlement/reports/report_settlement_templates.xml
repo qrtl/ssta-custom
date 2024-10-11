@@ -73,6 +73,10 @@
                                 <span t-field="company.vat" />
                             </div>
                         </t>
+                        <div class="mb-2">
+                            <span>Issue Date:</span>
+                            <span t-field="o.invoice_date" />
+                        </div>
                     </div>
                 </div>
                 <div class="row" style="padding-top: 20px;">

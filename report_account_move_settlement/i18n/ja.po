@@ -22,6 +22,11 @@ msgstr "<span>銀行:</span>"
 
 #. module: report_account_move_settlement
 #: model_terms:ir.ui.view,arch_db:report_account_move_settlement.commission_settlement_main
+msgid "<span>Issue Date:</span>"
+msgstr "<span>発行日:</span>"
+
+#. module: report_account_move_settlement
+#: model_terms:ir.ui.view,arch_db:report_account_move_settlement.commission_settlement_main
 msgid "<span>登録番号:</span>"
 msgstr ""
 
