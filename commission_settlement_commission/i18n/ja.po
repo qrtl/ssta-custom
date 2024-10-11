@@ -1,0 +1,27 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* commission_settlement_commission
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-10-11 04:44+0000\n"
+"PO-Revision-Date: 2024-10-11 04:44+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: commission_settlement_commission
+#: model:ir.model.fields,field_description:commission_settlement_commission.field_commission_settlement__commission_ids
+#: model_terms:ir.ui.view,arch_db:commission_settlement_commission.view_settlement_search_inherit
+msgid "Commission"
+msgstr "コミッション"
+
+#. module: commission_settlement_commission
+#: model:ir.model,name:commission_settlement_commission.model_commission_settlement
+msgid "Settlement"
+msgstr "セトルメント"
