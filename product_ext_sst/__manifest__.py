@@ -10,7 +10,6 @@
     "depends": [
         "website_sale",
         "product_yahoo_auction_sst",
-        "product_delivery_destination",
         "purchase_shop",
         "web_widget_open_tab",
         "stock_virtual_available_adj",
