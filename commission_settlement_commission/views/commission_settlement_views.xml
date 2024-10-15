@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <record model="ir.ui.view" id="view_settlement_tree_inherit">
+        <field name="name">Settlements tree</field>
+        <field name="model">commission.settlement</field>
+        <field name="inherit_id" ref="commission.view_settlement_tree" />
+        <field name="arch" type="xml">
+            <field name="agent_id" position="after">
+                <field name="commission_ids" widget="many2many_tags" optional="show" />
+            </field>
+        </field>
+    </record>
+    <record id="view_settlement_search_inherit" model="ir.ui.view">
+        <field name="name">commission.settlement.search</field>
+        <field name="model">commission.settlement</field>
+        <field name="inherit_id" ref="commission.view_settlement_search" />
+        <field name="arch" type="xml">
+            <field name="agent_id" position="after">
+                <field name="commission_ids" />
+            </field>
+            <filter name="group_agent" position="after">
+                <filter
+                    string="Commission"
+                    name="group_commission"
+                    context="{'group_by': 'commission_ids'}"
+                />
+            </filter>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_settlement_form_inherit">
+        <field name="name">Settlements</field>
+        <field name="model">commission.settlement</field>
+        <field name="inherit_id" ref="commission.view_settlement_form" />
+        <field name="arch" type="xml">
+            <field name="agent_id" position="after">
+                <field name="commission_ids" widget="many2many_tags" />
+            </field>
+        </field>
+    </record>
+</odoo>
