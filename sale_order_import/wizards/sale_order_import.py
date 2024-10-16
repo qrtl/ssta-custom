@@ -287,12 +287,16 @@ class ImportSale(models.TransientModel):
         if product_id_value not in product_dict.keys():
             product_product = self.env["product.product"]
             product = product_product.search([("default_code", "=", product_id_value)])
-            if not product:
+            if not product or len(product) > 1:
                 error_vals["error_message"] = (
                     error_vals["error_message"]
                     + _("Product: ")
                     + product_id_value
-                    + _(" not found!")
+                    + (
+                        _(" not found!")
+                        if not product
+                        else _(" is found more than once!")
+                    )
                     + "\n"
                 )
                 error_vals["error"] = True

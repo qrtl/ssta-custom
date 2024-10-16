@@ -17,6 +17,12 @@ msgstr ""
 
 #. module: sale_order_import
 #: code:addons/sale_order_import/wizards/sale_order_import.py:0
+#, python-format
+msgid " is found more than once!"
+msgstr " が複数存在します。"
+
+#. module: sale_order_import
+#: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #: code:addons/sale_order_import/wizards/sale_order_import.py:0
