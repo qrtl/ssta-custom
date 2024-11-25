@@ -12,10 +12,9 @@ class IrAttachment(models.Model):
 
     def _resize_image(self, datas):
         ICP = self.env["ir.config_parameter"].sudo().get_param
-        max_resolution = (
-            "1025x1025"  # Use 1025 instead of 1024 to enable the zoom feature
-        )
         quality = int(ICP("base.image_autoresize_quality", 80))
+        # Use 1025 instead of 1024 to enable the zoom feature
+        max_resolution = (1025, 1025)
         img = ImageProcess(datas, verify_resolution=False)
         w, h = img.image.size
         nw, nh = map(int, max_resolution.split("x"))
