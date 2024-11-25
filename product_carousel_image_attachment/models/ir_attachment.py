@@ -10,19 +10,21 @@ IMAGE_TYPES = ["image/png", "image/jpeg", "image/bmp", "image/gif"]
 class IrAttachment(models.Model):
     _inherit = "ir.attachment"
 
+    @api.model
     def _resize_image(self, datas):
         ICP = self.env["ir.config_parameter"].sudo().get_param
+        # Use 1025 instead of 1024 to enable the zoom feature.
+        # Define a static value instead of modifying the system parameter
+        # 'base.image_autoresize_extensions' to avoid
+        # affecting other image fields.
+        nw, nh = (1025, 1025)
         quality = int(ICP("base.image_autoresize_quality", 80))
-        # Use 1025 instead of 1024 to enable the zoom feature
-        max_resolution = (1025, 1025)
         img = ImageProcess(datas, verify_resolution=False)
         w, h = img.image.size
-        nw, nh = map(int, max_resolution.split("x"))
         if w > nw or h > nh:
-            img = img.resize(nw, nh)  # Resize the image
-            return img.image_base64(
-                quality=quality
-            )  # Return the resized image as base64
+            # Use odoo standard resize
+            img = img.resize(nw, nh)
+            return img.image_base64(quality=quality)
         return datas
 
     @api.model_create_multi
