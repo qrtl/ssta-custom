@@ -38,6 +38,7 @@ class IrAttachment(models.Model):
                 ("mimetype", "in", IMAGE_TYPES),
                 ("res_model", "in", ["product.template", "product.product"]),
                 ("resize_done", "=", False),
+                ("res_field", "=", False),
             ],
             limit=limit,
         )
