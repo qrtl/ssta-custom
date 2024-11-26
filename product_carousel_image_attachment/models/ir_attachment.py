@@ -15,8 +15,8 @@ class IrAttachment(models.Model):
         ICP = self.env["ir.config_parameter"].sudo().get_param
         # Use 1025 instead of 1024 to enable the zoom feature.
         # Define a static value instead of modifying the system parameter
-        # 'base.image_autoresize_extensions' to avoid
-        # affecting other image fields.
+        # 'base.image_autoresize_max_px' to avoid
+        # affecting attachment resize.
         nw, nh = (1025, 1025)
         quality = int(ICP("base.image_autoresize_quality", 80))
         img = ImageProcess(datas, verify_resolution=False)
