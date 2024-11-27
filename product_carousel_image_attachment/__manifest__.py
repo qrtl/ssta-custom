@@ -8,6 +8,5 @@
     "category": "Tools",
     "license": "AGPL-3",
     "depends": ["website_sale"],
-    "data": ["data/scheduler.xml"],
     "installable": True,
 }
