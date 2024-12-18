@@ -13,7 +13,7 @@ class CommissionSettlement(models.Model):
             "quantity": len(
                 self.line_ids.filtered(
                     lambda line: line.commission_id == commission
-                    and line.settled_amount > 0.0
+                    and line.settled_amount >= 0.0
                 )
             ),
             "price_unit": commission.sales_fee_product_id.list_price * -1,
