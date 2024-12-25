@@ -145,11 +145,11 @@ class ImportSale(models.TransientModel):
         price_unit = float(price_unit)
         product_qty = float(product_qty)
         for k, v in {_("Quantity"): product_qty, _("Unit Price"): price_unit}.items():
-            if v > 0:
+            if v >= 0:
                 continue
             error_vals["error_message"] = (
                 error_vals["error_message"]
-                + _("Value must be greater than 0: %s") % k
+                + _("Value must be 0 or greater: %s") % k
                 + "\n"
             )
             error_vals["error"] = True
