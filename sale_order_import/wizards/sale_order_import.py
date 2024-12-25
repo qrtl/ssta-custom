@@ -144,13 +144,14 @@ class ImportSale(models.TransientModel):
             self._get_taxes(tax_from_chunk, taxes, error_vals)
         price_unit = float(price_unit)
         product_qty = float(product_qty)
-        for k, v in {_("Quantity"): product_qty, _("Unit Price"): price_unit}.items():
-            if v >= 0:
-                continue
-            error_vals["error_message"] = (
-                error_vals["error_message"]
-                + _("Value must be 0 or greater: %s") % k
-                + "\n"
+        if price_unit < 0:
+            error_vals["error_message"] += (
+                _("Value must be 0 or greater: %s") % _("Unit Price") + "\n"
+            )
+            error_vals["error"] = True
+        if product_qty <= 0:
+            error_vals["error_message"] += (
+                _("Value must be greater than 0: %s") % _("Quantity") + "\n"
             )
             error_vals["error"] = True
         return product_qty, price_unit
