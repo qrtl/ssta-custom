@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 15.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-25 05:15+0000\n"
-"PO-Revision-Date: 2024-12-25 05:15+0000\n"
+"POT-Creation-Date: 2024-12-25 05:41+0000\n"
+"PO-Revision-Date: 2024-12-25 05:41+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -199,12 +199,6 @@ msgid "Product: "
 msgstr "プロダクト: "
 
 #. module: sale_order_import
-#: code:addons/sale_order_import/wizards/sale_order_import.py:0
-#, python-format
-msgid "Quantity"
-msgstr "数量"
-
-#. module: sale_order_import
 #: model:ir.model.fields,field_description:sale_order_import.field_data_import_log__sale_order_ids
 msgid "Related Sale Orders"
 msgstr "関連受注"
@@ -255,20 +249,14 @@ msgstr "販売チャネル: "
 #. module: sale_order_import
 #: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
-msgid "Unit Price"
-msgstr "単価"
+msgid "Value must be 0 or greater: Unit Price"
+msgstr "値は0以上でなければなりません: 単価"
 
 #. module: sale_order_import
 #: code:addons/sale_order_import/wizards/sale_order_import.py:0
 #, python-format
-msgid "Value must be 0 or greater: %s"
-msgstr "値は0以上でなければなりません: %s"
-
-#. module: sale_order_import
-#: code:addons/sale_order_import/wizards/sale_order_import.py:0
-#, python-format
-msgid "Value must be greater than 0: %s"
-msgstr "値は0より大きくなければなりません: %s"
+msgid "Value must be greater than 0: Quantity"
+msgstr "値は0より大きくなければなりません: 数量"
 
 #. module: sale_order_import
 #: code:addons/sale_order_import/wizards/sale_order_import.py:0

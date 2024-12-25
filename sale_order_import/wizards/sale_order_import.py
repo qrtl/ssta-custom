@@ -146,12 +146,12 @@ class ImportSale(models.TransientModel):
         product_qty = float(product_qty)
         if price_unit < 0:
             error_vals["error_message"] += (
-                _("Value must be 0 or greater: %s") % _("Unit Price") + "\n"
+                _("Value must be 0 or greater: Unit Price") + "\n"
             )
             error_vals["error"] = True
         if product_qty <= 0:
             error_vals["error_message"] += (
-                _("Value must be greater than 0: %s") % _("Quantity") + "\n"
+                _("Value must be greater than 0: Quantity") + "\n"
             )
             error_vals["error"] = True
         return product_qty, price_unit
