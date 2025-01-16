@@ -3,7 +3,7 @@
 
 from odoo import api, models
 
-IMAGE_TYPES = ["image/png", "image/jpeg", "image/bmp", "image/gif"]
+IMAGE_TYPES = ["image/png", "image/jpeg", "image/bmp", "image/tiff"]
 
 
 class IrAttachment(models.Model):
